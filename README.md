@@ -1,4 +1,2 @@
-GoodUI
-======
-
-Working on sewalong
+Group Good Unless Intended 
+GR4 computer prototype for "Sew Together"
