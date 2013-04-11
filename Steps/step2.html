@@ -10,12 +10,12 @@
   <link rel="stylesheet" href="/resources/demos/style.css" />
 	<script>
 	$(function() {
-		$( "#tabs" ).tabs();
+		$( "#tabs" ).tabs({active:2});
 	});
 
 	$(function() {
 		$( "#progressbar" ).progressbar({
-			value: 0
+			value: 10
 		});
 	});</script>
 </head>
@@ -51,24 +51,27 @@
 	<!--for a single step-->
 	<!--jQueryUi has stuff for tabs-- for navigation-->
 	<div id="step">
-		<div id="stepTitle"><h2>Step 1<h2></div>
+		<div id="stepTitle"><h2>Step 2<h2></div>
 		<div id="progressbar"></div>
-		<div id="stepText"><p>Print and cut out pattern template. Transfer each piece to the appropriate fabric, then cut out fabric pieces <p><div>
-		<div id="stepImage"><img src="step1.jpg"/></div>
-		<div id="stepExtra"><p><a href="">Template here</a></p></div>
+		<div id="stepText"><p>Sew the cake bottom to the cake sides as shown, using the blanket stitch<p><div>
+		<div id="stepImage"><img src="step2diagram.png"/></div>
+		<div id="stepExtra"><p></p></div>
 		<div id="stepAppendix">
 			<div id="stepWarnings"><span class="ui-icon ui-icon-alert"></span><h3>Warnings</h3>
 			<p>Be careful of blah blah blah</p></div>
 			<div id="stepTips"><span class="ui-icon ui-icon-lightbulb"></span><h3>Tips</h3>
 			<p>Blah blah blah</p></div>
 			<div id="stepHelp"><span class="ui-icon ui-icon-info"></span><h3>Additional Help</h3>
-			<p>Links to stuff-- Use jQueryUI dialog boxes</p></div>
+			<ul>
+				<li>Blanket stitch</li>
+			</ul>
+			</div>
 		</div>
 	</div>
 	<div id="stepNavigation">
 		<div id="backStep">Previous</div>
 		<div id="topOfSteps">Back to top</div>
-		<div id="nextStep"><a href="step2.html">Next</a></div>
+		<div id="nextStep">Next</div>
 	</div>	
 </div>
 </body>
