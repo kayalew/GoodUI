@@ -17,7 +17,20 @@
 		$( "#progressbar" ).progressbar({
 			value: 10
 		});
-	});</script>
+	});
+	
+	$(function() {
+		$("#blanket-stitch" ).dialog({
+			autoOpen:false
+		});
+	});
+	
+	$(document).ready(function(){ 
+		$( "#help-blanket-stitch" ).click(function() {
+			$( "#blanket-stitch" ).dialog( "open" );
+		});
+	});
+	</script>
 </head>
 
 <body>
@@ -63,7 +76,7 @@
 			<p>Blah blah blah</p></div>
 			<div id="stepHelp"><span class="ui-icon ui-icon-info"></span><h3>Additional Help</h3>
 			<ul>
-				<li>Blanket stitch</li>
+			<li id="help-blanket-stitch">Blanket stitch</li>
 			</ul>
 			</div>
 		</div>
@@ -73,6 +86,7 @@
 		<div id="topOfSteps">Back to top</div>
 		<div id="nextStep">Next</div>
 	</div>	
+	<div id="blanket-stitch" title="Blanket Stitch">this is how you blanket stitch</div>
 </div>
 </body>
 
