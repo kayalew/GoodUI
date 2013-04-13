@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+
+<!--
+  MEMBERS: Tristan Daniels, Xingyi Li, Kaleb Ayalew
+-->
+<html>
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+<!-- Load style sheets -->
+<link rel="stylesheet" type="text/css" href="projectSearch.css" />
+
+<!-- Load any supplemental Javascript libraries here -->
+<script type="text/javascript" src="external_js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="external_js/jquery-ui-1.10.0.custom.min.js"></script>
+<script type="text/javascript" src="search.js"></script>
+<!--<script type="text/javascript" src="external_js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="checker.js"></script>
+<script type="text/javascript" src="boardEvent.js"></script>
+<script type="text/javascript" src="board.js"></script>
+<script type="text/javascript" src="rules.js"></script>-->
+
+<!--
+<script type="text/javascript">
+
+//This script extracts parameters from the URL
+//from jquery-howto.blogspot.com
+
+    $.extend({
+        getUrlVars : function() {
+            var vars = [], hash;
+            var hashes = window.location.href.slice(
+                    window.location.href.indexOf('?') + 1).split('&');
+            for ( var i = 0; i < hashes.length; i++) {
+                hash = hashes[i].split('=');
+                vars.push(hash[0]);
+                vars[hash[0]] = hash[1];
+            }
+            return vars;
+        },
+        getUrlVar : function(name) {
+            return $.getUrlVars()[name];
+        }
+    });
+
+    var DEFAULT_BOARD_SIZE = 8;
+
+    //data model
+    var board;
+    var rules;
+    var whoseTurn = "black";	
+
+    var directionOf = function(color) {
+      if (color == "black") {
+        return -1;
+      }
+      return 1;
+    }
+
+    // Fill in this function to toggle the display for whose turn
+    // The color parameter should be either "black" or "red"
+    var toggleTurn = function(color) {
+		// Your code here
+		if (whoseTurn == "black"){
+			whoseTurn = "red";
+		}
+		else{
+			whoseTurn = "black";
+		}
+    }
+
+	//var ctx;
+	var unit;
+	var boardDimension = 400;
+	var arrowDetails = { toRow: "tba", toCol: "tba", fromRow: "tba", fromCol: "tba" };
+	var leftDist;
+	var topDist;
+	var moveList = new Array();
+	//within a game prevMoveIndex goes from
+	//-1 to moveList.length-1 (-1 means no moves made yet)
+	//prevMoveIndex considers all undoes and redoes
+	var prevMoveIndex = -1;
+	
+	function updateDrawnBoard(){
+		drawPieces();
+		updateTurnIndicator();
+        //note drawArrow uses arrowDetails object
+		drawArrow();
+		updateUndoAndRedoDisabled();
+		// my code
+	}
+	
+	function updateUndoAndRedoDisabled(){
+		if ((prevMoveIndex > moveList.length-1) 
+		|| (prevMoveIndex < -1)){
+			$('#btnUndo').prop("disabled", true);
+			$('#btnRedo').prop("disabled", true);
+		}
+		else{
+		    if (prevMoveIndex > -1) {
+				$('#btnUndo').prop("disabled", false);
+			}
+            else if (prevMoveIndex === -1) {
+				$('#btnUndo').prop("disabled", true);
+			}
+            if (prevMoveIndex < moveList.length-1) {
+				$('#btnRedo').prop("disabled", false);
+			}
+            else if (prevMoveIndex === moveList.length-1) {
+				$('#btnRedo').prop("disabled", true);
+			}
+		}
+	}
+	
+	function drawBoard() {
+        var canvas = document.getElementById('canvas');
+		if (canvas.getContext) {
+			var ctx = canvas.getContext("2d");
+			for (var j = 0; j < board.size(); j++) {
+				for (var i = 0; i < board.size(); i++) {
+					if (((i % 2) == 0) && ((j % 2) == 0)
+					||  ((i % 2) == 1) && ((j % 2) == 1)) {
+						ctx.fillStyle = "rgb(255,255,255)";
+					}
+					else{
+						ctx.fillStyle = "rgb(180,180,180)";
+					}
+					ctx.fillRect(i*unit, j*unit, unit, unit);
+				}
+			}
+		}
+		// my code
+    }
+    //Warning
+    //"" for no element being dragged
+    var currentDraggingId = "";
+    var mouseStartX = -1;
+    var mouseStartY = -1;
+    var checkerStartX = -1;
+    var checkerStartY = -1;
+    var startRow = -1;
+    var startCol = -1;
+
+    //NOTE:
+    //shouldn't be called during dragging
+    //otherwise drag may reset
+	function drawPieces(){
+		$('#piecesHolder').empty();
+		var allCheckers = board.getAllCheckers();
+		var numCheckers = allCheckers.length;
+		for (var x = 0; x < numCheckers; x++){
+			var checker = allCheckers[x];
+			var checkerLoc = board.getLocationOf(checker);
+			var row = checkerLoc["row"];
+			var col = checkerLoc["col"];
+            var id = generatePieceId(row,col);
+			var img = $("<img id="+id+">");
+			img.css('position', 'absolute');
+            var origY = topDist + row*unit;
+            var origX = leftDist + col * unit;
+            drawPiece(img, origY, origX, 2);
+            img.width(unit);
+			img.height(unit);
+			if(checker.color == "red"){	
+				if(checker.isKing == true){
+					img.prop('src', "graphics/red-king.png");
+				}
+				else{
+					img.prop('src', "graphics/red-piece.png");
+				}
+			}
+			else{//so if a piece is not red it's considered to be black
+				if(checker.isKing == true){
+					img.prop('src', "graphics/black-king.png");
+				}
+				else{
+					img.prop('src', "graphics/black-piece.png");
+				}
+			}
+            img.mousedown(function (e) {
+                //uncomment the below to make arrows
+                //disapper upon first mousedown on a checker
+                //clearArrowDetails();
+                //drawArrow();
+			    mouseStartX = e.pageX;
+			    mouseStartY = e.pageY;
+			    var id = $(this).prop("id");
+			    var rowCol = id.split("-");
+			    startRow = parseInt(rowCol[0]);
+			    startCol = parseInt(rowCol[1]);
+			    checkerStartY = topDist + startRow * unit;
+			    checkerStartX = leftDist + startCol * unit;
+			    $(this).css('z-index', 4);
+			    currentDraggingId = id; //last thing is to allow dragging
+			    e.preventDefault();
+			});
+			img.appendTo('#piecesHolder');
+		}
+		// my codeS
+	}
+
+	$(document).mousemove(function (e) {
+	    if (currentDraggingId != "") {
+            var newY = checkerStartY + (e.pageY - mouseStartY);
+            var newX = checkerStartX + (e.pageX - mouseStartX)
+            //here z-index is unnecessarily set to/kept at 4, but using same function to standardize
+	        drawPiece($("#" + currentDraggingId), newY, newX, 4);
+	    }
+	});
+	
+	//overwrite histroy tells us if this action should overwrite any
+	//history stored after prevMoveIndex
+	function makeMove(mStartRow, mStartCol, mEndRow, mEndCol, overwriteHistory){
+		var movedChecker = board.getCheckerAt(mStartRow, mStartCol);
+		
+		var playerColor = whoseTurn;
+	    var playerDirection = directionOf(playerColor);
+
+		var turnColor = movedChecker.color;
+		var turnDirection = directionOf(turnColor);
+
+		var result = rules.makeMove(movedChecker, turnDirection, playerDirection, mEndRow, mEndCol);
+
+		if (result != null) {
+			toggleTurn();
+			if (overwriteHistory){
+				prevMoveIndex += 1;
+				//below line also serves purpose of
+				//correcting moveList in sight of more
+				//undoes than redos
+				moveList.length = prevMoveIndex+1;
+				moveList[prevMoveIndex] = result;
+			}
+		}
+	
+	}
+	//NOTE:
+	//possible race condiiton
+	//if another mousedown starts before this is done
+	//new mousedown may have incorrect mouseStart and checkerStart values
+	$(document).mouseup(function (e) {
+	    if (currentDraggingId != "") {
+	        var endRow = Math.floor((e.pageY - topDist) / unit);
+	        var endCol = Math.floor((e.pageX - leftDist) / unit);
+	        if (board.isEmptyLocation(endRow, endCol) && board.isValidLocation(endRow, endCol)) {
+				makeMove(startRow, startCol, endRow, endCol, true);
+	        }
+	        //NOTE: if move is made b/n result and updateDrawnBoard the id
+	        //of the draggedChecker will not accurately represent the location on
+	        //the board (note this for race conditions with mousedown in between these)
+	        //ALSO NOTE: for casse where board is not empty or board is not valid or move is not valid
+	        //we don't have to update whole board, but I am currently choosing code simplicity over
+	        //efficiency
+	        updateDrawnBoard();
+
+	        currentDraggingId = ""; //invalidate dragging as soon as possible so that no other drag events happen
+	        mouseStartX = -1;
+	        mouseStartY = -1;
+	        checkerStartY = -1;
+	        checkerStartX = -1;
+	        startRow = -1;
+	        startCol = -1;
+	    }
+	});
+
+	//set css position of piece (passed in as a handle)
+	function drawPiece(pieceHandle, yCoor, xCoor, zIndex) {
+	    pieceHandle.css('top', yCoor);
+	    pieceHandle.css('left', xCoor);
+	    pieceHandle.css('z-index', zIndex);
+	}
+
+	//accepts two strings
+	function generatePieceId(row, col) {
+	    return row + "-" + col;
+	}
+
+	function updateTurnIndicator(){
+		$('#turnIndicator').text(whoseTurn + " turn");
+		$('#turnIndicator').css('textTransform', 'capitalize');
+		$('#turnIndicator').css('text-align', 'center');
+		$('#turnIndicator').css('color', 'white');
+		if (whoseTurn == "black"){
+			$('#turnIndicator').css('background-color', 'black');
+		}
+		else{
+			$('#turnIndicator').css('background-color', 'red');
+		}
+		// my code
+	}
+	
+	function toCenterUnit(boardUnit){
+		return (boardUnit * unit) + (unit/2);
+	}
+
+    //note drawArrow uses arrowDetails object
+	function drawArrow() {
+	    var toRow = arrowDetails["toRow"];
+		var toCol = arrowDetails["toCol"];
+        var fromRow = arrowDetails["fromRow"];
+		var fromCol = arrowDetails["fromCol"];
+	    $('#arrCanvas').css('left', -boardDimension);
+		var canvas = document.getElementById('arrCanvas');
+		if (canvas.getContext) {
+			var ctx = canvas.getContext("2d");
+			ctx.clearRect(0, 0, boardDimension, boardDimension);
+			if (toRow != "tba") {
+			    ctx.fillStyle = 'yellow';
+			    ctx.strokeStyle = 'yellow';
+			    ctx.lineWidth = 5;
+			    ctx.beginPath();
+			    ctx.moveTo(toCenterUnit(fromCol), toCenterUnit(fromRow));
+			    ctx.lineTo(toCenterUnit(toCol), toCenterUnit(toRow));
+			    ctx.stroke();
+			    ctx.closePath();
+			    ctx.beginPath();
+			    //where first point is on horizontal line
+                //from center of one edge to center of other
+			    if (toCol == fromCol) {
+			        ctx.moveTo(toCenterUnit(toCol), toCenterUnit(toRow));
+			        if (toRow > fromRow) {
+			            ctx.lineTo((toCol +1)*unit, toRow * unit);
+			            ctx.lineTo(toCol*unit, toRow * unit);
+			        }
+			        else {
+			            ctx.lineTo((toCol + 1) * unit, (toRow +1) * unit);
+			            ctx.lineTo(toCol * unit, (toRow +1)* unit);
+			        }
+			    }
+			    else if (toRow == fromRow) {
+			        ctx.moveTo(toCenterUnit(toCol), toCenterUnit(toRow));
+			        if (toCol > fromCol) {
+			            ctx.lineTo(toCol * unit, (toRow + 1) * unit);
+			            ctx.lineTo(toCol * unit, toRow * unit);
+			        }
+			        else {
+			            ctx.lineTo((toCol +1) * unit, (toRow + 1) * unit);
+			            ctx.lineTo((toCol +1) * unit, toRow * unit);
+			        }
+                }
+			    else {
+			        if (toCol > fromCol) {
+			            ctx.moveTo(toCol * unit, toCenterUnit(toRow));
+			        }
+			        else {
+			            ctx.moveTo((toCol + 1) * unit, toCenterUnit(toRow));
+			        }
+			        ctx.lineTo(toCenterUnit(toCol), toCenterUnit(toRow));
+			        //where third point is on vertical line
+			        //from center of one edge to center of other
+			        if (toRow > fromRow) {
+			            ctx.lineTo(toCenterUnit(toCol), toRow * unit);
+			        }
+			        else {
+			            ctx.lineTo(toCenterUnit(toCol), (toRow + 1) * unit);
+			        }
+			    }
+			    ctx.closePath();
+			    ctx.fill();
+			}
+		}
+	
+	}
+	
+    function clearArrowDetails(){
+        arrowDetails = { toRow: "tba", toCol: "tba", fromRow: "tba", fromCol: "tba" };
+    }
+	
+    // This allows the Javascript code inside this block to only run when the page
+    // has finished loading in the browser.
+    $(document).ready(function () {
+
+    });
+</script>
+-->
+
+</head>
+
+<body onload="start();">
+
+<table class="mainTable">
+    <tr>
+        <td id="navBar" colspan=2>navigation</td>
+		
+          <!--<table>
+			  <tr><td><div id = "turnIndicator"></div></td></tr>
+              <tr><td><input id="btnNewGame" type="button" name="new" value="New Game"/></td></tr>
+              <tr><td><input id="btnAutoMove" type="button" name="new" value="Auto Move"/></td></tr>
+			  <tr><td><input id="btnUndo" type="button" name="undo" value="Undo" disabled/></td></tr>
+			  <tr><td><input id="btnRedo" type="button" name="redo" value="Redo" disabled/></td></tr>
+
+            </table>-->
+        
+    </tr>
+	<tr>
+		<td></td>
+        <td id="searchBox">
+			<label for="query">Search</label>
+			<!-- Note: not within form. Check if this is problematic-->
+			<input id = "query" name="queryValue" type="text">
+		</td>
+		<div class = "selector"></div>
+		
+          <!--<table>
+			  <tr><td><div id = "turnIndicator"></div></td></tr>
+              <tr><td><input id="btnNewGame" type="button" name="new" value="New Game"/></td></tr>
+              <tr><td><input id="btnAutoMove" type="button" name="new" value="Auto Move"/></td></tr>
+			  <tr><td><input id="btnUndo" type="button" name="undo" value="Undo" disabled/></td></tr>
+			  <tr><td><input id="btnRedo" type="button" name="redo" value="Redo" disabled/></td></tr>
+
+            </table>-->
+        
+    </tr>
+	<tr>
+		<td id="sidebar">
+			<div class="filterCollection">
+			<div class="filterCategory">Cost </div>
+			<div class="filter">
+				<div><10$</div>
+				<div><50$</div>
+				<div><100$</div>
+			</div>
+			<div class="filterCategory">Materials</div>
+			<div class="filter">
+				<div>Fiber</div>
+				<div>Silk</div>
+			</div>
+			<div class="filterCategory">Difficulty</div>
+			<div class="filter">
+				<div>5 stars</div>
+				<div>4 stars</div>
+				<div>3 stars</div>
+				<div>2 stars</div>
+				<div>1 stars</div>
+			</div>
+			</div>
+		</td>
+		<td id="results"></td>
+	</tr>
+   </table>
+</body>
+
+</html>
