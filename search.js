@@ -2,26 +2,46 @@
 http://www.w3schools.com/js/js_loop_for.asp
 http://api.jquery.com/append/
 http://www.w3schools.com/tags/tag_input.asp
-http://www.w3schools.com/tags/tag_label.asp*/
+http://www.w3schools.com/tags/tag_label.asp
+http://www.w3schools.com/jsref/event_onkeypress.asp
+http://stackoverflow.com/questions/4088467/get-value-in-input-text-box
+http://api.jquery.com/val/
+http://www.bloggingdeveloper.com/post/KeyPress-KeyDown-KeyUp-The-Difference-Between-Javascript-Key-Events.aspx
+http://stackoverflow.com/questions/3090662/jquery-empty-vs-remove*/
+var searchItems;
 function start(){ 
 	setupFilters();
-	var searchItems = new Array();
-	var tagsA = ["<10$","Fiber","5 stars"];
+	searchItems = new Array();
+	var tagsA = ["Bear", "<10$","Fiber","5 stars"];
 	var itemA = {name:"Bear", tags:tagsA, cost:"<10$", material:"Fiber",difficulty:"5 stars"};
 	searchItems[0] = itemA;
-	var tagsB = ["<50$","Silk","4 stars"];
+	var tagsB = ["Cat", "<50$","Silk","4 stars"];
 	var itemB = {name:"Cat", tags:tagsB, cost:"<50$", material:"Silk",difficulty:"4 stars"};
 	searchItems[1] = itemB;
-	//var selector = $('.selector');
-	/*selector.autocomplete({
-		
-	});*/
+	refreshResults();
+}
+
+function refreshResults(){
+	$("#results").empty();
+	var $selectDiv = $('<div/>');
 	for (var i=0;i<searchItems.length;i++){
-		var $tempResultDiv = $('<div class="result">' + searchItems[i].name + '<div>');
-		$("#results").append($tempResultDiv);
-		/*$("#results").autocomplete({
-			source: tagsB
-		});*/
+		$selectDiv.autocomplete({
+			minLength: 0,
+			source: searchItems[i].tags,
+			response: function( event, ui ) {
+				//note it does this before updating val $("#query").val() so it's a step behind);
+				if(ui.content.length > 0){
+					$("#results").append('<div class="result">' + searchItems[i].name 
+					+ "<br>Tags: " + searchItems[i].tags.toString() +'<div>');
+				}
+				return false;
+			}
+		});
+		$selectDiv.autocomplete("search", $("#query").val());
+		//NOTE the below line should be heere but without it and with minLength
+		//there are visual bugs (this code interferes with setupFilters I think
+		// but confirm)
+		$selectDiv.remove();
 	}
 }
 
@@ -40,4 +60,14 @@ function setupFilters() {
 	return false;
   }).next().hide();
   //hides the next element (which in my code is the div containing the filter options)
+  jQuery(".filter").click(function()
+  {
+	console.log($(this).val());
+	//TODO: double check use of text
+	$("#query").val($(this).text());
+	refreshResults();
+	return false;
+  });
+  //TODO: tehre should be no gap above
+  //cost shouldn't justs search
 }
