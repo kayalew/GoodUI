@@ -51,6 +51,7 @@ background-color:#c30;
 }
 .filter 
 {
+cursor: pointer;
 padding: 5px 10px;
 /*position:relative;*/
 }
