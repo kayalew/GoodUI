@@ -3,32 +3,21 @@
 <html>
 
 <head>
-	<title>Project Name - Sew Together</title>
+	<title>Scrappy Starfish Beanbags - Sew Together</title>
+	
+	<!--stuff-->
 	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
   <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
   <link rel="stylesheet" href="/resources/demos/style.css" />
-	<script>
+  
+  <link rel="stylesheet" type="text/css" href="overview.css">
+  <link rel="stylesheet" type="text/css" href="tabs.css">
+  <link rel="stylesheet" type="text/css" href="materials.css">
+	<script>	
 	$(function() {
-		$( "#tabs" ).tabs({active:2});
-	});
-
-	$(function() {
-		$( "#progressbar" ).progressbar({
-			value: 10
-		});
-	});
-	
-	$(function() {
-		$("#blanket-stitch" ).dialog({
-			autoOpen:false
-		});
-	});
-	
-	$(document).ready(function(){ 
-		$( "#help-blanket-stitch" ).click(function() {
-			$( "#blanket-stitch" ).dialog( "open" );
-		});
+		$( "#tabs" ).tabs().addClass( "ui-tabs-vertical ui-helper-clearfix" );
+		$( "#tabs li" ).removeClass( "ui-corner-top" ).addClass( "ui-corner-left" );
 	});
 	</script>
 </head>
@@ -45,11 +34,16 @@
 	</ul>
 
 	<div id="overview">
-		<img src="strawberryrollcake.jpg"/>
-		<h1>Strawberry Roll Cake</h1>
-		<p>uploaded by Alice</p>
-		<p>Pattern adapted from a Chinese DIY kit. Because only azns would think about making small stuffed versions of pastries.</p>
-		<div id="difficulty">Difficulty: ?????</div>
+		<div id="overviewText">
+			<h1>Scrappy Starfish Beanbags</h1>
+			<p>uploaded by Alice</p>
+			<p>For some silly fun in the sun, play catch, or ring toss with these colorful patchwork starfish beanbags-or even line up your beach pails for a friendly game of beanbag buckets. This sewing pattern is handy for last minute gifts to sew, as a beachy summer decoration or to keep handy for your sewing-for-kids needs.</p>
+			<p>Adapted from <a href="http://www.sewdaily.com/media/p/6588.aspx">Scrappy Starfish Beanbags by Amber Eden</a>.</p>
+		</div>
+		<div id="overviewImages">
+			<img src="starfish 2.jpg"/>
+			<img src="starfish 1.jpg"/>
+		</div>
 	</div>
 	
 	<div id="materials">
@@ -90,4 +84,5 @@
 </div>
 </body>
 
+</html>
 </html>

@@ -1,0 +1,55 @@
+/* most of this is taken from the jQuery UI demo for vertical tabs*/
+
+.ui-tabs-vertical { 
+	position: relative; 
+    padding:0px; 
+	width:80%;
+	margin-left:auto;
+	margin-right:auto;
+	background:none;
+	border-width:0px;
+}
+
+.ui-tabs-vertical .ui-tabs-nav {
+	position: absolute;  
+    width: 15%; 
+    padding: 0px; 
+	background:transparent;
+	-moz-border-radius: 0px; 
+    -webkit-border-radius: 0px; 
+    border-radius: 0px; 
+	border:none;
+
+}
+
+.ui-tabs-vertical .ui-tabs-nav li {
+	right: 1px; 
+    width: 100%; 
+    border-right: none; 
+    border-bottom-width: 1px !important; 
+    overflow: hidden; 
+}
+
+.ui-tabs-vertical .ui-tabs-nav li.ui-tabs-selected, 
+.ui-tabs-vertical .ui-tabs-nav li.ui-state-active { 
+    border-right: 1px solid transparent; 
+} 
+
+.ui-tabs-vertical .ui-tabs-nav li a {
+	float: right; 
+    width: 100%; 
+    text-align: right; 
+	padding-right:1em;
+}
+
+.ui-tabs-vertical .ui-tabs-nav li.ui-tabs-active {
+	padding-bottom: 0;
+	padding-right: .1em;
+	border-right-width: 1px; 
+	border-right-width: 1px; 
+}
+
+.ui-tabs-vertical .ui-tabs-panel {
+	float: right; 
+	width:75%;
+}
