@@ -6,17 +6,17 @@
 	<title>Scrappy Starfish Beanbags - Sew Together</title>
 	
 	<!--stuff-->
-	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
-  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-  <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
-  <link rel="stylesheet" href="/resources/demos/style.css" />
-  
+
+  <script src="../external_js/jquery-1.9.1.js"></script>
+  <script src="../external_js/jquery-ui-1.10.2.custom.min.js"></script>
+
+  <!--link rel="stylesheet" href="themes/ui-lightness/jquery-ui.css"-->
   <link rel="stylesheet" type="text/css" href="overview.css">
   <link rel="stylesheet" type="text/css" href="tabs.css">
   <link rel="stylesheet" type="text/css" href="materials.css">
 	<script>	
 	$(function() {
-		$( "#tabs" ).tabs().addClass( "ui-tabs-vertical ui-helper-clearfix" );
+		$( "#tabs" ).tabs().addClass( "tabs ui-helper-clearfix" );
 		$( "#tabs li" ).removeClass( "ui-corner-top" ).addClass( "ui-corner-left" );
 	});
 	</script>
@@ -24,6 +24,7 @@
 
 <body>
 
+<div id="navigation"></div>
 <!--Tabs-->
 <div id="tabs">
 
@@ -34,24 +35,35 @@
 	</ul>
 
 	<div id="overview">
+
 		<div id="overviewText">
 			<h1>Scrappy Starfish Beanbags</h1>
 			<p>uploaded by Alice</p>
 			<p>For some silly fun in the sun, play catch, or ring toss with these colorful patchwork starfish beanbags-or even line up your beach pails for a friendly game of beanbag buckets. This sewing pattern is handy for last minute gifts to sew, as a beachy summer decoration or to keep handy for your sewing-for-kids needs.</p>
+			<p>Finished size: 9.5 inches in diameter</p>
 			<p>Adapted from <a href="http://www.sewdaily.com/media/p/6588.aspx">Scrappy Starfish Beanbags by Amber Eden</a>.</p>
 		</div>
+
 		<div id="overviewImages">
-			<img src="starfish 2.jpg"/>
-			<img src="starfish 1.jpg"/>
+			<img src="starfish 2.jpg">
+			<img src="starfish 1.jpg">
 		</div>
+
 	</div>
 	
 	<div id="materials">
-		<ul id="materialsList">
-			<li>cloth</li>
-			<li>fabric</li>
-			<li>magic</li>
+	
+		<h3>Fabric</h3>
+		<ul>
+			 <li>3 coordinating <a href="">fat-quarter</a> cotton print fabrics (makes 3 starfish)</li>
 		</ul>
+		
+		<h3>Other supplies</h3>
+		<ul>
+			<li>8 oz bag plastic pellets for filling (available at most craft supply stores)</li>
+			<li>Small funnel</li>
+			<li><a href="">Pattern templates</a></li>
+		</ul>		
 		<div id="whereToBuy">Find fabric stores near you!</div>
 	</div>
 
@@ -59,28 +71,13 @@
 	<!--jQueryUi has stuff for tabs-- for navigation-->
 	<div id="step">
 		<div id="stepTitle"><h2>Step 2<h2></div>
-		<div id="progressbar"></div>
-		<div id="stepText"><p>Sew the cake bottom to the cake sides as shown, using the blanket stitch<p><div>
-		<div id="stepImage"><img src="step2diagram.png"/></div>
-		<div id="stepExtra"><p></p></div>
-		<div id="stepAppendix">
-			<div id="stepWarnings"><span class="ui-icon ui-icon-alert"></span><h3>Warnings</h3>
-			<p>Be careful of blah blah blah</p></div>
-			<div id="stepTips"><span class="ui-icon ui-icon-lightbulb"></span><h3>Tips</h3>
-			<p>Blah blah blah</p></div>
-			<div id="stepHelp"><span class="ui-icon ui-icon-info"></span><h3>Additional Help</h3>
-			<ul>
-			<li id="help-blanket-stitch">Blanket stitch</li>
-			</ul>
-			</div>
-		</div>
 	</div>
 	<div id="stepNavigation">
 		<div id="backStep">Previous</div>
 		<div id="topOfSteps">Back to top</div>
 		<div id="nextStep">Next</div>
 	</div>	
-	<div id="blanket-stitch" title="Blanket Stitch">this is how you blanket stitch</div>
+	
 </div>
 </body>
 

@@ -1,6 +1,17 @@
+#materials{
+	width:60%;
+}
+
 #whereToBuy{
-	appearance:button;
-	-moz-appearance:button; /* Firefox */
-	-webkit-appearance:button; /* Safari and Chrome */
-	padding:1em;
+	height:3em;
+	width:60%;
+	background-color:green;
+	border-radius:10px;
+	text-align:center;
+	color:white;
+	line-height:3em;
+}
+
+#whereToBuy:hover{
+	background-color:blue;
 }
