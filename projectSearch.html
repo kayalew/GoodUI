@@ -398,9 +398,8 @@
         <td id="searchBox">
 			<label for="query">Search</label>
 			<!-- Note: not within form. Check if this is problematic-->
-			<input id = "query" name="queryValue" type="text">
+			<input id = "query" name="queryValue" type="text" onkeypress="refreshResults()">
 		</td>
-		<div class = "selector"></div>
 		
           <!--<table>
 			  <tr><td><div id = "turnIndicator"></div></td></tr>
@@ -417,22 +416,22 @@
 			<div class="filterCollection">
 			<div class="filterCategory">Cost </div>
 			<div class="filter">
-				<div><10$</div>
-				<div><50$</div>
-				<div><100$</div>
+				<div class="filter"><10$</div>
+				<div class="filter"><50$</div>
+				<div class="filter"><100$</div>
 			</div>
 			<div class="filterCategory">Materials</div>
-			<div class="filter">
-				<div>Fiber</div>
-				<div>Silk</div>
+			<div>
+				<div class="filter">Fiber</div>
+				<div class="filter">Silk</div>
 			</div>
 			<div class="filterCategory">Difficulty</div>
-			<div class="filter">
-				<div>5 stars</div>
-				<div>4 stars</div>
-				<div>3 stars</div>
-				<div>2 stars</div>
-				<div>1 stars</div>
+			<div>
+				<div class="filter">5 stars</div>
+				<div class="filter">4 stars</div>
+				<div class="filter">3 stars</div>
+				<div class="filter">2 stars</div>
+				<div class="filter">1 stars</div>
 			</div>
 			</div>
 		</td>
