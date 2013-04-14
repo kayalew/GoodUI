@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <!--script src="../external_js/jquery-1.9.1.js"></script>
+  <script src="../external_js/jquery-ui-1.10.2.custom.min.js"></script-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
+  <script>
+  $(document).ready(function(){
+  $("button").click(function(){
+    $("#div1").load("alice.txt");
+  });
+});
+  </script>
+
+</head>
+<body>
+<div id="instruction">
+<h2>Step 1</h2>
+<div id="voice"><span class="ui-icon ui-icon-volume-on"></span></div>
+<p>For each Beanbag, cut 5 of <a href="templateA.pdf">Template A</a> and 1 of <a href="templateB.pdf">Template B.<a></p>
+</div>
+
+<div id="div1"><h2>Let jQuery AJAX Change This Text</h2></div>
+<button>Get External Content</button>
+
+</body>
+</html>
