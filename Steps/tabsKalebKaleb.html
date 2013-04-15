@@ -1,0 +1,191 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<title>Strawberry Cream Roll - Sew Together</title>
+	
+	<!--stuff-->
+
+  <script src="../external_js/jquery-1.9.1.js"></script>
+  <script src="../external_js/jquery-ui-1.10.2.custom.min.js"></script>
+
+  <!--easytabs-->
+  
+  
+  <!--link rel="stylesheet" href="themes/ui-lightness/jquery-ui.css"-->
+  <link rel="stylesheet" type="text/css" href="overview.css">
+  <link rel="stylesheet" type="text/css" href="tabs.css">
+  <link rel="stylesheet" type="text/css" href="materials.css">
+	<script>
+	    var maxTabNo = 3;
+	    var tabNo = loadPageVar("tabNo");
+	    function setupTabs() {
+	        $("#tabs").tabs().addClass("tabs ui-helper-clearfix");
+	        $("#tabs li").removeClass("ui-corner-top").addClass("ui-corner-left");
+	        if (tabNo != "") {
+	            $("#tabs").tabs("option", "active", 2);
+                //assumes instructions will be named step0, step1 etc
+	            for (var i = 0; i <= maxTabNo; i++) {
+	                if (tabNo == i) {
+	                    $("#step" + i).show(0);
+	                }
+	                else {
+	                    $("#step" + i).hide(0);
+                    }
+	            }
+	        }
+	    };
+	//https://developer.mozilla.org/en-US/docs/DOM/window.location
+    //http://stackoverflow.com/questions/6321000/how-can-i-go-to-a-new-page-from-within-javascript
+    //http://stackoverflow.com/questions/4194092/how-to-parse-string-to-int-in-javascript
+	//http://www.w3schools.com/jsref/jsref_parseint.asp
+	//http: //stackoverflow.com/questions/5659825/jquery-ui-tabs-go-to-specific-div-in-tab
+	    //http://api.jqueryui.com/tabs/
+	    //http://api.jquery.com/hide/
+	    
+    function loadPageVar(sVar) {
+        return unescape(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + escape(sVar).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1"));
+    }
+
+
+    tabNo = correctTabVal();
+    function correctTabVal() {
+        if (isNaN(tabNo) || tabNo === "" || tabNo === NaN || tabNo === undefined) {
+            return tabNo = 0;
+        }
+        else return tabNo;
+    }
+    function goToStep(tabNum) {
+        //alert(window.location.pathname);
+        window.location.assign(window.location.hostname + window.location.pathname +'?tabNo=' + tabNum.toString());
+    }
+    function goToNextStep(tabNo) {
+        //TODO:check when this needs to be done and minimize use. only at beginnig didn't seem to work
+        tabNo = correctTabVal();
+        goToStep(Math.min(parseInt(tabNo, 10) + 1, maxTabNo));
+    }
+    function goToPrevStep(tabNo) {
+        tabNo = correctTabVal();
+        goToStep(Math.max(parseInt(tabNo, 10) - 1, 0));
+    }
+	//optimization. If at last or first hide next/prev
+	</script>
+</head>
+
+<body onload = "setupTabs()">
+
+<div id="navigation"></div>
+<!--Tabs-->
+<div id="tabs">
+
+	<ul>
+		<li><a href="#overview">Overview</a></li>
+		<li><a href="#materials">Materials</a></li>
+		<li><a href="#step">Instructions</a></li>
+	</ul>
+
+	<div id="overview">
+
+		<div id="overviewText">
+			<h1>Strawberry Cream Roll</h1>
+			<p>uploaded by Alice</p>
+			<p>Now you can have your own stuffed pastry! Sadly this one is not at all edible. This is a simple pattern with a lot of room for optional embellishments, if you're feeling adventurous!</p>
+			<p>Finished size: ????????????????</p>
+		</div>
+
+		<div id="overviewImages">
+			<img src="strawberryrollcake.jpg">
+
+		</div>
+
+	</div>
+	
+	<div id="materials">
+	
+		<h3>Fabric</h3>
+		<ul>
+			 <li>Felt DIMENSIONS</li>
+			 <li>Felt DIMENSIONS</li>
+			 <li>Felt DIMENSIONS</li>
+		</ul>
+		
+		<h3>Other supplies</h3>
+		<ul>
+			<li>thread of colors</li>
+			<li>Stuffing</li>
+			<li><a href="">Pattern templates</a></li>
+			<li><span class="optional">OPTIONAL</span> Hot glue gun</li>
+		</ul>		
+		<div id="whereToBuy">Find fabric stores near you!</div>
+	</div>
+
+	<div id="step">
+<!--
+		<div id="listOfSteps">
+			<h3>Steps</h3>
+			<ol>
+				<li><a href="step1.html">Cut out templates and fabric</a></li>
+				<li><a href="step2.html">Sew the side of the roll to the bottom</a></li>
+				<li><a href="step3.html">Sew the cream spirals onto the cake fronts</a></li>
+				<li><a href="step4.html">Stitch the cake fronts on, leaving a small opening</a></li>
+				<li><a href="step5.html">Stuff the roll, then sew opening closed</a></li>
+				<li><a href="step6.html"><span class="optional">OPTIONAL</span> Leaves</a></li>
+				<li><a href="step7.html"><span class="optional">OPTIONAL</span> Strawberry</a></li>
+				<li><a href="step8.html"><span class="optional">OPTIONAL</span> Cream</a></li>
+				<li><a href="step9.html"><span class="optional">OPTIONAL</span> Blueberry</a></li>
+				<li><a href="step10.html"><span class="optional">OPTIONAL</span> Attach decorations</a></li>
+			</ol>
+			
+			<a href="step1.html"><div id="beginButton">Begin!</div></a>
+			
+		</div>
+		<div id="instruction">
+			<h3>Step 1</h3>
+			<p>Print and cut out <a href="template.pdf">pattern template</a>. Cut fabric according to the template.
+			<p>If you are making the optional decorations and are afraid you will lose some pieces or get them mixed up, consider pinning your paper template to your felt pieces!</p>
+			<p>You should have the following:</p>
+			<ul>
+				<li>1 cake bottom</li>
+				<li>2 cake fronts</li>
+				<li>1 cake side</li>
+				<li>2 cream spiral</li>
+				<li><span class="optional">OPTIONAL</span> 3 leaf pieces</li>
+				<li><span class="optional">OPTIONAL</span> 1 strawberry piece</li>
+				<li><span class="optional">OPTIONAL</span> 2 cream pieces</li>
+				<li><span class="optional">OPTIONAL</span> 2 blueberry pieces</li>
+			</ul>		
+
+		</div>
+-->
+        <div onclick ="goToNextStep()"> Next </div>
+        <div onclick ="goToPrevStep()"> Prev </div>
+             <div id = "step0">
+                <h2>Materials</h2>
+                <div id="voice0"><span class="ui-icon ui-icon-volume-on"></span></div>
+                <li>1 pastry</li>
+                <li>1 thread</li>
+                <li>1 needle</li>
+             </div>
+             <div id = "step1">
+                <h2>Step 1</h2>
+                <div id="voice"><span class="ui-icon ui-icon-volume-on"></span></div>
+                <p>For each Beanbag, cut 5 of <a href="templateA.pdf">Template A</a> and 1 of <a href="templateB.pdf">Template B.<a></p>
+             </div>
+             <div id = "step2">
+                <h2>Step 2</h2>
+                <div id="voice2"><span class="ui-icon ui-icon-volume-on"></span></div>
+                <p>Hello I'm step 2 <a href="templateC.pdf">Template C</a> and 5 stars to <a href="templateD.pdf">Template D.<a></p>
+             </div>
+             <div id = "step3">
+                <h2>Step 3</h2>
+                <div id="voice3"><span class="ui-icon ui-icon-volume-on"></span></div>
+                <p>And then there were none <a href="templateE.pdf">Template E</a> and 30 of <a href="templateF.pdf">Template F.<a></p>
+             </div>
+	</div>	
+	
+</div>
+
+</body>
+
+</html>
