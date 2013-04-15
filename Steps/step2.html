@@ -10,6 +10,21 @@
   <script src="../external_js/jquery-ui-1.10.2.custom.min.js"></script>
   <link rel="stylesheet" type="text/css" href="steps.css">
   <link rel="stylesheet" type="text/css" href="tabs.css">
+  <link rel="stylesheet" type="text/css" href="../jquery/css/smoothness/jquery-ui.css">
+  <script>
+  
+	$(function() {
+		$( "#blanketStitch" ).dialog({
+			autoOpen:false
+		});
+		$("#blanket-click").click(function(){
+			$("#blanketStitch").dialog("open");
+		});
+	});
+  
+	
+  </script>
+  
 </head>
 
 <body>
@@ -31,7 +46,7 @@
 	<div id="step">
 	<div id="stepText">
 		<h3>Step 2</h3>
-		<p>With the pink thread, sew the cake side to the cake bottom as shown, using <span class="glossaryTerm" id="blanket">blanket stitch</span>.</p>
+		<p>With the pink thread, sew the cake side to the cake bottom as shown, using <span class="glossaryTerm" id="blanket-click">blanket stitch</span>.</p>
 		<div class="warning"><p>Make sure that the right sides are facing OUTWARDS when you are sewing them together!</p></div>
 		
 		<div id="helpful">
@@ -59,6 +74,11 @@
 	</div>
 	<div class="clearStuff"></div>
 </div>
+
+<div id="blanketStitch" title="Blanket Stitch">
+  <p>BLANKET STITCH INSTRUCTIONS HERE</p>
+</div>
+
 
 </body>
 </html>

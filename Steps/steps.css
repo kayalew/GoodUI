@@ -34,3 +34,12 @@
 	width:100%;
 	box-sizing:border-box;
 }
+
+.glossaryTerm{
+	text-decoration:underline;
+}
+
+.glossaryTerm:hover{
+	color:green;
+	cursor:pointer;
+}
