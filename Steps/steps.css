@@ -4,6 +4,18 @@
 	box-sizing:border-box;
 	padding:1em;
 }
+
+#stepNavigation{
+	padding:1em;
+}
+
+#stepBack{
+	float:left;
+}
+#stepNext{
+	float:right;
+}
+
 #stepImages{
 	float:right;
 	width:30%;
