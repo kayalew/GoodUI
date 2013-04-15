@@ -7,7 +7,9 @@ http://www.w3schools.com/jsref/event_onkeypress.asp
 http://stackoverflow.com/questions/4088467/get-value-in-input-text-box
 http://api.jquery.com/val/
 http://www.bloggingdeveloper.com/post/KeyPress-KeyDown-KeyUp-The-Difference-Between-Javascript-Key-Events.aspx
-http://stackoverflow.com/questions/3090662/jquery-empty-vs-remove*/
+http://stackoverflow.com/questions/3090662/jquery-empty-vs-remove
+http://stackoverflow.com/questions/537690/getting-the-value-of-a-form-field-after-keypress-event*/
+
 var searchItems;
 function start(){ 
 	setupFilters();

@@ -6,6 +6,8 @@ http://forum.jquery.com/topic/jquery-jquery-accordion-how-can-panels-stay-open
 http://docs.jquery.com/UI/Accordion#What_this_isn.27t</a>
 http://stackoverflow.com/questions/14326259/using-slidetoggle-to-pull-a-hidden-div-up-from-the-bottom
 http://stackoverflow.com/questions/7219007/html-no-line-break
+http://jquery-ui.googlecode.com/svn/tags/1.6rc5/tests/static/icons.html
+http://stackoverflow.com/questions/7290857/using-jquery-ui-icons
 */
 html, body
 {
@@ -42,10 +44,12 @@ html, body
 }
  
 .filterCategory {
-margin: 1px;
+margin-bottom: 1px;
 color: black;
-padding: 3px 10px;
+padding-right: 5px;
 cursor: pointer;
+height: 50px;
+
 /*position: absolute;*/
 background-color:#c30;
 }

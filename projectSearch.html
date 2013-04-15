@@ -9,11 +9,12 @@
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 
 <!-- Load style sheets -->
+<link type="text/css" href="jquery/css/ui-lightness/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
 <link rel="stylesheet" type="text/css" href="projectSearch.css" />
 
 <!-- Load any supplemental Javascript libraries here -->
-<script type="text/javascript" src="external_js/jquery-1.9.0.min.js"></script>
-<script type="text/javascript" src="external_js/jquery-ui-1.10.0.custom.min.js"></script>
+<script type="text/javascript" src="jquery/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
 <script type="text/javascript" src="search.js"></script>
 <!--<script type="text/javascript" src="external_js/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="checker.js"></script>
@@ -382,52 +383,32 @@
 <table class="mainTable">
     <tr>
         <td id="navBar" colspan=2>navigation</td>
-		
-          <!--<table>
-			  <tr><td><div id = "turnIndicator"></div></td></tr>
-              <tr><td><input id="btnNewGame" type="button" name="new" value="New Game"/></td></tr>
-              <tr><td><input id="btnAutoMove" type="button" name="new" value="Auto Move"/></td></tr>
-			  <tr><td><input id="btnUndo" type="button" name="undo" value="Undo" disabled/></td></tr>
-			  <tr><td><input id="btnRedo" type="button" name="redo" value="Redo" disabled/></td></tr>
-
-            </table>-->
-        
     </tr>
 	<tr>
 		<td></td>
         <td id="searchBox">
 			<label for="query">Search</label>
 			<!-- Note: not within form. Check if this is problematic-->
-			<input id = "query" name="queryValue" type="text" onkeypress="refreshResults()">
+			<input id = "query" name="queryValue" type="text" onkeyup="refreshResults()">
 		</td>
-		
-          <!--<table>
-			  <tr><td><div id = "turnIndicator"></div></td></tr>
-              <tr><td><input id="btnNewGame" type="button" name="new" value="New Game"/></td></tr>
-              <tr><td><input id="btnAutoMove" type="button" name="new" value="Auto Move"/></td></tr>
-			  <tr><td><input id="btnUndo" type="button" name="undo" value="Undo" disabled/></td></tr>
-			  <tr><td><input id="btnRedo" type="button" name="redo" value="Redo" disabled/></td></tr>
-
-            </table>-->
-        
     </tr>
 	<tr>
 		<td id="sidebar">
 			<div class="filterCollection">
-			<div class="filterCategory">Cost </div>
+			<div class="filterCategory"><div class = "ui-icon ui-icon-plusthick" style="display:inline-block"></div> Cost </div>
 			<div class="filter">
 				<div class="filter"><10$</div>
 				<div class="filter"><50$</div>
 				<div class="filter"><100$</div>
 			</div>
-			<div class="filterCategory">Materials</div>
+			<div class="filterCategory"><div class = "ui-icon ui-icon-plusthick" style="display:inline-block"></div> Materials</div>
 			<div>
 				<div class="filter">Fiber</div>
 				<div class="filter">Silk</div>
 			</div>
-			<div class="filterCategory">Difficulty</div>
+			<div class="filterCategory"><div class = "ui-icon ui-icon-plusthick" style="display:inline-block"></div> Difficulty</div>
 			<div>
-				<div class="filter">5 stars</div>
+				<div class="filter">5 stars</div><!--highlight selected options-->
 				<div class="filter">4 stars</div>
 				<div class="filter">3 stars</div>
 				<div class="filter">2 stars</div>
