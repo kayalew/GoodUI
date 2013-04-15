@@ -7,21 +7,16 @@
 	
 	<!--stuff-->
 
-  <script src="../external_js/jquery-1.9.1.js"></script>
-  <script src="../external_js/jquery-ui-1.10.2.custom.min.js"></script>
+  <script type="txt/javascript" src="../external_js/jquery-1.9.1.js"></script>
+  <script type="txt/javascript" src="../external_js/jquery-ui-1.10.2.custom.min.js"></script>
 
   <!--easytabs-->
+  <script type="txt/javascript" src="jquery.easytabs.js"</script>
+  <script type="txt/javascript" src="jquery.ba-hashchange.js"</script>
   
-  
-  <!--link rel="stylesheet" href="themes/ui-lightness/jquery-ui.css"-->
-  <link rel="stylesheet" type="text/css" href="overview.css">
-  <link rel="stylesheet" type="text/css" href="tabs.css">
-  <link rel="stylesheet" type="text/css" href="materials.css">
 	<script>	
-	$(function() {
-		$( "#tabs" ).tabs().addClass( "tabs ui-helper-clearfix" );
-		$( "#tabs li" ).removeClass( "ui-corner-top" ).addClass( "ui-corner-left" );
-	});
+
+	$("#tab-containger").easytabs();
 	
 	</script>
 </head>
@@ -30,6 +25,27 @@
 
 <div id="navigation"></div>
 <!--Tabs-->
+<div id="tab-container" class="tab-container">
+  <ul class='etabs'>
+    <li class='tab'><a href="#tabs1-html">HTML Markup</a></li>
+    <li class='tab'><a href="#tabs1-js">Required JS</a></li>
+    <li class='tab'><a href="#tabs1-css">Example CSS</a></li>
+  </ul>
+  <div id="tabs1-html">
+    <h2>HTML Markup for these tabs</h2>
+    <!-- content -->
+  </div>
+  <div id="tabs1-js">
+    <h2>JS for these tabs</h2>
+    <!-- content -->
+  </div>
+  <div id="tabs1-css">
+    <h2>CSS Styles for these tabs</h2>
+    <!-- content -->
+  </div>
+</div>
+
+
 <div id="tabs">
 
 	<ul>
