@@ -9,13 +9,14 @@
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 
 <!-- Load style sheets -->
-<link type="text/css" href="jquery/css/ui-lightness/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
-<link rel="stylesheet" type="text/css" href="projectSearch.css" />
+<link type="text/css" href="../../jquery/css/ui-lightness/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="../css/projectSearch.css" />
+<link href="layout.css" rel="stylesheet" type="text/css" />
 
 <!-- Load any supplemental Javascript libraries here -->
-<script type="text/javascript" src="jquery/js/jquery-1.9.0.min.js"></script>
-<script type="text/javascript" src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
-<script type="text/javascript" src="search.js"></script>
+<script type="text/javascript" src="../../jquery/js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="../../jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
+<script type="text/javascript" src="../js/search.js"></script>
 <!--<script type="text/javascript" src="external_js/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="checker.js"></script>
 <script type="text/javascript" src="boardEvent.js"></script>
@@ -380,10 +381,9 @@
 
 <body onload="start();">
 
+
+<h1 class="title">Project Search</h1>/////////////////////////////////////////////////////////
 <table class="mainTable">
-    <tr>
-        <td id="navBar" colspan=2>navigation</td>
-    </tr>
 	<tr>
 		<td></td>
         <td id="searchBox">
@@ -393,7 +393,7 @@
 		</td>
     </tr>
 	<tr>
-		<td id="sidebar">
+		<td class = "sidebar">////////////////////////////////////////////////////////////////////////////
 			<div class="filterCollection">
 			<div class="filterCategory"><div class = "ui-icon ui-icon-plusthick" style="display:inline-block"></div> Cost </div>
 			<div class="filter">
