@@ -108,4 +108,8 @@ table.mainTable {
 #main {
 }
 
+.clearFloat{
+	clear:both;
+}
+
 

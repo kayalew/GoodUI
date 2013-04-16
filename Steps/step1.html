@@ -10,6 +10,7 @@
   <script src="../external_js/jquery-ui-1.10.2.custom.min.js"></script>
   <link rel="stylesheet" type="text/css" href="steps.css">
   <link rel="stylesheet" type="text/css" href="tabs.css">
+  <link rel="stylesheet" type="text/css" href="../application/css/layout.css">
 </head>
 
 <body>
@@ -17,44 +18,42 @@
 <div id="navigation"></div>
 <!--Tabs-->
 <div id="pageContent">
-<div id="tabs">
 
-	<ul>
-		<li><a href="overview.html">Overview</a></li>
-		<li><a href="materials.html">Materials</a></li>
-		<li><a href="listOfSteps.html">Instructions</a></li>
-	</ul>
+	<div id="tabs">
+		<ul>
+			<li><a href="overview.html">Overview</a></li>
+			<li><a href="materials.html">Materials</a></li>
+			<li><a href="listOfSteps.html">Instructions</a></li>
+		</ul>		
+	</div>
+
+	<div id="tabContent" class="step">
 	
-</div>
-
-<div id="tabContent">
-
-		<div id="step">
-			<div id="stepText">
-				<h3>Step 1</h3>
-				<p>Print and cut out <a href="template.pdf" target="_blank">pattern template</a>. Transfer pattern by tracing the template <strong>lightly</strong> on the appropriately colored felt and then cutting.<p>
-				<p>You should have the following:</p>
-				<ul>
-					<li>1 cake bottom</li>
-					<li>2 cake fronts</li>
-					<li>1 cake side</li>
-					<li>2 cream spirals</li>
-				</ul>
-				<div id="stepNavigation">
-					<a href="listOfSteps.html"><span id="stepBack">Back</span></a><a href="step2.html"><span id="stepNext">Next</span></a>
-				</div>
-				
-				
-			</div>
+		<div id="stepText">
+			<h3>Step 1</h3>
+			<p>Print and cut out <a href="template.pdf" target="_blank">pattern template</a>. Transfer pattern by tracing the template <strong>lightly</strong> on the appropriately colored felt and then cutting.<p>
+			<p>You should have the following:</p>
+			<ul>
+				<li>1 cake bottom</li>
+				<li>2 cake fronts</li>
+				<li>1 cake side</li>
+				<li>2 cream spirals</li>
+			</ul>
 			
-			<div id="stepImages">
-				<img src="step1.jpg"/>
-			</div>
-			<div class="clearStuff"></div>
+			<div id="stepNavigation">
+				<a href="listOfSteps.html"><span id="stepBack">Back</span></a><a href="step2.html"><span id="stepNext">Next</span></a>
+			</div>		
 		</div>
+		
+		<div id="stepImages">
+			<img src="step1.jpg"/>
+		</div>
+		
+		<div class="clearFloat"></div>
+	</div>
+
+	<div class="clearFloat"></div>
 	
-</div>
-<div class="clearStuff"></div>
 </div>
 </body>
 </html>
