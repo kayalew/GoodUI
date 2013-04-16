@@ -11,19 +11,8 @@
   <link rel="stylesheet" type="text/css" href="steps.css">
   <link rel="stylesheet" type="text/css" href="tabs.css">
   <link rel="stylesheet" type="text/css" href="../jquery/css/smoothness/jquery-ui.css">
-  <script>
-  
-	$(function() {
-		$( "#blanketStitch" ).dialog({
-			autoOpen:false
-		});
-		$("#blanket-click").click(function(){
-			$("#blanketStitch").dialog("open");
-		});
-	});
-  
-	
-  </script>
+  <link rel="stylesheet" type="text/css" href="glossary.css">
+  <script src="glossary.js"></script>
   
 </head>
 
@@ -46,18 +35,18 @@
 	<div id="step">
 	<div id="stepText">
 		<h3>Step 2</h3>
-		<p>With the pink thread, sew the cake side to the cake bottom as shown, using <span class="glossaryTerm" id="blanket-click">blanket stitch</span>.</p>
+		<p>With the pink thread, sew the cake side to the cake bottom as shown, using <span class="glossaryTerm blanket-stitch-click">blanket stitch</span>.</p>
 		<div class="warning"><p>Make sure that the right sides are facing OUTWARDS when you are sewing them together!</p></div>
 		
 		<div id="helpful">
 		<p>Also helpful: </p>
 
 		<ul>
-			<li>Threading a needle</li>
-			<li>Tying a knot</li>
-			<li>Blanket stitch</li>
-			<li>Tying off hand sewing</li>
-			<li>Thimbles</li>
+			<li><span class="glossaryTerm thread-needle-click">Threading a needle</span></li>
+			<li><span class="glossaryTerm tie-knot-click">Tying a knot</span></li>
+			<li><span class="glossaryTerm blanket-stitch-click">Blanket stitch</span></li>
+			<li><span class="glossaryTerm tie-off-click">Tying off hand sewing</span></li>
+			<li><span class="glossaryTerm thimble-click">Thimbles</span></li>
 		</ul>
 		</div>
 		
@@ -75,10 +64,24 @@
 	<div class="clearStuff"></div>
 </div>
 
-<div id="blanketStitch" title="Blanket Stitch">
+<div id="glossary-blanket-stitch" title="Blanket stitch">
   <p>BLANKET STITCH INSTRUCTIONS HERE</p>
 </div>
-
+<div id="glossary-running-stitch" title="Running stitch">
+  <p>RUNNING STITCH INSTRUCTIONS HERE</p>
+</div>
+<div id="glossary-thimble" title="Thimbles">
+  <p>THIMBLE INSTRUCTIONS HERE</p>
+</div>
+<div id="glossary-thread-needle" title="Threading a needle">
+  <p>THREADING NEEDLE INSTRUCTIONS HERE</p>
+</div>
+<div id="glossary-tie-knot" title="Tying a knot">
+  <p>TYING KNOT INSTRUCTIONS HERE</p>
+</div>
+<div id="glossary-tie-off" title="Tying off">
+  <p>TIE OFF INSTRUCTIONS HERE</p>
+</div>
 
 </body>
 </html>
