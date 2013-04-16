@@ -1,13 +1,33 @@
 	$(function() {
 		
-		$( "#glossary-blanket-stitch" ).dialog({
-			autoOpen:false
+		// make draggable things draggable
+		$(".draggable").each(function(){
+			$(this).draggable();
 		});
+		
+		// stuff for each of the entries
+		
+		$( "#glossary-blanket-stitch" ).dialog({
+			autoOpen:false,
+			width:500,
+			resizable:false,
+			create: function(){
+				$("#glossary-blanket-stitch-tabs").tabs({
+					create: function(e,ui){
+						$("#glossary-blanket-stitch-close").click(function(){
+							$("#glossary-blanket-stitch").dialog("close");
+						});
+					}
+				});
+			}
+		});
+		
 		$(".blanket-stitch-click").each(function(){
 			$(this).click(function(){
 				$("#glossary-blanket-stitch").dialog("open");
 			});
 		});
+	
 	
 		$( "#glossary-running-stitch" ).dialog({
 			autoOpen:false

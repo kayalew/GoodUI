@@ -1,0 +1,33 @@
+.glossaryTerm{
+	text-decoration:underline;
+}
+
+.glossaryTerm:hover{
+	color:green;
+	cursor:pointer;
+}
+
+.glossaryContent{
+
+}
+
+.ui-tabs-nav li.ui-tabs-close-button{
+	float:right;
+	margin-top:3px;
+}
+
+.ui-dialog-titlebar{
+	display:none;
+}
+
+li a {
+	outline-color:transparent;
+}
+
+/* THIS IS ACTUALLY A SHODDY WORKAROUND SOMETHING ELSE T____T */
+.ui-dialog {
+	background-color:transparent;
+	border:none;
+}
+
+

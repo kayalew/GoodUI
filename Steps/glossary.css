@@ -1,8 +1,0 @@
-.glossaryTerm{
-	text-decoration:underline;
-}
-
-.glossaryTerm:hover{
-	color:green;
-	cursor:pointer;
-}

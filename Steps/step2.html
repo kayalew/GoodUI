@@ -11,8 +11,8 @@
   <link rel="stylesheet" type="text/css" href="steps.css">
   <link rel="stylesheet" type="text/css" href="tabs.css">
   <link rel="stylesheet" type="text/css" href="../jquery/css/smoothness/jquery-ui.css">
-  <link rel="stylesheet" type="text/css" href="glossary.css">
-  <script src="glossary.js"></script>
+  <link rel="stylesheet" type="text/css" href="../glossary/glossary.css">
+  <script src="../glossary/glossary.js"></script>
   
 </head>
 
@@ -64,22 +64,37 @@
 	<div class="clearStuff"></div>
 </div>
 
-<div id="glossary-blanket-stitch" title="Blanket stitch">
-  <p>BLANKET STITCH INSTRUCTIONS HERE</p>
+<div class="glossaryEntry draggable" id="glossary-blanket-stitch" title="Blanket stitch">
+	<div id="glossary-blanket-stitch-tabs">
+		<ul>
+			<li><a href="#glossary-blanket-stitch-definition">Blanket Stitch</a></li>
+			<li><a href="#glossary-blanket-stitch-video">Video</a></li>
+			<li class="ui-tabs-close-button"><button id="glossary-blanket-stitch-close">x</button><li>
+		</ul>
+		<div class="glossaryContent" id="glossary-blanket-stitch-definition">
+			<p>A decorative stitch visible on both sides, traditionally used to reinforce the edge of thick materials such as blankets.</p>
+			<img src="../glossary/blanket.png"/>
+			</p><a href="http://www.futuregirl.com/craft_blog/2007/9/tutorial-hand-sew-felt.aspx" target="_blank">More on blanket stitch</a></p>
+		</div>
+		<div class="glossaryContent" id="glossary-blanket-stitch-video">
+			<iframe width="420" height="315" src="http://www.youtube.com/embed/eXkSE2TTF4s" frameborder="0" allowfullscreen></iframe>
+		</div>
+	</div>
 </div>
-<div id="glossary-running-stitch" title="Running stitch">
+
+<div class="glossaryEntry" id="glossary-running-stitch" title="Running stitch">
   <p>RUNNING STITCH INSTRUCTIONS HERE</p>
 </div>
-<div id="glossary-thimble" title="Thimbles">
+<div class="glossaryEntry" id="glossary-thimble" title="Thimbles">
   <p>THIMBLE INSTRUCTIONS HERE</p>
 </div>
-<div id="glossary-thread-needle" title="Threading a needle">
+<div class="glossaryEntry" id="glossary-thread-needle" title="Threading a needle">
   <p>THREADING NEEDLE INSTRUCTIONS HERE</p>
 </div>
-<div id="glossary-tie-knot" title="Tying a knot">
+<div class="glossaryEntry" id="glossary-tie-knot" title="Tying a knot">
   <p>TYING KNOT INSTRUCTIONS HERE</p>
 </div>
-<div id="glossary-tie-off" title="Tying off">
+<div class="glossaryEntry" id="glossary-tie-off" title="Tying off">
   <p>TIE OFF INSTRUCTIONS HERE</p>
 </div>
 
