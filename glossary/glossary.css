@@ -16,10 +16,16 @@
 	display:none;
 }
 
+.ui-widget{
+	font-size:.8em;
+}
+
 .ui-tabs-panel{
 	overflow-y:auto;
 	overflow-x:auto;
 	min-height:300px;
+	margin-left:auto;
+	margin-right:auto;
 }
 
 /* THIS IS ACTUALLY A SHODDY WORKAROUND SOMETHING ELSE T____T */
