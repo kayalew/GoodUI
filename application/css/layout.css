@@ -51,16 +51,17 @@ h2 {
 	border-radius:4px;
 	padding:.3em;
 	margin-top:8px;
+	display:inline-block;
 }
 
 #navLeft {
-	float:left;
+	
 }
 
 #navRight {
 	float:right;
 }
 
-#clearFloat {
+.clearFloat {
 	clear:both;
 }
