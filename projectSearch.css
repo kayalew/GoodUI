@@ -8,9 +8,9 @@ http://stackoverflow.com/questions/14326259/using-slidetoggle-to-pull-a-hidden-d
 http://stackoverflow.com/questions/7219007/html-no-line-break
 http://jquery-ui.googlecode.com/svn/tags/1.6rc5/tests/static/icons.html
 http://stackoverflow.com/questions/7290857/using-jquery-ui-icons
+http://www.w3schools.com/cssref/pr_pos_vertical-align.asp
 */
-html, body
-{
+html, body {
   height: 100%;
 }
 .mainTable { 
@@ -31,6 +31,7 @@ html, body
     width: 80%;
     height: 100%;
     border:2px solid black;
+	vertical-align:top;
 }
 .result { 
     width: 100%;
