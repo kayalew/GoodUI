@@ -7,10 +7,6 @@
 	cursor:pointer;
 }
 
-.glossaryContent{
-
-}
-
 .ui-tabs-nav li.ui-tabs-close-button{
 	float:right;
 	margin-top:3px;
@@ -20,8 +16,10 @@
 	display:none;
 }
 
-li a {
-	outline-color:transparent;
+.ui-tabs-panel{
+	overflow-y:auto;
+	overflow-x:auto;
+	min-height:300px;
 }
 
 /* THIS IS ACTUALLY A SHODDY WORKAROUND SOMETHING ELSE T____T */
@@ -30,4 +28,6 @@ li a {
 	border:none;
 }
 
-
+.glossaryContent{
+	padding:2em;
+}
