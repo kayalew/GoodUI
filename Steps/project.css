@@ -45,3 +45,16 @@
 	border-bottom-right-radius:5px;
 	border-bottom-left-radius:5px;
 }
+
+.myButton{
+	background-color:#5655A1;
+	border-radius:10px;
+	text-align:center;
+	color:white;
+	text-decoration:none;
+	font-family: "Tahoma", sans-serif;
+}
+
+.myButton:hover{
+	background-color:#557DED;
+}
