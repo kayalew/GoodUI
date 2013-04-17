@@ -19,6 +19,7 @@ html, body {
     height: 100%;
 }
 #sidebar {
+    width: 20%;
 	height: 100%;
 	padding: .4em;
     border:1px solid #DDDDDD;
@@ -53,6 +54,14 @@ text-transform:capitalize;
 cursor: pointer;
 padding: 5px 10px;
 visibility: hidden;
+}
+
+.filter:hover {
+	color: red;
+}
+
+.selected {
+	color: red;
 }
 
 .ui-icon.ui-icon-plusthick{

@@ -21,17 +21,17 @@ function start(){
 						materials: ["Fiber","Silk","Cotton"], 
 						difficulty: ["5 stars","4 stars","3 stars","2 stars","1 star"] };
 	setupFilters();
-	var bear = { name:"Bear", cost:"<10$", materials:"Fiber", difficulty:"5 stars", 
-				tags:["Bear","<10$","Fiber","5 stars"] };
+	var bear = { name:"Bear", cost:"10$", materials:"Fiber", difficulty:"5 stars", 
+				tags:["Bear","&lt;10$","Fiber","5 stars"] };
 	var cat = {name:"Cat", cost:"<50$", materials:"Silk",difficulty:"4 stars",
-				tags:["Cat", "<50$","Silk","4 stars"]};
+				tags:["Cat", "%lt;50$","Silk","4 stars"]};
 	var pillow = {name:"Pillow",cost:"<10$", material:"Cotton",difficulty:"1 star",
-				tags:["Pillow", "<10$","Cotton","1 stars"]};
+				tags:["Pillow", "&lt;10$","Cotton","1 stars"]};
 	searchItems = [bear,cat,pillow];
-	refreshResults();
+	refreshResults([]);
 }
 
-function refreshResults(){
+function refreshResults(selectedFilters){
 	$("#results").empty();
 	var $selectDiv = $('<div/>');
 	for (var i=0;i<searchItems.length;i++){
@@ -39,8 +39,24 @@ function refreshResults(){
 			minLength: 0,
 			source: searchItems[i].tags,
 			response: function( event, ui ) {
+				var match = 0;
 				//note it does this before updating val $("#query").val() so it's a step behind);
-				if(ui.content.length > 0){
+				if (selectedFilters.length != 0) {
+					for (var x = 0; x < selectedFilters.length; x++) {
+						for (var y = 0; y < searchItems[i].tags.length; y++) {
+							if (selectedFilters[x].innerHTML === (searchItems[i].tags[y])) {
+								match = 1;
+								break;
+							}
+						}
+					}
+				}
+				
+				else {
+					match = 1;
+				}
+				
+				if (ui.content.length > 0 && match == 1){
 					$("#results").append('<div class="result">' + searchItems[i].name 
 					+ "<br>Tags: " + searchItems[i].tags.toString() +'<div>');
 				}
@@ -48,12 +64,14 @@ function refreshResults(){
 			}
 		});
 		$selectDiv.autocomplete("search", $("#query").val());
+		
 		//NOTE the below line should be heere but without it and with minLength
 		//there are visual bugs (this code interferes with setupFilters I think
 		// but confirm)
 		$selectDiv.remove();
 	}
 }
+
 
 //filter Items must be defined
 //create filter categories and filters, hide filter options and set up toggleability
@@ -91,8 +109,12 @@ function setupFilters() {
   {
 	console.log($(this).val());
 	//TODO: double check use of text
-	$("#query").val($(this).text());
-	refreshResults();
+	//$("#query").val($(this).text());
+	$(this).toggleClass("selected");
+	
+	var selectedFilters = $(".selected");
+	
+	refreshResults(selectedFilters);
 	return false;
   });
   //TODO: tehre should be no gap above
