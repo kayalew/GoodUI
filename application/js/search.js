@@ -17,17 +17,23 @@ http://www.w3schools.com/cssref/pr_class_visibility.asp*/
 var searchItems;
 var filterItems;
 function start(){ 
-	filterItems = { cost: ["<10$","<50$","<100$"], 
-						materials: ["Fiber","Silk","Cotton"], 
-						difficulty: ["5 stars","4 stars","3 stars","2 stars","1 star"] };
+	filterItems = { cost: ["scraps!","$10 and under","$20 and under ","$30 and under","$50 and under"], 
+						difficulty: ["5 stars","4 stars","3 stars","2 stars","1 star"],
+						fabric: ["any","cotton","felt","fleece","linen","polyester","silk"],
+						 };
+						
+						// TODO: change materials to "fabric by weight"??
+						// Also separate notions
 	setupFilters();
-	var bear = { name:"Bear", cost:"10$", materials:"Fiber", difficulty:"5 stars", 
-				tags:["Bear","&lt;10$","Fiber","5 stars"] };
-	var cat = {name:"Cat", cost:"<50$", materials:"Silk",difficulty:"4 stars",
-				tags:["Cat", "%lt;50$","Silk","4 stars"]};
-	var pillow = {name:"Pillow",cost:"<10$", material:"Cotton",difficulty:"1 star",
-				tags:["Pillow", "&lt;10$","Cotton","1 stars"]};
-	searchItems = [bear,cat,pillow];
+	var roll = {name:"Strawberry Cream Roll",cost:"$10 and under", fabric:"felt", difficulty:"1 star",
+				tags:["Strawberry Cream Roll", "$10 and under", "felt","1 star"]};
+	var bear = { name:"Bear", cost:"$10 and under", materials:"cotton", difficulty:"3 stars",
+				tags:["Bear","$10 and under","cotton","3 stars","buttons"] };
+	var sundress = {name:"Sundress", cost:"$30 and under", materials:"cotton",difficulty:"4 stars", 
+				tags:["Sundress", "$30 and under","cotton","4 stars"]};
+	var pillow = {name:"Pillow",cost:"$20 and under", material:"silk",difficulty:"2 star",
+				tags:["Pillow", "$20 and under","silk","2 stars"]};
+	searchItems = [bear,pillow,roll,sundress];
 	refreshResults([]);
 }
 
