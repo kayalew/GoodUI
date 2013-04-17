@@ -18,6 +18,10 @@ a.noUnderline{
 text-decoration:none;
 }
 
+a.whiteText{
+	color:white;
+}
+
 .bodyText {
 	font-family: "Lustria", serif;
 	margin-left: 20px;
