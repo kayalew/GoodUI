@@ -1,0 +1,28 @@
+/*USED: http://phrogz.net/css/vertical-align/ for centering objects hint
+*/
+#slidingImages{
+	height:10em;
+}
+#dashboard{
+	height:70%;
+	width:100%;
+}
+.menuTitle{
+	margin-bottom:1em;
+	font-family: "Lato", sans-serif;
+	height: 2em;
+	width: 100%;
+	border-radius:1px;
+	font-size: 20px;
+	color: #FFFFFF;
+	line-height:2em;
+	text-align:center;
+}
+
+.menuElement{
+	width: 49.825%;
+	display:inline-block;
+}
+.menuElement:nth-of-type(odd){
+	/*display:block;*/
+}
