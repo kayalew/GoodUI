@@ -19,7 +19,6 @@ html, body {
     height: 100%;
 }
 #sidebar {
-    width: 20%;
 	height: 100%;
 	padding: .4em;
     border:1px solid #DDDDDD;
