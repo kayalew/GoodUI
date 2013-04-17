@@ -1,3 +1,6 @@
+// references: http://stackoverflow.com/questions/9240180/jquery-ui-dialog-widget-with-tabs
+
+
 $(function() {
 	
 	// make draggable things draggable
