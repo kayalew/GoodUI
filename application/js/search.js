@@ -79,6 +79,7 @@ function setupFilters() {
   //specific enough for future purposes
   jQuery(".filterCategory").click(function()
   {
+	$(".filter").css( "visibility", "visible" );//counters the default hidden characteristic
 	//can use 'slow' 'fast' instead of millisecond value
 	//can use $(this).next(".filter").slideToggle(400); if bugs come up
 	$(this).next().slideToggle(400);
