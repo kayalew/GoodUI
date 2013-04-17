@@ -59,3 +59,15 @@
 #whereToBuy:hover{
 	background-color:#557DED;
 }
+
+#listOfSteps li{
+	margin:.5em;
+}
+
+#listOfSteps a{
+	text-decoration:none;
+}
+
+#listOfSteps a:hover{
+	color:#557DED;
+}
