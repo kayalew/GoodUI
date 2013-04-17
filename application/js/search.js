@@ -8,18 +8,26 @@ http://stackoverflow.com/questions/4088467/get-value-in-input-text-box
 http://api.jquery.com/val/
 http://www.bloggingdeveloper.com/post/KeyPress-KeyDown-KeyUp-The-Difference-Between-Javascript-Key-Events.aspx
 http://stackoverflow.com/questions/3090662/jquery-empty-vs-remove
-http://stackoverflow.com/questions/537690/getting-the-value-of-a-form-field-after-keypress-event*/
+http://stackoverflow.com/questions/537690/getting-the-value-of-a-form-field-after-keypress-event
+http://www.w3schools.com/json/
+http://api.jquery.com/append/
+http://api.jquery.com/after/
+http://www.w3schools.com/cssref/pr_class_visibility.asp*/
 
 var searchItems;
+var filterItems;
 function start(){ 
+	filterItems = { cost: ["<10$","<50$","<100$"], 
+						materials: ["Fiber","Silk","Cotton"], 
+						difficulty: ["5 stars","4 stars","3 stars","2 stars","1 star"] };
 	setupFilters();
-	searchItems = new Array();
-	var tagsA = ["Bear", "<10$","Fiber","5 stars"];
-	var itemA = {name:"Bear", tags:tagsA, cost:"<10$", material:"Fiber",difficulty:"5 stars"};
-	searchItems[0] = itemA;
-	var tagsB = ["Cat", "<50$","Silk","4 stars"];
-	var itemB = {name:"Cat", tags:tagsB, cost:"<50$", material:"Silk",difficulty:"4 stars"};
-	searchItems[1] = itemB;
+	var bear = { name:"Bear", cost:"<10$", materials:"Fiber", difficulty:"5 stars", 
+				tags:["Bear","<10$","Fiber","5 stars"] };
+	var cat = {name:"Cat", cost:"<50$", materials:"Silk",difficulty:"4 stars",
+				tags:["Cat", "<50$","Silk","4 stars"]};
+	var pillow = {name:"Pillow",cost:"<10$", material:"Cotton",difficulty:"1 star",
+				tags:["Pillow", "<10$","Cotton","1 stars"]};
+	searchItems = [bear,cat,pillow];
 	refreshResults();
 }
 
@@ -47,10 +55,26 @@ function refreshResults(){
 	}
 }
 
-//hide filter categories and set up their toggleable nature
+//filter Items must be defined
+//create filter categories and filters, hide filter options and set up toggleability
 //Note, the element right after a category should be
 //everything immediately under it
 function setupFilters() {
+	//beginning create filter html
+  var filterCategories = Object.keys(filterItems);
+  for (var i = 0; i < filterCategories.length; i++){
+	$("#filterCollection").append("<h2 id='ID_"+filterCategories[i]+"' class='filterCategory'>"
+	+"<div class = 'ui-icon ui-icon-plusthick'></div> "+filterCategories[i]+" </h2>");
+  }
+  for (var j = 0; j < filterCategories.length; j++){
+	var $tempDivVar = $("<div></div>");
+	for (var k = 0; k < filterItems[filterCategories[j]].length; k++){
+		$tempDivVar.append("<div class='filter bodyText'>"+filterItems[filterCategories[j]][k]+"</div>");
+	}
+	$("#ID_"+filterCategories[j]).after($tempDivVar);
+  }
+  //end of create filter html
+  
   //can use $(".filter").hide(); if .next().hide() isn't 
   //specific enough for future purposes
   jQuery(".filterCategory").click(function()
