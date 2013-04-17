@@ -22,6 +22,10 @@ a.whiteText{
 	color:white;
 }
 
+.sidebarWidth{
+	width:15%;
+}
+
 .bodyText {
 	font-family: "Lustria", serif;
 	margin-left: 20px;
