@@ -30,7 +30,20 @@
 	max-width:80%;
 }
 
+#materials{
+	margin-top:2em;
+	margin-left:1em;
+}
+
+#materials li{
+	font-size:.9em;
+	list-style-type:circle;
+}
+
 #whereToBuy{
+	margin-top:2em;
+	margin-left:auto;
+	margin-right:auto;
 	height:3em;
 	width:60%;
 	background-color:#5655A1;
@@ -39,8 +52,10 @@
 	color:white;
 	line-height:3em;
 	text-decoration:none;
+	font-family: "Tahoma", sans-serif;
+	font-size:1.3em;
 }
 
 #whereToBuy:hover{
-	background-color:blue;
+	background-color:#557DED;
 }

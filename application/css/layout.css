@@ -37,6 +37,13 @@ h2 {
 	font-size:1.3em;
 }
 
+h3{
+	font-family: "Lato", sans-serif;
+	color:#5655A1;
+	font-size:1.2em;
+	margin-bottom:1em;
+}
+
 
 #navBar {
 	background-color:#7F7EBF;
