@@ -45,7 +45,7 @@
 		<td></td>
         <td id="searchBox">
 			<!-- Note: not within form. Check if this is problematic-->
-			<input id = "query" name="queryValue" type="text">
+			<input id = "query" name="queryValue" type="text" onkeyup="searchIfEnter(event)">
 			<input id = "searchButton" name="searchValue" type="button" onclick="refreshResults()" value="Search">
 		</td>
     </tr>

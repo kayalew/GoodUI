@@ -12,7 +12,8 @@ http://stackoverflow.com/questions/537690/getting-the-value-of-a-form-field-afte
 http://www.w3schools.com/json/
 http://api.jquery.com/append/
 http://api.jquery.com/after/
-http://www.w3schools.com/cssref/pr_class_visibility.asp*/
+http://www.w3schools.com/cssref/pr_class_visibility.asp
+http://www.w3schools.com/Js/tryit.asp?filename=try_dom_event_keycode*/
 
 var searchItems;
 var filterItems;
@@ -85,6 +86,11 @@ function refreshResults(){
 	}
 }
 
+function searchIfEnter(event){
+	if(event.keyCode == 13){//keycode 13 is enter
+		refreshResults();
+	}
+}
 
 //filter Items must be defined
 //create filter categories and filters, hide filter options and set up toggleability
