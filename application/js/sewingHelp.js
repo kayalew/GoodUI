@@ -17,66 +17,42 @@ http://www.w3schools.com/cssref/pr_class_visibility.asp*/
 var searchItems;
 var filterItems;
 function start(){ 
-	filterItems = { cost: ["scraps!","$10 and under","$20 and under ","$30 and under","$50 and under"], 
-						difficulty: ["&#9733;&#9733;&#9733;&#9733;&#9733;","&#9733;&#9733;&#9733;&#9733;","&#9733;&#9733;&#9733;","&#9733;&#9733;","&#9733;"],
-						fabric: ["any","cotton","felt","fleece","linen","polyester","silk"],
-						 };
-						
-						// TODO: change materials to "fabric by weight"??
-						// Also separate notions
+	filterItems = { techniques: ["Basting","Cut","Darning"],
+					stitches: ["Backstitch","Bar tack","Blanket"],
+					closures: ["Buckle","Button","Buttonhole"],
+					tools: ["Bobbin", "Dress form", "Needle threader"]
+					};
 	setupFilters();
-	var roll = {name:"Strawberry Cream Roll",cost:"$10 and under", fabric:"felt", difficulty:"&#9733;", link:'"../../Steps/overview.html"', image:'"../images/roll.jpg"',
-				tags:["Strawberry Cream Roll", "$10 and under", "felt","&#9733;"]};
-	var bear = { name:"Bear", cost:"$10 and under", materials:"cotton", difficulty:"&#9733;&#9733;&#9733;", link:'""', image:'""',
-				tags:["Bear","$10 and under","cotton","&#9733;&#9733;&#9733;","buttons"] };
-	var sundress = {name:"Sundress", cost:"$30 and under", materials:"cotton",difficulty:"&#9733;&#9733;&#9733;&#9733;", link:'""', image:'""',
-				tags:["Sundress", "$30 and under","cotton","&#9733;&#9733;&#9733;&#9733;"]};
-	var pillow = {name:"Pillow",cost:"$20 and under", material:"silk",difficulty:"&#9733;&#9733;", link:'""', image:'""',
-				tags:["Pillow", "$20 and under","silk","&#9733;&#9733;"]};
-	searchItems = [bear,pillow,roll,sundress];
+	var basting = { name:"Basting", 
+				tags:["Basting"] };
+	var cut = { name:"Cut", 
+				tags:["Cut"] };
+	var darning = { name:"Darning", 
+				tags:["Darning"] };
+
+	helpItems = [basting,cut,darning];
 	refreshResults([]);
 }
 
 function refreshResults(selectedFilters){
-	$("#results").empty();
-	var $selectDiv = $('<div/>');
-	for (var i=0;i<searchItems.length;i++){
+	for (var i;i<helpItems.length;i++) {
+		$("#results").empty();
+		var $selectDiv = $('<div/>');
 		$selectDiv.autocomplete({
 			minLength: 0,
-			source: searchItems[i].tags,
+			source: helpItems[i].tags,
 			response: function( event, ui ) {
-				var match = 0;
-				//note it does this before updating val $("#query").val() so it's a step behind);
-				if (selectedFilters.length != 0) {
-					for (var x = 0; x < selectedFilters.length; x++) {
-						for (var y = 0; y < searchItems[i].tags.length; y++) {
-							if (selectedFilters[x].innerHTML === (searchItems[i].tags[y])) {
-								match = 1;
-								break;
-							}
-						}
+				if (selectedFilters.length == 1) {
+					if (selectedFilters[0].innerHTML === helpItems[i].tags[0]) {
+						$("#results").append('<div class="result">' + helpItems[i].name 
+						+ "<br>Tags: " +helpItems[i].tags.toString() +'<div>');
 					}
-				}
-				
-				else {
-					match = 1;
-				}
-				
-				if (ui.content.length > 0 && match == 1){
-					$("#results").append('<div class="searchResult" id="search-result-roll">' +
-						'<div class="searchResultText">' +
-						'<h3><a href='+ searchItems[i].link + ' class="searchResultName">' + searchItems[i].name + '</a></h3>' +
-						'<p>Difficulty: <span class="difficulty">' + searchItems[i].difficulty + '</span></p>' +
-						'<a href=' + searchItems[i].link + 'More information >></a>' +
-						'</div>' +
-						'<div class="thumbnail searchResultImg"><img src=' + searchItems[i].image + '/></div>' +
-						'<div class="clearFloat"></div>' +
-					'</div>');
 				}
 				return false;
 			}
 		});
-		$selectDiv.autocomplete("search", $("#query").val());
+
+		$selectDiv.autocomplete("search", selectedFilters[0].innerHTML);
 		
 		//NOTE the below line should be heere but without it and with minLength
 		//there are visual bugs (this code interferes with setupFilters I think
@@ -123,6 +99,8 @@ function setupFilters() {
 	console.log($(this).val());
 	//TODO: double check use of text
 	//$("#query").val($(this).text());
+	
+	$(".selected").toggleClass("selected");
 	$(this).toggleClass("selected");
 	
 	var selectedFilters = $(".selected");
