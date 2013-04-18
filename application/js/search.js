@@ -67,7 +67,6 @@ function refreshResults(selectedFilters){
 						'<div class="searchResultText">' +
 						'<h3><a href='+ searchItems[i].link + ' class="searchResultName">' + searchItems[i].name + '</a></h3>' +
 						'<p>Difficulty: <span class="difficulty">' + searchItems[i].difficulty + '</span></p>' +
-						'<a href=' + searchItems[i].link + 'More information >></a>' +
 						'</div>' +
 						'<div class="thumbnail searchResultImg"><img src=' + searchItems[i].image + '/></div>' +
 						'<div class="clearFloat"></div>' +
