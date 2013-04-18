@@ -13,6 +13,7 @@
 <link type="text/css" href="../../jquery/css/ui-lightness/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
 <link rel="stylesheet" type="text/css" href="../css/sewingHelp.css" />
 <link href="../css/layout.css" rel="stylesheet" type="text/css" />
+<link href="../../glossary/glossary.css" rel="stylesheet" type="text/css" />
 
 <!-- Load any supplemental Javascript libraries here -->
 <script type="text/javascript" src="../../jquery/js/jquery-1.9.0.min.js"></script>
@@ -50,7 +51,30 @@
 			<div id="filterCollection">
 			</div>
 		</td>
-		<td id="results"></td>
+		<td id="results">
+			<div id="glossary-blanket-stitch-tabs">
+			
+			
+			<!--
+			
+				$("#glossary-blanket-stitch-tabs").tabs();
+				
+			-->
+				<ul>
+					<li><a href="#glossary-blanket-stitch-definition">Blanket Stitch</a></li>
+					<li><a href="#glossary-blanket-stitch-video">Video</a></li>
+				</ul>
+				<div class="glossaryContent" id="glossary-blanket-stitch-definition">
+					<p>A decorative stitch visible on both sides, traditionally used to reinforce the edge of thick materials such as blankets.</p>
+					<img src="../glossary/blanket.png"/>
+					<p><a href="http://www.futuregirl.com/craft_blog/2007/9/tutorial-hand-sew-felt.aspx" target="_blank">More on blanket stitch</a></p>
+				</div>
+				<div class="glossaryContent" id="glossary-blanket-stitch-video">
+					<iframe width="420" height="315" src="http://www.youtube.com/embed/eXkSE2TTF4s" frameborder="0" allowfullscreen></iframe>
+				</div>
+			</div>
+		
+		</td>
 	</tr>
    </table>
 </body>
