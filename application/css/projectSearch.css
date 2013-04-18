@@ -58,11 +58,11 @@ visibility: hidden;
 }
 
 .filter:hover {
-	color: red;
+	color: blue;
 }
 
 .selected {
-	color: red;
+	font-weight: bold;
 }
 
 .ui-icon.ui-icon-plusthick{
