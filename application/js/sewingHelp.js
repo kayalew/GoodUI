@@ -23,41 +23,28 @@ function start(){
 					tools: ["Bobbin", "Dress form", "Needle threader"]
 					};
 	setupFilters();
+	
 	var basting = { name:"Basting", 
 				tags:["Basting"] };
 	var cut = { name:"Cut", 
 				tags:["Cut"] };
 	var darning = { name:"Darning", 
-				tags:["Darning"] };
+				tags:["Darning"] }
+	var blanket = { name:"Blanket", 
+				tags:["Blanket"] };
 
-	helpItems = [basting,cut,darning];
+	helpItems = [basting,cut,darning,blanket];
 	refreshResults([]);
 }
 
 function refreshResults(selectedFilters){
-	for (var i;i<helpItems.length;i++) {
-		$("#results").empty();
-		var $selectDiv = $('<div/>');
-		$selectDiv.autocomplete({
-			minLength: 0,
-			source: helpItems[i].tags,
-			response: function( event, ui ) {
-				if (selectedFilters.length == 1) {
-					if (selectedFilters[0].innerHTML === helpItems[i].tags[0]) {
-						$("#results").append('<div class="result">' + helpItems[i].name 
-						+ "<br>Tags: " +helpItems[i].tags.toString() +'<div>');
-					}
-				}
-				return false;
-			}
-		});
-
-		$selectDiv.autocomplete("search", selectedFilters[0].innerHTML);
-		
-		//NOTE the below line should be heere but without it and with minLength
-		//there are visual bugs (this code interferes with setupFilters I think
-		// but confirm)
-		$selectDiv.remove();
+	if (selectedFilters[0].innerHTML === "Blanket") {
+		$("#glossary-blanket-stitch-tabs").tabs();
+		$("#results").css("display","inline");
+	}
+	
+	else {
+		$("#results").css("display","none");
 	}
 }
 
