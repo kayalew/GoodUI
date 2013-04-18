@@ -12,7 +12,11 @@ http://stackoverflow.com/questions/537690/getting-the-value-of-a-form-field-afte
 http://www.w3schools.com/json/
 http://api.jquery.com/append/
 http://api.jquery.com/after/
-http://www.w3schools.com/cssref/pr_class_visibility.asp*/
+http://www.w3schools.com/cssref/pr_class_visibility.asp
+
+
+http://stackoverflow.com/questions/5619102/lowercase-and-uppercase-with-jquery
+http://www.w3schools.com/jsref/jsref_tolowercase.asp*/
 
 var searchItems;
 var filterItems;
@@ -38,7 +42,11 @@ function start(){
 }
 
 function refreshResults(selectedFilters){
-	if (selectedFilters[0].innerHTML === "Blanket") {
+	var queryTerm = $("#query").val().toLowerCase();
+	if (((queryTerm == "blanket") || (queryTerm == "blanke") ||
+	(queryTerm == "blank")) || 
+	(selectedFilters[0].innerHTML === "Blanket")){
+		$("#blanket").addClass("selected");
 		$("#glossary-blanket-stitch-tabs").tabs();
 		$("#results").css("display","inline");
 	}
@@ -48,6 +56,11 @@ function refreshResults(selectedFilters){
 	}
 }
 
+function searchIfEnter(event){
+	if(event.keyCode == 13){//keycode 13 is enter
+		refreshResults([]);
+	}
+}
 
 //filter Items must be defined
 //create filter categories and filters, hide filter options and set up toggleability
@@ -63,7 +76,12 @@ function setupFilters() {
   for (var j = 0; j < filterCategories.length; j++){
 	var $tempDivVar = $("<div></div>");
 	for (var k = 0; k < filterItems[filterCategories[j]].length; k++){
-		$tempDivVar.append("<div class='filter bodyText'>"+filterItems[filterCategories[j]][k]+"</div>");
+		if (filterItems[filterCategories[j]][k].toLowerCase() == "blanket"){
+			$tempDivVar.append("<div id='blanket' class='filter bodyText'>"+filterItems[filterCategories[j]][k]+"</div>");
+		}
+		else{
+			$tempDivVar.append("<div class='filter bodyText'>"+filterItems[filterCategories[j]][k]+"</div>");
+		}
 	}
 	$("#ID_"+filterCategories[j]).after($tempDivVar);
   }
