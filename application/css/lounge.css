@@ -6,3 +6,103 @@
 	position:relative;
 	top:-1em;
 }
+
+.myButton{
+	background-color:#5655A1;
+	border-radius:10px;
+	text-align:center;
+	color:white;
+	text-decoration:none;
+	font-family: "Tahoma", sans-serif;
+}
+
+.myButton:hover{
+	background-color:#557DED;
+}
+
+#loungeLeft{
+	float:left;
+	width:60%;
+	margin:1em 2em 1em 2em;
+}
+
+#loungeRight{
+	float:right;
+	width:25%;
+	margin:1em 2em 1em 2em;
+}
+
+.activeLounge{
+	margin:5px;
+	border:1px solid #999999;
+	padding:1em;
+	border-radius:5px;
+}
+
+.loungeName{
+	font-family:"Tahoma",sans-serif;
+	font-size:1em;
+	margin:.5em 0 .5em 0;
+	color:#5655A1;
+}
+
+.loungeName:hover{
+	color:#557DED;
+	cursor:pointer;
+}
+
+.loungeDesc{
+	font-family:"Garamond",serif;
+	font-size:.9em;
+}
+.loungeDetail{
+	font-family:"Garamond",serif;
+	font-size:.9em;
+}
+
+#friends{
+	margin:auto;
+}
+
+#friends h3{
+	background-color:#5655A1;
+	color:white;
+	border-top-left-radius:5px;
+	border-top-right-radius:5px;
+	padding:.5em;
+	margin-bottom:0;
+}
+
+#friends ul{
+	overflow:hidden;
+	margin-top:0;
+	border-bottom-left-radius:5px;
+	border-bottom-right-radius:5px;
+	padding:0;
+}
+
+#friends li{
+	list-style-type:none;
+	background-color:#EBE69F;
+	width:100%;
+	padding:.5em;
+	overflow:hidden;
+	box-sizing:border-box;
+	font-family:"Tahoma",sans-serif;
+}
+
+#friends li ul{
+	border:none;
+	margin-top:.5em;
+	margin-bottom:.5em;
+}
+
+#friends li ul li{
+	background-color:white;
+	text-align:right;
+}
+
+.online{
+	font-weight:bold;
+	cursor:pointer;
+}
