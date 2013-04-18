@@ -26,7 +26,7 @@
 
 <body onload="start();">
 <table id="mainTable">
-	<tr><td colspan="2">
+	<tr><td id="navCell" colspan="2">
 <div id="navBar" class="primarySiteColor">
 	<h3 id="navLeft" class="navText">
 		<a class="noUnderline whiteText" href="homePage.html">Sew Together </a>|
@@ -46,7 +46,7 @@
         <td id="searchBox">
 			<!-- Note: not within form. Check if this is problematic-->
 			<input id = "query" name="queryValue" type="text">
-			<input id = "searchButton" name="searchValue" type="button" onclick="refreshResults([])" value="Search">
+			<input id = "searchButton" name="searchValue" type="button" onclick="refreshResults()" value="Search">
 		</td>
     </tr>
 	<tr>

@@ -37,7 +37,8 @@ function start(){
 	refreshResults([]);
 }
 
-function refreshResults(selectedFilters){
+function refreshResults(){
+	var selectedFilters = $(".selected");
 	$("#results").empty();
 	var $selectDiv = $('<div/>');
 	for (var i=0;i<searchItems.length;i++){
@@ -124,9 +125,7 @@ function setupFilters() {
 	//$("#query").val($(this).text());
 	$(this).toggleClass("selected");
 	
-	var selectedFilters = $(".selected");
-	
-	refreshResults(selectedFilters);
+	refreshResults();
 	return false;
   });
   //TODO: tehre should be no gap above
