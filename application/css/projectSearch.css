@@ -69,12 +69,11 @@ visibility: hidden;
 	font-weight: bold;
 }
 
-.ui-icon.ui-icon-plusthick{
+.ui-icon.ui-icon-plusthick,.ui-icon.ui-icon-minusthick {
 	display:inline-block;
 }
 
-
-#searchBox{
+#searchBox {
 	column-span:2;
 	text-align:right;
 }

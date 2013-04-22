@@ -83,6 +83,9 @@ function refreshResults(){
 		//there are visual bugs (this code interferes with setupFilters I think
 		// but confirm)
 		$selectDiv.remove();
+		
+		
+		//$("#query").val(""); SHOULD WE DO THIS????
 	}
 }
 
@@ -103,6 +106,7 @@ function setupFilters() {
 	$("#filterCollection").append("<h2 id='ID_"+filterCategories[i]+"' class='filterCategory'>"
 	+"<div class = 'ui-icon ui-icon-plusthick'></div> "+filterCategories[i]+" </h2>");
   }
+  
   for (var j = 0; j < filterCategories.length; j++){
 	var $tempDivVar = $("<div></div>");
 	for (var k = 0; k < filterItems[filterCategories[j]].length; k++){
@@ -119,6 +123,7 @@ function setupFilters() {
 	$(".filter").css( "visibility", "visible" );//counters the default hidden characteristic
 	//can use 'slow' 'fast' instead of millisecond value
 	//can use $(this).next(".filter").slideToggle(400); if bugs come up
+	$(this).children().toggleClass("ui-icon-plusthick ui-icon-minusthick");
 	$(this).next().slideToggle(400);
 	
 	return false;
