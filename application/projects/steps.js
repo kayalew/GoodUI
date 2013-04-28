@@ -1,6 +1,5 @@
 $(document).ready(function() {
 
-
 	$(document).keydown(function(e){
 
 		// navigation between steps w/  arrow keys	
@@ -20,10 +19,15 @@ $(document).ready(function() {
 				$("#begin").click();
 		}
 		
-		// navigate through glossary terms on this page
+		/*
+		// pressing "/" on the keyboard opens up help and
+		// goes through them, maybe?
+		else if (e.which==191){
+			$(".glossaryTerm").each(function(i){
+				$(this).addClass("glossaryTermFocus");
+			});
+		}
+		*/
 		
-	});
-	
-	
-	
+	});	
 });
