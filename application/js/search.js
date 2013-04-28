@@ -52,8 +52,6 @@ function refreshResults(){
 				if (selectedFilters.length != 0) {
 					for (var x = 0; x < selectedFilters.length; x++) {
 						for (var y = 0; y < searchItems[i].tags.length; y++) {
-							alert(selectedFilters[x].children[1].innerHTML);
-							alert(searchItems[i].tags[y]);
 							if (selectedFilters[x].children[1].innerHTML == (searchItems[i].tags[y])) {
 								match = 1;
 								break;
