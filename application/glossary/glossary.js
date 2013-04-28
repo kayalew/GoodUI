@@ -11,6 +11,7 @@ $(function() {
 	glossaryEntryStuff("blanket-stitch");
 	glossaryEntryStuff("running-stitch");
 	glossaryEntryStuff("thread-needle");
+	glossaryEntryStuff("needle-threader");
 	glossaryEntryStuff("tie-off");
 
 	
