@@ -32,6 +32,7 @@ html, body {
 	border-radius:5px;
 	background-color:white;
 }
+
 #results { 
     width: 80%;
     height: 100%;
@@ -57,6 +58,11 @@ cursor: pointer;
 height: 50px;
 text-transform:capitalize;
 }
+
+.filterCategory:hover {
+	color:#557DED;
+}
+
 .filter {
 cursor: pointer;
 padding: 5px 10px;
@@ -71,7 +77,7 @@ visibility: hidden;
 	font-weight: bold;
 }
 
-.ui-icon.ui-icon-plusthick{
+.ui-icon.ui-icon-plusthick,.ui-icon.ui-icon-minusthick {
 	display:inline-block;
 }
 

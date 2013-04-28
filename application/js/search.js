@@ -52,7 +52,9 @@ function refreshResults(){
 				if (selectedFilters.length != 0) {
 					for (var x = 0; x < selectedFilters.length; x++) {
 						for (var y = 0; y < searchItems[i].tags.length; y++) {
-							if (selectedFilters[x].innerHTML === (searchItems[i].tags[y])) {
+							alert(selectedFilters[x].children[1].innerHTML);
+							alert(searchItems[i].tags[y]);
+							if (selectedFilters[x].children[1].innerHTML == (searchItems[i].tags[y])) {
 								match = 1;
 								break;
 							}
@@ -95,6 +97,7 @@ function searchIfEnter(event){
 	}
 }
 
+  
 //filter Items must be defined
 //create filter categories and filters, hide filter options and set up toggleability
 //Note, the element right after a category should be
@@ -109,8 +112,9 @@ function setupFilters() {
   
   for (var j = 0; j < filterCategories.length; j++){
 	var $tempDivVar = $("<div></div>");
+
 	for (var k = 0; k < filterItems[filterCategories[j]].length; k++){
-		$tempDivVar.append("<div class='filter bodyText'>"+filterItems[filterCategories[j]][k]+"</div>");
+		$tempDivVar.append("<div class='filter bodyText'><input type='checkbox' class='checkBox'><span>"+filterItems[filterCategories[j]][k]+"</span></div>");
 	}
 	$("#ID_"+filterCategories[j]).after($tempDivVar);
   }
@@ -128,6 +132,7 @@ function setupFilters() {
 	
 	return false;
   }).next().hide();
+  
   //hides the next element (which in my code is the div containing the filter options)
   jQuery(".filter").click(function()
   {
@@ -135,10 +140,19 @@ function setupFilters() {
 	//TODO: double check use of text
 	//$("#query").val($(this).text());
 	$(this).toggleClass("selected");
+	$(this).children().prop("checked",!$(this).children().prop("checked"));
 	
 	refreshResults();
 	return false;
   });
+  
+  jQuery(".checkBox").click(function(event) {
+	event.stopPropagation();
+	$(this).parent().toggleClass("selected");
+	refreshResults();
+  });
+  
+  
   //TODO: tehre should be no gap above
   //cost shouldn't justs search
 }

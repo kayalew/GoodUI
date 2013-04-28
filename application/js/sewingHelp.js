@@ -45,8 +45,8 @@ function refreshResults(selectedFilters){
 	var queryTerm = $("#query").val().toLowerCase();
 	if (((queryTerm == "blanket") || (queryTerm == "blanke") ||
 	(queryTerm == "blank")) || 
-	(selectedFilters[0].innerHTML === "Blanket")){
-		$("#blanket").addClass("selected");
+	(selectedFilters[0].id == "blanket")){
+		//$("#blanket").addClass("selected"); DIDNT UNSELECT
 		$("#glossary-blanket-stitch-tabs").tabs();
 		$("#results").css("display","inline");
 	}
@@ -54,6 +54,7 @@ function refreshResults(selectedFilters){
 	else {
 		$("#results").css("display","none");
 	}
+	$("#query").val("");
 }
 
 function searchIfEnter(event){
@@ -77,10 +78,10 @@ function setupFilters() {
 	var $tempDivVar = $("<div></div>");
 	for (var k = 0; k < filterItems[filterCategories[j]].length; k++){
 		if (filterItems[filterCategories[j]][k].toLowerCase() == "blanket"){
-			$tempDivVar.append("<div id='blanket' class='filter bodyText'>"+filterItems[filterCategories[j]][k]+"</div>");
+			$tempDivVar.append("<div id='blanket' class='filter bodyText'><input type='radio' class='radioBox'><span>"+filterItems[filterCategories[j]][k]+"</span></div>");
 		}
 		else{
-			$tempDivVar.append("<div class='filter bodyText'>"+filterItems[filterCategories[j]][k]+"</div>");
+			$tempDivVar.append("<div class='filter bodyText'><input type='radio' class='radioBox'><span>"+filterItems[filterCategories[j]][k]+"</div>");
 		}
 	}
 	$("#ID_"+filterCategories[j]).after($tempDivVar);
@@ -94,6 +95,7 @@ function setupFilters() {
 	$(".filter").css( "visibility", "visible" );//counters the default hidden characteristic
 	//can use 'slow' 'fast' instead of millisecond value
 	//can use $(this).next(".filter").slideToggle(400); if bugs come up
+	$(this).children().toggleClass("ui-icon-plusthick ui-icon-minusthick");
 	$(this).next().slideToggle(400);
 	
 	return false;
@@ -107,6 +109,8 @@ function setupFilters() {
 	
 	$(".selected").toggleClass("selected");
 	$(this).toggleClass("selected");
+	$(":radio").prop("checked",false);
+	$(this).children().prop("checked",true);
 	
 	var selectedFilters = $(".selected");
 	

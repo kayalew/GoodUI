@@ -55,6 +55,11 @@ cursor: pointer;
 height: 50px;
 text-transform:capitalize;
 }
+
+.filterCategory:hover {
+	color:#557DED;
+}
+
 .filter {
 cursor: pointer;
 padding: 5px 10px;
