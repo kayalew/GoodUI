@@ -1,0 +1,67 @@
+#overviewText{
+	float:left;
+	width:60%;
+}
+
+#overviewImages{
+	width:40%;
+	float:right;
+}
+
+#overviewImages > img{
+	display:block;
+	padding:2px;
+	border:1px gray solid;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:.5em;
+	margin-bottom:.5em;
+	max-width:80%;
+	max-height:100%;
+	width:100%;
+}
+
+.whoUploaded{
+	font-size:.8em;
+	color:#555555;
+	text-align:right;
+	margin-left:auto;
+	margin-right:auto;
+	max-width:80%;
+}
+
+#materials{
+	margin-top:2em;
+	margin-left:1em;
+}
+
+#materials li{
+	font-size:.9em;
+	list-style-type:circle;
+}
+
+#whereToBuy{
+	margin-top:2em;
+	margin-left:auto;
+	margin-right:auto;
+	height:3em;
+	width:50%;
+	line-height:3em;
+	font-size:1.3em;
+}
+
+#begin{
+	margin-top:2em;
+	margin-left:auto;
+	margin-right:auto;
+	height:3em;
+	width:30%;
+	line-height:3em;
+	font-size:1.3em;
+}
+
+
+#listOfSteps li{
+	margin:.5em;
+}
+

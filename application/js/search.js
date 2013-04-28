@@ -26,7 +26,7 @@ function start(){
 						// TODO: change materials to "fabric by weight"??
 						// Also separate notions
 	setupFilters();
-	var roll = {name:"Strawberry Cream Roll",cost:"$10 and under", fabric:"felt", difficulty:"&#9733;", link:'"../../Steps/overview.html"', image:'"../images/roll.jpg"',
+	var roll = {name:"Strawberry Cream Roll",cost:"$10 and under", fabric:"felt", difficulty:"&#9733;", link:'"../projects/strawberry-cream-roll/html/overview.html"', image:'"../images/roll.jpg"',
 				tags:["Strawberry Cream Roll", "$10 and under", "felt","&#9733;"]};
 	var bear = { name:"Bear", cost:"$10 and under", materials:"cotton", difficulty:"&#9733;&#9733;&#9733;", link:'""', image:'""',
 				tags:["Bear","$10 and under","cotton","&#9733;&#9733;&#9733;","buttons"] };

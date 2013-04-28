@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130428185449) do
+ActiveRecord::Schema.define(:version => 20130428195531) do
 
   create_table "glossary_entries", :force => true do |t|
     t.string   "name"
@@ -26,6 +26,15 @@ ActiveRecord::Schema.define(:version => 20130428185449) do
     t.text     "tab_contents"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
+  end
+
+  create_table "project_search_entries", :force => true do |t|
+    t.string   "name"
+    t.string   "cost"
+    t.integer  "difficulty"
+    t.string   "fabric"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end
