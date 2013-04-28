@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  glossary_entry_id: 1
+  tab_type: MyText
+  tab_contents: MyText
+
+two:
+  glossary_entry_id: 1
+  tab_type: MyText
+  tab_contents: MyText

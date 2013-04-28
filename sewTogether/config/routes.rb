@@ -1,4 +1,6 @@
 SewTogether::Application.routes.draw do
+  get "glossary/index"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
