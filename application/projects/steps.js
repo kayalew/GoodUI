@@ -1,7 +1,9 @@
-// navigation between steps w/  arrow keys
 $(document).ready(function() {
+
+
 	$(document).keydown(function(e){
 
+		// navigation between steps w/  arrow keys	
 		// left arrow
 		if (e.which==37){
 			// step back if you can.
@@ -17,5 +19,11 @@ $(document).ready(function() {
 			else if ($("#begin").length!=0)
 				$("#begin").click();
 		}
+		
+		// navigate through glossary terms on this page
+		
 	});
+	
+	
+	
 });

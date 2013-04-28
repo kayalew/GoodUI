@@ -1,10 +1,12 @@
 .glossaryTerm{
-	text-decoration:underline;
-	
+
+	font-family:"Tahoma",sans-serif;
+	font-size:.8em;
+	font-weight:bold;
 }
 
 .glossaryTerm:hover{
-	color:green;
+	color:#557DED;
 	cursor:pointer;
 }
 
@@ -19,6 +21,18 @@
 
 .ui-widget{
 	font-size:.8em;
+}
+
+.ui-widget a{
+	color:#5655A1;
+}
+
+.ui-widget a:visited{
+	color:#5655A1;
+}
+
+.ui-widget a:hover{
+	color:#557DED;
 }
 
 .ui-tabs-panel{
