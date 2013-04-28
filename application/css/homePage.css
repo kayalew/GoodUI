@@ -65,3 +65,15 @@
 .edit{
 	font-size:.5em;
 }
+
+.progressbar{
+	height:.7em;
+	width:40%;
+	float:right;
+	position:relative;
+	top:2px;
+}
+
+.progressbar > .ui-progressbar-value{
+	background:#7F7EBF;
+}

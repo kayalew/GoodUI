@@ -1,4 +1,14 @@
 SewTogether::Application.routes.draw do
+  get "about/index"
+
+  get "project/index"
+
+  get "lounge/index"
+
+  get "project_search/index"
+
+  get "homepage/index"
+
   get "glossary/index"
 
   # The priority is based upon order of creation:
