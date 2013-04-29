@@ -1,5 +1,5 @@
 SewTogether::Application.routes.draw do
-  # we should probably make a static pages controller.
+  #static pages controller
   # idea from http://stackoverflow.com/questions/15513134/rails-3-2-7-and-link-to
 	resources :static_pages do
 		collection do
@@ -8,6 +8,13 @@ SewTogether::Application.routes.draw do
 			get 'sewing_help'
 			get 'lounge'
 			get 'about'
+			get 'overview'
+			get 'step0'
+			get 'step1'
+			get 'step2'
+			get 'step3'
+			get 'step4'
+			get 'step5'
 		end
 	end
 	root :to => "static_pages#dashboard"
