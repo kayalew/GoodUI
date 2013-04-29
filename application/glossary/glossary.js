@@ -1,4 +1,6 @@
-// references: http://stackoverflow.com/questions/9240180/jquery-ui-dialog-widget-with-tabs
+/* references: 	http://stackoverflow.com/questions/9240180/jquery-ui-dialog-widget-with-tabs
+
+*/
 
 // deals with dialog boxes that come up when you click on a glossary term
 $(document).ready(function() {
@@ -42,16 +44,24 @@ var glossaryEntryStuff = function(term){
 				activate: function(e,ui){
 					if ($("#videoPlaceholder-"+term).length){
 						var url = $("#videoPlaceholder-"+term).html();
-						var toEmbed = "<iframe width=\"420\" height=\"315\" src=\""+url+"\"frameborder=\"0\" allowfullscreen></iframe>";
+						var toEmbed = "<iframe id=\"iframe-"+term+"\" width=\"420\" height=\"315\" src=\""+url+"\"frameborder=\"0\" allowfullscreen></iframe>";
 						console.log(toEmbed);
-						$("#glossary-"+term+"-video").html(toEmbed);
+						$("#glossary-"+term+"-video").html(toEmbed);						
+						
+						
+						// stop the video if you close the dialog box						
+						// actually pausing the video would be better, but. Maybe later :P
+						$("#glossary-"+term+"-close").click(function(){
+							$("#glossary-"+term+"-video").html(toEmbed);
+						});
+						
 					}
 					else{
 					}
 				}
 			});
 			
-		}
+		} 
 	});
 	
 	// open dialog box if you click on the term
