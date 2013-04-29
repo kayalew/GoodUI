@@ -10,15 +10,9 @@ SewTogether::Application.routes.draw do
 			get 'about'
 		end
 	end
-	resources :static_pages do
+	resources :projects do
 		collection do
 			get 'overview'
-			get 'step0'
-			get 'step1'
-			get 'step2'
-			get 'step3'
-			get 'step4'
-			get 'step5'
 		end
 	end
 	root :to => "static_pages#dashboard"

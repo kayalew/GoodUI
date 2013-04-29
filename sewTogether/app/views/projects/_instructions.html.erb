@@ -1,0 +1,31 @@
+<div id="tabContent">
+
+	<div id="overview">
+	
+		<div id="overviewText">
+			
+			<div id="listOfSteps">
+				<h3>Steps</h3>
+				<ol>
+					<li><%= link_to "Cut out templates and fabric", overview_projects_path(:part => "step1") %></li>
+					<li><%= link_to "Sew the side of the roll to the bottom", overview_projects_path(:part => "step2") %></li>
+					<li><%= link_to "Sew the cream spirals onto the cake fronts", overview_projects_path(:part => "step3") %></li>
+					<li><%= link_to "Stitch the cake fronts on, leaving a small opening", overview_projects_path(:part => "step4") %></li>
+					<li><%= link_to "Stuff the roll, then sew opening closed", overview_projects_path(:part => "step5") %></li>
+				</ol>
+			</div>
+			<%= link_to overview_projects_path(:part => "step1"), :class => "noUnderline" do %>
+				<div id="begin" class="myButton">Begin!</div>
+			<% end %>
+		</div>
+			
+		</div>
+
+		<div id="overviewImages">
+			<%= image_tag("images/projects/strawberry-cream-roll/roll.jpg") %>
+		</div>
+	
+		<div class="clearFloat"></div>
+	</div>
+	
+</div>

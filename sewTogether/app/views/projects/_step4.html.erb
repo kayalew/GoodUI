@@ -1,51 +1,7 @@
-<!DOCTYPE HTML>
-
-<html>
-
-<head>
-	<title>Strawberry Cream Roll - Sew Together</title>
-	
-	<!--stuff-->
-  <script src="../../../../external_js/jquery-1.9.1.js"></script>
-  <script src="../../../../external_js/jquery-ui-1.10.2.custom.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="../../steps.css">
-  <link rel="stylesheet" type="text/css" href="../../project.css">
-  <link rel="stylesheet" type="text/css" href="../../../css/layout.css">
-
-  <link rel="stylesheet" type="text/css" href="../../../../jquery/css/smoothness/jquery-ui.css">
-  <link rel="stylesheet" type="text/css" href="../../../glossary/glossary.css">
-  <script src="../../../glossary/glossary.js"></script>
-  <script src="../../steps.js"></script>
-</head>
-
-<body>
-<div id="navBar" class="primarySiteColor">
-	<h3 id="navLeft" class="navText">
-		<a class="noUnderline whiteText" href="../../../html/homePage.html">Sew Together </a>|
-		<a class="noUnderline whiteText" href="../../../html/projectSearch.html"> Project Search </a>|
-		<a class="noUnderline whiteText" href="../../../html/sewingHelp.html"> Sewing Help </a>|
-		<a class="noUnderline whiteText" href="../../../html/lounge.html"> Lounge</a></h3>
-	<span id="navRight">
-		<h3 id="navRight" class="navText">
-			<a class="noUnderline whiteText" href="">About </a>| Log out</h3></span>
-</div>
-
-<!--Tabs-->
-<div id="pageContent">
-	<h1 id="title">Strawberry Cream Roll</h1>
-	<div id="tabs">
-		<ul>
-		<a href="overview.html"><li>Overview</li></a>
-		<a href="step0.html"><li class="projectActiveTab">Instructions</li></a>
-	</ul>
-	</div>
-
 	<div id="tabContent" class="step">
-
 		<div id="stepText">
-			<h3>Step 2 of 5</h3>
-			<p>With the pink thread, sew the cake side to the cake bottom as shown, using <span class="glossaryTerm blanket-stitch-click">blanket stitch</span>.</p>
-			<div class="warning"><p>Make sure that the right sides are facing OUTWARDS when you are sewing them together!</p></div>
+			<h3>Step 4 of 5</h3>
+			<p>With the pink thread, stitch the cake fronts on using <span class="glossaryTerm blanket-stitch-click">blanket stitch</span>, leaving a small opening for stuffing the roll.</p>
 			
 			<div id="helpful">
 			<h4>Sewing help</h4>
@@ -59,24 +15,20 @@
 			</div>
 			
 			<div id="stepNavigation">
-				<a href="step1.html"><span id="stepBack" class="myButton">&lt;&lt; Back</span></a><a href="step3.html"><span id="stepNext" class="myButton">Next &gt;&gt;</span></a>
-				<div class="clearFloat"></div>
-			</div>		
+				<%= render 'step_navigation', :prev_step => "step3", :next_step => "step5" %>
+			</div>				
 		</div>	
 		
 		<div id="stepImages">
-			<img src="../resources/step2diagram.png"/>
-			<img src="../resources/step2-1.jpg"/>
-			<img src="../resources/step2-2.jpg"/>
-		</div>
-		
+			<%= image_tag("images/projects/strawberry-cream-roll/step4diagram.png") %>
+			<%= image_tag("images/projects/strawberry-cream-roll/step4-1.jpg") %>
+			<%= image_tag("images/projects/strawberry-cream-roll/step4-2.jpg") %>
+		</div>	
 		<div class="clearFloat"></div>
 	</div>
 	
 	<div class="clearFloat"></div>
-
 </div>
-
 <!-- GLOSSARY CONTENT FROM HERE ON OUT -->
 
 <div class="glossaryEntry draggable" id="glossary-blanket-stitch" title="Blanket stitch">
@@ -137,7 +89,7 @@
 			<li class="ui-tabs-close-button"><button id="glossary-tie-off-close">x</button><li>
 		</ul>
 		<div class="glossaryContent" id="glossary-thread-needle-video">
-			<div class="videoPlaceholder"></div>	
+			<div class="videoPlaceholder"></div>
 		</div>
 	</div>		
 </div>
