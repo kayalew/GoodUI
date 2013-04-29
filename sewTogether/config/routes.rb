@@ -1,7 +1,17 @@
 SewTogether::Application.routes.draw do
-  resources :sewing_help
-  resources :project_search
-  root :to => "sewing_help#index"
+  # we should probably make a static pages controller.
+  # idea from http://stackoverflow.com/questions/15513134/rails-3-2-7-and-link-to
+	resources :static_pages do
+		collection do
+			get 'dashboard'
+			get 'project_search'
+			get 'sewing_help'
+			get 'lounge'
+			get 'about'
+		end
+	end
+	root :to => "static_pages#dashboard"
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

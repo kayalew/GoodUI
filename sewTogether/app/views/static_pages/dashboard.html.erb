@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<!--copied tmeplate from checkers game-->
+<html>
+
+<head>
+<title>Sew Together</title>
+
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+<!-- Load style sheets -->
+<%= stylesheet_link_tag :dashboard %>
+
+<!-- Load any supplemental Javascript libraries here -->
+<% content_for :head do %>
+	<%= javascript_include_tag :dashboard %>
+<% end %>
+
+</head>
+
+<body>
+
+<%= render 'nav_bar' %>
+<h1 id="title">My Home</h1>
+<div id="dashboard">
+<div class="menuElementRow">
+<div class = "menuElement MELeft">
+<div id="currentProjects" class="menuTitle category"><a class="noUnderline whiteText" href="">Current Projects    <span class="edit">(edit)</span></a></div>
+<ul>
+<li> <a href="../projects/strawberry-cream-roll/html/step2.html">Strawberry Cream Roll <div class="progressbar" id="strawberry-cream-roll-progress"></div></a>
+</ul>
+</div>
+<div class = "menuElement MERight">
+<div id="pastProjects" class="menuTitle"><a class="noUnderline whiteText" href="">Past Projects    <span class="edit">(edit)</span></a></div>
+<ul>
+<li> Bear
+<li> Sundress
+<li> Easy Tote Bag
+</ul>
+</div>
+<div class="clearFloat"></div>
+</div>
+<div class="menuElementRow">
+<div class = "menuElement MELeft">
+<div id="friends" class="menuTitle"><a class="noUnderline whiteText" href="">Friends    <span class="edit">(edit)</span></a></div>
+<ul>
+<li> Kaleb
+<li> Alice
+<li> Tristan
+</ul>
+</div>
+<div class = "menuElement MERight">
+<div id="interestingProjects" class="menuTitle"><a class="noUnderline whiteText" href="">Interesting Projects    <span class="edit">(edit)</span></a></div>
+<ul>
+<li> Stuffed Penguin
+<li> Kitty Ear Hat
+</ul>
+</div>
+<div class="clearFloat"></div>
+</div>
+</div>
+</body>
+
+</html>

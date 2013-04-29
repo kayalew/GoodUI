@@ -1,0 +1,84 @@
+// Place all the styles related to the dashboard controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*USED: http://phrogz.net/css/vertical-align/ for centering objects hint
+*/
+#slidingImages{
+	height:10em;
+}
+#dashboard{
+	height:70%;
+	width:80%;
+	margin:auto;
+}
+.menuTitle{
+	background-color:#7F7EBF;
+	margin-bottom:1em;
+	font-family: "Lato", sans-serif;
+	height: 2em;
+	width: 100%;
+	border-radius:5px;
+	font-size: 20px;
+	color: #FFFFFF;
+	line-height:2em;
+	text-align:center;
+}
+
+.menuElement{
+	width:48%;
+}
+
+.MELeft{
+	float:left;
+}
+
+.MERight{
+	float:right;
+}
+
+.menuElementRow{
+	margin:1em;
+}
+
+.menuElement:nth-of-type(odd){
+	/*display:block;*/
+}
+
+#dashboard li{
+	list-style-type:none;
+	font-family:"Garamond",sans-serif;
+	margin:1em;
+	cursor:pointer;
+	font-weight:bold;
+}
+
+#dashboard li a{
+	color:black;
+}
+
+#dashboard li a:hover{
+	color:#557DED;
+}
+
+
+#dashboard li:hover{
+	color:#557DED;
+}
+
+.edit{
+	font-size:.5em;
+}
+
+.progressbar{
+	height:.7em;
+	width:40%;
+	float:right;
+	position:relative;
+	top:2px;
+}
+
+.progressbar > .ui-progressbar-value{
+	background:#7F7EBF;
+}
+

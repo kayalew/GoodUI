@@ -1,10 +1,15 @@
+<!--http://apidock.com/rails/ActionView/Helpers/UrlHelper/link_to-->
 <div id="navBar" class="primarySiteColor">
 	<h3 id="navLeft" class="navText">
-		<a class="noUnderline whiteText" href="homePage.html">Sew Together </a>|
-		<a class="noUnderline whiteText" href="projectSearch.html"> Project Search </a>|
-		<a class="noUnderline whiteText" href="sewingHelp.html"> Sewing Help </a>|
-		<a class="noUnderline whiteText" href="lounge.html"> Lounge</a></h3>
+		<%= link_to "Sew Together ", dashboard_static_pages_path, :class => "noUnderline whiteText" %>|
+		<%= link_to " Project Search ", project_search_static_pages_path, :class => "noUnderline whiteText" %>|
+		<%= link_to " Sewing Help ", sewing_help_static_pages_path, :class => "noUnderline whiteText" %>|
+		<%= link_to " Lounge", lounge_static_pages_path, :class => "noUnderline whiteText" %>
+	</h3>
 	<span id="navRight">
 		<h3 id="navRight" class="navText">
-			<a class="noUnderline whiteText" href="">About </a>| Log out</h3></span>
+			<%= link_to "About ", about_static_pages_path, :class => "noUnderline whiteText" %>|
+			Log out
+		</h3>
+	</span>
 </div>
