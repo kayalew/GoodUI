@@ -47,7 +47,19 @@ function refreshResults(selectedFilters){
 	(queryTerm == "blank")) || 
 	(selectedFilters[0].id == "blanket")){
 		//$("#blanket").addClass("selected"); DIDNT UNSELECT
-		$("#glossary-blanket-stitch-tabs").tabs();
+		$("#glossary-blanket-stitch-tabs").tabs({
+			// don't embed the youtube video until/unless you actually need it
+			activate: function(e,ui){
+				if ($("#videoPlaceholder-"+term).length){
+					var url = $("#videoPlaceholder-"+term).html();
+					var toEmbed = "<iframe id=\"iframe-"+term+"\" width=\"420\" height=\"315\" src=\""+url+"\"frameborder=\"0\" allowfullscreen></iframe>";
+					console.log(toEmbed);
+					$("#glossary-"+term+"-video").html(toEmbed);						
+				}
+				else{
+				}
+			}
+		});
 		$("#results").css("display","inline");
 	}
 	
