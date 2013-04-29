@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<!--
+  MEMBERS: Tristan Daniels, Xingyi Li, Kaleb Ayalew
+-->
+<!--copied tmeplate from checkers game-->
+<!--
+http://railscasts.com/episodes/8-layouts-and-content-for-->
+<html>
+
+<head>
+<title>Sewing Help - Sew Together</title>
+
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+<!-- Load style sheets -->
+<%= stylesheet_link_tag "jquery_css/smoothness/jquery-ui.css" %>
+<%= stylesheet_link_tag :sewing_help %>
+<%= stylesheet_link_tag :glossary %>
+<% content_for :head do %>
+	<%= javascript_include_tag :sewing_help %>
+<% end %>
+</head>
+
+
+
+
+<body onload="start();">
+<table id="mainTable">
+	<tr><td id="navCell" colspan="2">
+<div id="navBar" class="primarySiteColor">
+	<h3 id="navLeft" class="navText">
+		<a class="noUnderline whiteText" href="homePage.html">Sew Together </a>|
+		<a class="noUnderline whiteText" href="projectSearch.html"> Project Search </a>|
+		<a class="noUnderline whiteText" href="sewingHelp.html"> Sewing Help </a>|
+		<a class="noUnderline whiteText" href="lounge.html"> Lounge</a></h3>
+	<span id="navRight">
+		<h3 id="navRight" class="navText">
+			<a class="noUnderline whiteText" href="">About </a>| Log out</h3></span>
+</div>
+
+	<h1 id="title">Sewing Help</h1>
+	<td><tr>
+	<tr>
+		<td></td>
+        <td id="searchBox">
+			<!-- Note: not within form. Check if this is problematic-->
+			<input id = "query" name="queryValue" type="text" onkeyup="searchIfEnter(event)">
+			<input id = "searchButton" name="searchValue" type="button" onclick="refreshResults([])" value="Search">
+		</td>
+    </tr>
+	<tr>
+		<td id = "sidebar" class="sidebarWidth">
+			<div id="filterCollection">
+			</div>
+		</td>
+		<td id="results">
+			<div id="glossary-blanket-stitch-tabs">
+			
+			
+			<!--
+			
+				$("#glossary-blanket-stitch-tabs").tabs();
+				
+			-->
+				<ul>
+					<li><a href="#glossary-blanket-stitch-definition">Blanket Stitch</a></li>
+					<li><a href="#glossary-blanket-stitch-video">Video</a></li>
+				</ul>
+				<div class="glossaryContent" id="glossary-blanket-stitch-definition">
+					<p>A decorative stitch visible on both sides, traditionally used to reinforce the edge of thick materials such as blankets.</p>
+					<img src="../../glossary/blanket.png"/>
+					<p><a href="http://www.futuregirl.com/craft_blog/2007/9/tutorial-hand-sew-felt.aspx" target="_blank">More on blanket stitch</a></p>
+				</div>
+				<div class="glossaryContent" id="glossary-blanket-stitch-video">
+					<iframe width="420" height="315" src="http://www.youtube.com/embed/eXkSE2TTF4s" frameborder="0" allowfullscreen></iframe>
+				</div>
+			</div>
+		
+		</td>
+	</tr>
+   </table>
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+//<link href='http://fonts.googleapis.com/css?family=Bad+Script|Lustria|Lato:700' rel='stylesheet' type='text/css'>
+
+html {
+	background-color:#FFF4C2;
+}
+
+body {
+	border:1px solid #DDDDDD;
+	border-radius:5px;
+	padding:5px;
+	background-color: #FFFFFF;
+	width:85%;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+a{
+	text-decoration:none;
+}
+
+a:hover{
+	color:#557DED
+}
+
+a.noUnderline{
+text-decoration:none;
+}
+
+a.whiteText{
+	color:white;
+}
+
+.primarySiteColor{
+	background-color:#5655A1;
+}
+
+.sidebarWidth{
+	width:15%;
+}
+
+.bodyText {
+	font-family: "Lustria", serif;
+	margin-left: 20px;
+}
+
+#title {
+	font-family: "Lato", sans-serif;
+	font-size: 24px;
+	color:#5655A1;
+	letter-spacing: .1em;
+	text-align: left;
+	border-bottom:2px solid #DECE81;
+}
+
+
+h2 {
+	font-family: "Lato", sans-serif;
+	color:#5655A1;
+	border-bottom:2px solid #DECE81;
+	font-size:1.3em;
+}
+
+h3{
+	font-family: "Lato", sans-serif;
+	color:#5655A1;
+	font-size:1.2em;
+	margin-bottom:1em;
+}
+
+h4{
+	font-family: "Tahoma", sans-serif;
+	color: #5655A1;
+	text-transform:uppercase;
+	font-size:.9em;
+	font-weight:bolder;
+}
+
+#navBar {
+	height:50px;
+	border-radius:5px;
+}
+
+.navText {
+	font-size: 20px;
+	color: #FFFFFF;
+	border-radius:4px;
+	padding:.3em;
+	margin-top:8px;
+	display:inline-block;
+}
+
+#navLeft {
+	
+}
+
+#navRight {
+	float:right;
+}
+
+.clearFloat {
+	clear:both;
+}
+
+ul li {
+	list-style-type:circle;
+}

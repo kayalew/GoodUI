@@ -1,3 +1,46 @@
-// Place all the styles related to the glossary controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.glossaryTerm{
+	text-decoration:underline;
+	
+}
+
+.glossaryTerm:hover{
+	color:green;
+	cursor:pointer;
+}
+
+.ui-tabs-nav li.ui-tabs-close-button{
+	float:right;
+	margin-top:3px;
+}
+
+.ui-dialog-titlebar{
+	display:none;
+}
+
+.ui-widget{
+	font-size:.8em;
+}
+
+.ui-tabs-panel{
+	overflow-y:auto;
+	overflow-x:auto;
+	min-height:300px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+//THIS IS ACTUALLY A SHODDY WORKAROUND SOMETHING ELSE T____T
+.ui-dialog {
+	background-color:transparent;
+	border:none;
+}
+
+.glossaryContent{
+	padding:2em;
+}
+
+.videoPlaceholder{
+	height:315px;
+	width:420px;
+	margin:auto;
+}

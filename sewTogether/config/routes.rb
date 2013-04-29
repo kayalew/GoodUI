@@ -1,16 +1,6 @@
 SewTogether::Application.routes.draw do
-  get "about/index"
-
-  get "project/index"
-
-  get "lounge/index"
-
-  get "project_search/index"
-
-  get "homepage/index"
-
-  get "glossary/index"
-
+  resources :sewing_help
+  root :to => "sewing_help#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
