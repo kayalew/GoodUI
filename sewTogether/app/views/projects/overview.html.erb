@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<!--http://api.rubyonrails.org/classes/ActionView/Helpers/UrlHelper.html#method-i-link_to
+for interesting link tos-->
+<html>
+
+<head>
+	<title>Strawberry Cream Roll - Sew Together</title>
+	
+	<!--stuff-->
+	<%= stylesheet_link_tag :overview %>
+	<%= stylesheet_link_tag :project %>
+</head>
+
+<body>
+<%= render 'nav_bar' %>
+
+
+<!--Tabs-->
+<div id="pageContent">
+<h1 id="title">Strawberry Cream Roll</h1>
+<div id="tabs">
+
+	<ul>
+		<%= link_to overview_static_pages_path do %>
+			<li class="projectActiveTab">Overview</li>
+		<% end %>
+		<%= link_to step0_static_pages_path do %>
+			<li>Instructions</li>
+		<% end %>
+	</ul>
+	
+</div>
+
+<div id="tabContent">
+
+	<div id="overview">
+	
+		<div id="overviewText">
+			
+			<p>Now you can have your own stuffed pastry! Sadly this one is not at all edible. This is a simple pattern with a lot of room for optional embellishments, if you're feeling adventurous!</p>
+			<p>Finished size: About 3 inches in diameter</p>
+			
+			<div id="materials">
+	
+		<h3>Fabric</h3>
+		<ul>
+			 <li>Pink felt, 6" x 4"</li>
+			 <li>Brown felt, 12" x  2"</li>
+			 <li>White felt, 5" x 2"</li>
+		</ul>
+		
+		<h3>Other supplies</h3>
+		<ul>
+			<li>Pink and brown thread</li>
+			<li>Hand sewing needle</li>
+			<li>Scissors</li>
+			<li>Stuffing</li>
+			<li><a href="../resources/template.pdf" target="_blank">Pattern templates</a></li>
+		</ul>		
+		</div>
+		<a class="noUnderline" href="http://www.yelp.com/search?find_desc=&find_loc=Cambridge%2C+MA&ns=1&ls=7cd3f61660d28549#find_desc=fabric+store&show_filters=1" target="_blank"><div id="whereToBuy" class="myButton">Find fabric stores near you!</div></a>
+	
+			
+		</div>
+
+		<div id="overviewImages">
+			<%= image_tag("projects/strawberry-cream-roll/roll.jpg") %>
+			<p class="whoUploaded">uploaded by Alice</p>
+		</div>
+	
+		<div class="clearFloat"></div>
+	</div>
+	
+</div>
+<div class="clearFloat"></div>
+</div>
+</body>
+</html>

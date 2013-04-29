@@ -8,6 +8,10 @@ SewTogether::Application.routes.draw do
 			get 'sewing_help'
 			get 'lounge'
 			get 'about'
+		end
+	end
+	resources :static_pages do
+		collection do
 			get 'overview'
 			get 'step0'
 			get 'step1'
