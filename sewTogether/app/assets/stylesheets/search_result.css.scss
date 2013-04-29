@@ -1,0 +1,29 @@
+.thumbnail{
+	height:100px;
+	width:100px;
+	padding:1px;
+	border:1px solid gray;
+}
+
+.thumbnail img{
+	max-width:100%;
+}
+
+.searchResultImg{
+	float:right;
+	margin:1em;
+}
+
+.searchResultText{
+	float:left;
+	margin:0 1em 1em 1em;
+}
+
+.searchResultName{
+	border-bottom: 1px solid #DECE81;
+	color:#5655A1;
+}
+
+.searchResult:nth-of-type(odd) {
+	background-color:#E6E6E6;
+}

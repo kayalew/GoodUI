@@ -45,7 +45,7 @@ function refreshResults(selectedFilters){
 	var queryTerm = $("#query").val().toLowerCase();
 	if (((queryTerm == "blanket") || (queryTerm == "blanke") ||
 	(queryTerm == "blank")) || 
-	(selectedFilters[0].id == "blanket")){
+	((selectedFilters.length > 0) && (selectedFilters[0].id == "blanket"))){
 		//$("#blanket").addClass("selected"); DIDNT UNSELECT
 		$("#glossary-blanket-stitch-tabs").tabs();
 		$("#results").css("display","inline");

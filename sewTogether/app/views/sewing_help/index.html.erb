@@ -5,7 +5,10 @@
 -->
 <!--copied tmeplate from checkers game-->
 <!--
-http://railscasts.com/episodes/8-layouts-and-content-for-->
+http://railscasts.com/episodes/8-layouts-and-content-for 
+http://stackoverflow.com/questions/1202654/how-do-i-make-an-image-link-tag-using-haml-in-rails
+http://apidock.com/rails/ActionView/Helpers/AssetTagHelper/image_tag
+-->
 <html>
 
 <head>
@@ -14,9 +17,10 @@ http://railscasts.com/episodes/8-layouts-and-content-for-->
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 
 <!-- Load style sheets -->
-<%= stylesheet_link_tag "jquery_css/smoothness/jquery-ui.css" %>
-<%= stylesheet_link_tag :sewing_help %>
+<%= stylesheet_link_tag :search %>
 <%= stylesheet_link_tag :glossary %>
+
+<!-- Load javascript libraries here -->
 <% content_for :head do %>
 	<%= javascript_include_tag :sewing_help %>
 <% end %>
@@ -29,7 +33,7 @@ http://railscasts.com/episodes/8-layouts-and-content-for-->
 <table id="mainTable">
 	<tr><td id="navCell" colspan="2">
 		<%= render 'nav_bar' %>
-	<h1 id="title">Sewing Help</h1>
+		<h1 id="title">Sewing Help</h1>
 	<td><tr>
 	<tr>
 		<td></td>
@@ -59,11 +63,12 @@ http://railscasts.com/episodes/8-layouts-and-content-for-->
 				</ul>
 				<div class="glossaryContent" id="glossary-blanket-stitch-definition">
 					<p>A decorative stitch visible on both sides, traditionally used to reinforce the edge of thick materials such as blankets.</p>
-					<img src="../../glossary/blanket.png"/>
+					<%= image_tag("sewing_help/blanket.png") %>
 					<p><a href="http://www.futuregirl.com/craft_blog/2007/9/tutorial-hand-sew-felt.aspx" target="_blank">More on blanket stitch</a></p>
 				</div>
 				<div class="glossaryContent" id="glossary-blanket-stitch-video">
-					<iframe width="420" height="315" src="http://www.youtube.com/embed/eXkSE2TTF4s" frameborder="0" allowfullscreen></iframe>
+					<iframe/>
+					<!--<iframe width="420" height="315" src="http://www.youtube.com/embed/eXkSE2TTF4s" frameborder="0" allowfullscreen></iframe>-->
 				</div>
 			</div>
 		

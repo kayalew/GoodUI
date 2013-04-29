@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<!--
+  MEMBERS: Tristan Daniels, Xingyi Li, Kaleb Ayalew
+-->
+<!--copied tmeplate from checkers game-->
+<html>
+
+<head>
+<title>Project Search - Sew Together</title>
+
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+<!-- Load style sheets -->
+<%= stylesheet_link_tag :search %>
+<%= stylesheet_link_tag :search_result %>
+
+<!-- Load javascript libraries here -->
+<% content_for :head do %>
+	<%= javascript_include_tag :search %>
+<% end %>
+
+</head>
+
+<body onload="start();">
+<table id="mainTable">
+	<tr><td id="navCell" colspan="2">
+		<%= render 'nav_bar' %>
+		<h1 id="title">Project Search</h1>
+	<td><tr>
+	<tr>
+		<td></td>
+        <td id="searchBox">
+			<!-- Note: not within form. Check if this is problematic-->
+			<input id = "query" name="queryValue" type="text" onkeyup="searchIfEnter(event)">
+			<input id = "searchButton" name="searchValue" type="button" onclick="refreshResults()" value="Search">
+		</td>
+    </tr>
+	<tr>
+		<td id = "sidebar" class="sidebarWidth">
+			<div id="filterCollection">
+			</div>
+		</td>
+		<td id="results"></td>
+	</tr>
+   </table>
+</body>
+
+</html>

@@ -1,5 +1,6 @@
 SewTogether::Application.routes.draw do
   resources :sewing_help
+  resources :project_search
   root :to => "sewing_help#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
