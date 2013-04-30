@@ -10,17 +10,23 @@
 	padding:1em 0 1em 0;
 }
 
+#helpful h4{
+	margin-bottom:.5em;
+}
+#helpful ul{
+	margin:.5em;
+}
 #helpful li{
 	list-style-type:none;
 }
 
 #stepBack{
 	float:left;
-	padding: .5em;
+	padding: .6em;
 }
 #stepNext{
 	float:right;
-	padding:.5em;
+	padding:.6em;
 }
 
 #stepImages{

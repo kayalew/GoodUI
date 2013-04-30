@@ -1,11 +1,16 @@
 .glossaryTerm{
-	text-decoration:underline;
-	
+	font-family:"Tahoma",sans-serif;
+	font-size:.8em;
+	font-weight:bold;
 }
 
 .glossaryTerm:hover{
-	color:green;
+	color:#557DED;
 	cursor:pointer;
+}
+
+.glossaryTermFocus{
+	color:#557DED;
 }
 
 .ui-tabs-nav li.ui-tabs-close-button{
@@ -21,6 +26,18 @@
 	font-size:.8em;
 }
 
+.ui-widget a{
+	color:#5655A1;
+}
+
+.ui-widget a:visited{
+	color:#5655A1;
+}
+
+.ui-widget a:hover{
+	color:#557DED;
+}
+
 .ui-tabs-panel{
 	overflow-y:auto;
 	overflow-x:auto;
@@ -29,7 +46,7 @@
 	margin-right:auto;
 }
 
-//THIS IS ACTUALLY A SHODDY WORKAROUND SOMETHING ELSE T____T
+/* THIS IS ACTUALLY A SHODDY WORKAROUND SOMETHING ELSE T____T */
 .ui-dialog {
 	background-color:transparent;
 	border:none;
