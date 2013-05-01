@@ -26,7 +26,7 @@ function start(){
 						// TODO: change materials to "fabric by weight"??
 						// Also separate notions
 	setupFilters();
-	var roll = {name:"Strawberry Cream Roll",cost:"$10 and under", fabric:"felt", difficulty:"&#9733;", link:'<%= overview_static_pages_path =>', image:'"projects/strawberry-cream-roll/roll.jpg"',
+	var roll = {name:"Strawberry Cream Roll",cost:"$10 and under", fabric:"felt", difficulty:"&#9733;", link:'../projects?part=overview', image:'"projects/strawberry-cream-roll/roll.jpg"',
 				tags:["Strawberry Cream Roll", "$10 and under", "felt","&#9733;"]};
 	var bear = { name:"Bear", cost:"$10 and under", materials:"cotton", difficulty:"&#9733;&#9733;&#9733;", link:'""', image:'""',
 				tags:["Bear","$10 and under","cotton","&#9733;&#9733;&#9733;","buttons"] };
@@ -67,7 +67,8 @@ function refreshResults(){
 				if (ui.content.length > 0 && match == 1){
 					$("#results").append('<div class="searchResult" id="search-result-roll">' +
 						'<div class="searchResultText">' +
-						'<h3><a href='+ searchItems[i].link + ' class="searchResultName">' + searchItems[i].name + '</a></h3>' +
+						//'<h3><a href='+ searchItems[i].link + ' class="searchResultName">' + searchItems[i].name + '</a></h3>' +
+						'<h3><a href='+ searchItems[i].link +'>' + searchItems[i].name + '</a></h3>' +						
 						'<p>Difficulty: <span class="difficulty">' + searchItems[i].difficulty + '</span></p>' +
 						'</div>' +
 						'<div class="thumbnail searchResultImg"><!--<%= image_tag(' + searchItems[i].image + ') %>--></div>' +
