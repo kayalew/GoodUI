@@ -26,13 +26,13 @@ function start(){
 						// TODO: change materials to "fabric by weight"??
 						// Also separate notions
 	setupFilters();
-	var roll = {name:"Strawberry Cream Roll",cost:"$10 and under", fabric:"felt", difficulty:"&#9733;", link:'../projects?part=overview', image:'"projects/strawberry-cream-roll/roll.jpg"',
+	var roll = {name:"Strawberry Cream Roll",cost:"$10 and under", fabric:"felt", difficulty:"&#9733;&#9734;&#9734;&#9734;&#9734;", link:'../projects?part=overview', image:'"projects/strawberry-cream-roll/roll.jpg"',
 				tags:["Strawberry Cream Roll", "$10 and under", "felt","&#9733;"]};
-	var bear = { name:"Bear", cost:"$10 and under", materials:"cotton", difficulty:"&#9733;&#9733;&#9733;", link:'""', image:'""',
+	var bear = { name:"Bear", cost:"$10 and under", materials:"cotton", difficulty:"&#9733;&#9733;&#9733;&#9734;&#9734;", link:'""', image:'""',
 				tags:["Bear","$10 and under","cotton","&#9733;&#9733;&#9733;","buttons"] };
-	var sundress = {name:"Sundress", cost:"$30 and under", materials:"cotton",difficulty:"&#9733;&#9733;&#9733;&#9733;", link:'""', image:'""',
+	var sundress = {name:"Sundress", cost:"$30 and under", materials:"cotton",difficulty:"&#9733;&#9733;&#9733;&#9733;&#9734;", link:'""', image:'""',
 				tags:["Sundress", "$30 and under","cotton","&#9733;&#9733;&#9733;&#9733;"]};
-	var pillow = {name:"Pillow",cost:"$20 and under", material:"silk",difficulty:"&#9733;&#9733;", link:'""', image:'""',
+	var pillow = {name:"Pillow",cost:"$20 and under", material:"silk",difficulty:"&#9733;&#9733;&#9734;&#9734;&#9734;", link:'""', image:'""',
 				tags:["Pillow", "$20 and under","silk","&#9733;&#9733;"]};
 	searchItems = [bear,pillow,roll,sundress];
 	refreshResults([]);
