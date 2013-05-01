@@ -12,7 +12,7 @@ SewTogether::Application.routes.draw do
 	end
 	resources :projects do
 		collection do
-			get 'overview'
+			get 'index'
 		end
 	end
 	root :to => "static_pages#dashboard"
