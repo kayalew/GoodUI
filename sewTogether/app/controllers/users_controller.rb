@@ -3,12 +3,10 @@ class UsersController < ApplicationController
 		@user = User.new
 	end
 	def create
-		@user = User.new(params[:user])
-		
-		if @user.save
+		if @user = User.new(params[:user])
 			redirect_to root_url
 		else
 			render 'new'
-		en
+		end
 	end
 end

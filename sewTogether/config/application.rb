@@ -60,6 +60,6 @@ module SewTogether
     config.assets.version = '1.0'
 	
 	# Use HTTPS to encrypt users' passwords
-	config.force_ssl = true
+	config.force_ssl = false
   end
 end
