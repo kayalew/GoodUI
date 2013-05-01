@@ -34,11 +34,15 @@ $(document).ready(function() {
 	// if we are on an instructions/steps page, then put in 
 	// the extra side navigation (and change the tab thing)
 	if (($("#stepBack").length==0)&&($("#begin").length==0)){
+		// in overview page, "Overview" is active tab
+		// and the extra navigation stuff shouldn't show up
 		$("#instructionsExtras").hide();
 		$("#tabInstructions").removeClass("projectActiveTab");
 		$("#tabOverview").addClass("projectActiveTab");
 	}
 	else{
+		// in instructions/steps. Add the extra navigational content
+		// and add the tip about using arrow key navigation
 		$("#instructionsAccordion").accordion({
 			collapsible: true,
 			active:false,
