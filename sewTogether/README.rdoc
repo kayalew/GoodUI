@@ -1,3 +1,12 @@
+== References 
+
+https://stellar.mit.edu/S/course/6/fa12/6.170/courseMaterial/topics/topic4/resource/text2/text
+https://stellar.mit.edu/S/course/6/fa12/6.170/courseMaterial/topics/topic6/lectureNotes/6.170Tutorial2ActiveRecordandEvents/6.170Tutorial2ActiveRecordandEvents.pdf
+https://stellar.mit.edu/S/course/6/fa12/6.170/courseMaterial/topics/topic6/lectureNotes/6.170Tutorial3SessionsandAuthentication/6.170Tutorial3SessionsandAuthentication.pdf
+https://stellar.mit.edu/S/course/6/fa12/6.170/courseMaterial/topics/topic6/lectureNotes/6.170Tutorial7JavascriptandjQuery/6.170Tutorial7JavascriptandjQuery.pdf
+http://www.simonecarletti.com/blog/2011/05/configuring-rails-3-https-ssl/
+http://guides.rubyonrails.org/migrations.html#creating-a-standalone-migration
+
 == Welcome to Rails
 
 Rails is a web-application framework that includes everything needed to create
