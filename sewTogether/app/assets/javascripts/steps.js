@@ -30,4 +30,19 @@ $(document).ready(function() {
 		*/
 		
 	});	
+	
+	// if we are on an instructions/steps page, then put in 
+	// the extra side navigation (and change the tab thing)
+	if (($("#stepBack").length==0)&&($("#begin").length==0)){
+		$("#instructionsExtras").hide();
+		$("#tabInstructions").removeClass("projectActiveTab");
+		$("#tabOverview").addClass("projectActiveTab");
+	}
+	else{
+		$("#instructionsAccordion").accordion({
+			collapsible: true,
+			active:false,
+			heightStyle:"content"
+		});
+	}
 });
