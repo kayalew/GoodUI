@@ -27,13 +27,13 @@ function start(){
 						// Also separate notions
 	setupFilters();
 	var roll = {name:"Strawberry Cream Roll",cost:"$10 and under", fabric:"felt", difficulty:"&#9733;&#9734;&#9734;&#9734;&#9734;", link:'../projects?part=overview', image:'"projects/strawberry-cream-roll/roll.jpg"',
-				tags:["Strawberry Cream Roll", "$10 and under", "felt","&#9733;"]};
+				tags:["Strawberry Cream Roll", "$10 and under", "felt","&#9733;"],diff:"diff1"};
 	var bear = { name:"Bear", cost:"$10 and under", materials:"cotton", difficulty:"&#9733;&#9733;&#9733;&#9734;&#9734;", link:'""', image:'""',
-				tags:["Bear","$10 and under","cotton","&#9733;&#9733;&#9733;","buttons"] };
+				tags:["Bear","$10 and under","cotton","&#9733;&#9733;&#9733;","buttons"],diff:"diff3"};
 	var sundress = {name:"Sundress", cost:"$30 and under", materials:"cotton",difficulty:"&#9733;&#9733;&#9733;&#9733;&#9734;", link:'""', image:'""',
-				tags:["Sundress", "$30 and under","cotton","&#9733;&#9733;&#9733;&#9733;"]};
+				tags:["Sundress", "$30 and under","cotton","&#9733;&#9733;&#9733;&#9733;"],diff:"diff4"};
 	var pillow = {name:"Pillow",cost:"$20 and under", material:"silk",difficulty:"&#9733;&#9733;&#9734;&#9734;&#9734;", link:'""', image:'""',
-				tags:["Pillow", "$20 and under","silk","&#9733;&#9733;"]};
+				tags:["Pillow", "$20 and under","silk","&#9733;&#9733;"],diff:"diff2"};
 	searchItems = [bear,pillow,roll,sundress];
 	refreshResults([]);
 }
@@ -52,6 +52,12 @@ function refreshResults(){
 				if (selectedFilters.length != 0) {
 					for (var x = 0; x < selectedFilters.length; x++) {
 						for (var y = 0; y < searchItems[i].tags.length; y++) {
+							if (selectedFilters[x].children[1].classList.contains("diff")) {
+								if (selectedFilters[x].children[1].id == (searchItems[i].diff)) {
+								match = 1;
+								break;
+							}
+							}
 							if (selectedFilters[x].children[1].innerHTML == (searchItems[i].tags[y])) {
 								match = 1;
 								break;
@@ -113,7 +119,12 @@ function setupFilters() {
 	var $tempDivVar = $("<div></div>");
 
 	for (var k = 0; k < filterItems[filterCategories[j]].length; k++){
-		$tempDivVar.append("<div class='filter bodyText'><input type='checkbox' class='checkBox'><span>"+filterItems[filterCategories[j]][k]+"</span></div>");
+		if (filterCategories[j] == "difficulty"){
+			$tempDivVar.append("<div class='filter bodyText'><input type='checkbox' class='checkBox'><span class='diff' id='diff'"+5-k">"+filterItems[filterCategories[j]][k]+"</span></div>");
+		}
+		else {
+			$tempDivVar.append("<div class='filter bodyText'><input type='checkbox' class='checkBox'><span>"+filterItems[filterCategories[j]][k]+"</span></div>");
+		}
 	}
 	$("#ID_"+filterCategories[j]).after($tempDivVar);
   }
