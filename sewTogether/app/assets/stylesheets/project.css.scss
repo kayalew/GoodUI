@@ -102,3 +102,36 @@
 	font-size:.7em;
 	text-align:center;
 }
+
+#comments{
+	padding:.5em;
+}
+
+#comments h5{
+	margin-bottom:.5em;
+	border-bottom:1px solid #DECE81;
+}
+
+.comment{
+	border:1px dashed #AAAAAA;
+	border-radius:5px;
+	padding:.5em;
+	margin: 1em 0em;
+}
+
+.commentText{
+	font-family: sans-serif;
+	font-size:.9em;
+	
+}
+
+.commentInfo{
+	font-family: serif;
+	font-size:.8em;
+}
+
+#newComment{
+	width:30%;
+	margin:auto;
+	padding: .5em 0;
+}
