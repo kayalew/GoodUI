@@ -120,7 +120,8 @@ function setupFilters() {
 
 	for (var k = 0; k < filterItems[filterCategories[j]].length; k++){
 		if (filterCategories[j] == "difficulty"){
-			$tempDivVar.append("<div class='filter bodyText'><input type='checkbox' class='checkBox'><span class='diff' id='diff'"+5-k+">"+filterItems[filterCategories[j]][k]+"</span></div>");
+			var l = 5-k;
+			$tempDivVar.append("<div class='filter bodyText'><input type='checkbox' class='checkBox'><span class='diff' id='diff"+l+"'>"+filterItems[filterCategories[j]][k]+"</span></div>");
 		}
 		else {
 			$tempDivVar.append("<div class='filter bodyText'><input type='checkbox' class='checkBox'><span>"+filterItems[filterCategories[j]][k]+"</span></div>");
