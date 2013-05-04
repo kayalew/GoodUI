@@ -7,11 +7,12 @@
 			<div id="listOfSteps">
 				<h3>Steps</h3>
 				<ol>
-					<li><%= link_to "Cut out templates and fabric", projects_path(:part => "step1") %></li>
-					<li><%= link_to "Sew the side of the roll to the bottom", projects_path(:part => "step2") %></li>
-					<li><%= link_to "Sew the cream spirals onto the cake fronts", projects_path(:part => "step3") %></li>
-					<li><%= link_to "Stitch the cake fronts on, leaving a small opening", projects_path(:part => "step4") %></li>
-					<li><%= link_to "Stuff the roll, then sew opening closed", projects_path(:part => "step5") %></li>
+					<li><%= link_to projects_path(:part => "step5") do %>Cut out templates and fabric <span class="ui-icon ui-icon-circle-arrow-e inlineArrow"></span><% end %></li>
+					<li><%= link_to projects_path(:part => "step5") do %>Sew the side of the roll to the bottom <span class="ui-icon ui-icon-circle-arrow-e inlineArrow"></span><% end %></li>
+					<li><%= link_to projects_path(:part => "step5") do %>Sew the cream spirals onto the cake fronts <span class="ui-icon ui-icon-circle-arrow-e inlineArrow"></span><% end %></li>
+					<li><%= link_to projects_path(:part => "step5") do %>Stitch the cake fronts on, leaving a small opening <span class="ui-icon ui-icon-circle-arrow-e inlineArrow"></span><% end %></li>
+					<li><%= link_to projects_path(:part => "step5") do %>Stuff the roll, then sew opening closed <span class="ui-icon ui-icon-circle-arrow-e inlineArrow"></span><% end %></li>
+					
 				</ol>
 			</div>
 			<%= link_to projects_path(:part => "step1"), :class => "noUnderline" do %>
