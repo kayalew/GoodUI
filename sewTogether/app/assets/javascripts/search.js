@@ -27,20 +27,36 @@ function start(){
 						// TODO: change materials to "fabric by weight"??
 						// Also separate notions
 	setupFilters();
-	var roll = {name:"Strawberry Cream Roll",cost:10, fabric:"felt", difficulty:"&#9733;&#9734;&#9734;&#9734;&#9734;", link:'../projects?part=overview', image:"/projects/strawberry-cream-roll/roll.JPG",
-				tags:["Strawberry Cream Roll", 10, "felt","&#9733;"],diff:"diff1"};
-	var bear = { name:"Bear", cost:10, materials:"cotton", difficulty:"&#9733;&#9733;&#9733;&#9734;&#9734;", link:'""', image:'""',
-				tags:["Bear",10,"cotton","&#9733;&#9733;&#9733;","buttons"],diff:"diff3"};
-	var sundress = {name:"Sundress", cost:30, materials:"cotton",difficulty:"&#9733;&#9733;&#9733;&#9733;&#9734;", link:'""', image:'""',
-				tags:["Sundress", 30,"cotton","&#9733;&#9733;&#9733;&#9733;"],diff:"diff4"};
-	var pillow = {name:"Pillow",cost:20, material:"silk",difficulty:"&#9733;&#9733;&#9734;&#9734;&#9734;", link:'""', image:'""',
-				tags:["Pillow", 20,"silk","&#9733;&#9733;"],diff:"diff2"};
+	var roll = {name:"Strawberry Cream Roll", cost:10, fabric:"felt", difficulty:"&#9733;&#9734;&#9734;&#9734;&#9734;", link:'../projects?part=overview', image:"/projects/strawberry-cream-roll/roll.JPG",
+				tags:["Strawberry Cream Roll", 10, "felt","&#9733;"], diff:"diff1"};
+	var bear = { name:"Bear", cost:10, fabric:"cotton", difficulty:"&#9733;&#9733;&#9733;&#9734;&#9734;", link:'""', image:'""',
+				tags:["Bear",10,"cotton","&#9733;&#9733;&#9733;","buttons"], diff:"diff3"};
+	var sundress = {name:"Sundress", cost:30, fabric:"cotton",difficulty:"&#9733;&#9733;&#9733;&#9733;&#9734;", link:'""', image:'""',
+				tags:["Sundress", 30,"cotton","&#9733;&#9733;&#9733;&#9733;"], diff:"diff4"};
+	var pillow = {name:"Pillow", cost:20, fabric:"silk",difficulty:"&#9733;&#9733;&#9734;&#9734;&#9734;", link:'""', image:'""',
+				tags:["Pillow", 20,"silk","&#9733;&#9733;"], diff:"diff2"};
 	searchItems = [bear,pillow,roll,sundress];
 	refreshResults([]);
 }
 
 function refreshResults(){
 	var selectedFilters = $(".selected");
+	var selectedCostFilters = [];
+	var selectedDiffFilters = [];
+	var selectedFabricFilters = [];
+	
+	for (var z = 0; z < selectedFilters.length; z++) {
+		if (selectedFilters[z].children[1].classList.contains("number")) {
+			selectedCostFilters.push(selectedFilters[z].children[1].id);
+		}
+		else if ((selectedFilters[z].children[1].classList.contains("diff"))) {
+			selectedDiffFilters.push(selectedFilters[z].children[1].id);
+		}
+		else {
+			selectedFabricFilters.push(selectedFilters[z].children[1].innerHTML);
+		}
+	}
+	
 	$("#results").empty();
 	var $selectDiv = $('<div/>');
 	for (var i=0;i<searchItems.length;i++){
@@ -48,36 +64,33 @@ function refreshResults(){
 			minLength: 0,
 			source: searchItems[i].tags,
 			response: function( event, ui ) {
-				var match = 0;
-				//note it does this before updating val $("#query").val() so it's a step behind);
-				if (selectedFilters.length != 0) {
-					for (var x = 0; x < selectedFilters.length; x++) {
-						for (var y = 0; y < searchItems[i].tags.length; y++) {
-							if (selectedFilters[x].children[1].classList.contains("diff")) {
-								if (selectedFilters[x].children[1].id == (searchItems[i].diff)) {
-									match = 1;
-									break;
-								}
-							}
-							if (selectedFilters[x].children[1].classList.contains("number")) {
-								if (parseInt(selectedFilters[x].children[1].id) >= (searchItems[i].cost)) {
-									match = 1;
-									break;
-								}
-							}
-							if (selectedFilters[x].children[1].innerHTML == (searchItems[i].tags[y])) {
-								match = 1;
-								break;
-							}
+				var costMatch = 0;
+				var diffMatch = 1;
+				var fabricMatch = 1;
+				
+				
+				if (selectedCostFilters.length > 0) {
+					for (var x = 0; x < selectedCostFilters.length; x++) {
+						if (searchItems[i].cost <= selectedCostFilters[x]) {
+							costMatch = 1;
 						}
 					}
 				}
 				
 				else {
-					match = 1;
+					costMatch = 1;
 				}
 				
-				if (ui.content.length > 0 && match == 1){
+				if ($.inArray(searchItems[i].diff,selectedDiffFilters) == -1 && selectedDiffFilters.length > 0) {
+					diffMatch = 0;
+				}
+				
+				if ($.inArray(searchItems[i].fabric,selectedFabricFilters) == -1 && selectedFabricFilters.length > 0) {
+					fabricMatch = 0;
+				}
+				
+				
+				if (ui.content.length > 0 && costMatch == 1 && diffMatch == 1 && fabricMatch == 1){
 					$("#results").append('<div class="searchResult" id="search-result-roll">' +
 						'<div class="searchResultText">' +
 						//'<h3><a href='+ searchItems[i].link + ' class="searchResultName">' + searchItems[i].name + '</a></h3>' +
@@ -134,7 +147,7 @@ function setupFilters() {
 			$tempDivVar.append("<div class='filter bodyText'><input type='checkbox' class='checkBox'><span class='number' id='"+filterCosts[k]+"'>"+filterItems[filterCategories[j]][k]+"</span></div>");
 		}
 		else {
-			$tempDivVar.append("<div class='filter bodyText'><input type='checkbox' class='checkBox'><span>"+filterItems[filterCategories[j]][k]+"</span></div>");
+			$tempDivVar.append("<div class='filter bodyText'><input type='checkbox' class='checkBox'><span class='fabric'>"+filterItems[filterCategories[j]][k]+"</span></div>");
 		}
 	}
 	$("#ID_"+filterCategories[j]).after($tempDivVar);
