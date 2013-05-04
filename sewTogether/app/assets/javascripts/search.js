@@ -68,7 +68,7 @@ function refreshResults(){
 				var diffMatch = 1;
 				var fabricMatch = 1;
 				
-				
+
 				if (selectedCostFilters.length > 0) {
 					for (var x = 0; x < selectedCostFilters.length; x++) {
 						if (searchItems[i].cost <= selectedCostFilters[x]) {
@@ -85,7 +85,7 @@ function refreshResults(){
 					diffMatch = 0;
 				}
 				
-				if ($.inArray(searchItems[i].fabric,selectedFabricFilters) == -1 && selectedFabricFilters.length > 0) {
+				if ($.inArray(searchItems[i].fabric,selectedFabricFilters) == -1 && selectedFabricFilters.length > 0 && $.inArray("any",selectedFabricFilters) == -1) {
 					fabricMatch = 0;
 				}
 				
