@@ -18,7 +18,7 @@ http://www.w3schools.com/Js/tryit.asp?filename=try_dom_event_keycode*/
 var searchItems;
 var filterItems;
 function start(){ 
-	filterItems = { cost: ["scraps!","$10 and under","$20 and under ","$30 and under","$50 and under"], 
+	filterItems = { cost: ["$10 and under","$20 and under","$30 and under","$50 and under"], 
 						difficulty: ["&#9733;&#9733;&#9733;&#9733;&#9733;","&#9733;&#9733;&#9733;&#9733;","&#9733;&#9733;&#9733;","&#9733;&#9733;","&#9733;"],
 						fabric: ["any","cotton","felt","fleece","linen","polyester","silk"],
 						 };
@@ -26,14 +26,14 @@ function start(){
 						// TODO: change materials to "fabric by weight"??
 						// Also separate notions
 	setupFilters();
-	var roll = {name:"Strawberry Cream Roll",cost:"$10 and under", fabric:"felt", difficulty:"&#9733;&#9734;&#9734;&#9734;&#9734;", link:'../projects?part=overview', image:'"projects/strawberry-cream-roll/roll.jpg"',
-				tags:["Strawberry Cream Roll", "$10 and under", "felt","&#9733;"],diff:"diff1"};
-	var bear = { name:"Bear", cost:"$10 and under", materials:"cotton", difficulty:"&#9733;&#9733;&#9733;&#9734;&#9734;", link:'""', image:'""',
-				tags:["Bear","$10 and under","cotton","&#9733;&#9733;&#9733;","buttons"],diff:"diff3"};
-	var sundress = {name:"Sundress", cost:"$30 and under", materials:"cotton",difficulty:"&#9733;&#9733;&#9733;&#9733;&#9734;", link:'""', image:'""',
-				tags:["Sundress", "$30 and under","cotton","&#9733;&#9733;&#9733;&#9733;"],diff:"diff4"};
-	var pillow = {name:"Pillow",cost:"$20 and under", material:"silk",difficulty:"&#9733;&#9733;&#9734;&#9734;&#9734;", link:'""', image:'""',
-				tags:["Pillow", "$20 and under","silk","&#9733;&#9733;"],diff:"diff2"};
+	var roll = {name:"Strawberry Cream Roll",cost:"10", fabric:"felt", difficulty:"&#9733;&#9734;&#9734;&#9734;&#9734;", link:'../projects?part=overview', image:"/projects/strawberry-cream-roll/roll.JPG",
+				tags:["Strawberry Cream Roll", "10", "felt","&#9733;"],diff:"diff1"};
+	var bear = { name:"Bear", cost:"10", materials:"cotton", difficulty:"&#9733;&#9733;&#9733;&#9734;&#9734;", link:'""', image:'""',
+				tags:["Bear","10","cotton","&#9733;&#9733;&#9733;","buttons"],diff:"diff3"};
+	var sundress = {name:"Sundress", cost:"30", materials:"cotton",difficulty:"&#9733;&#9733;&#9733;&#9733;&#9734;", link:'""', image:'""',
+				tags:["Sundress", "30","cotton","&#9733;&#9733;&#9733;&#9733;"],diff:"diff4"};
+	var pillow = {name:"Pillow",cost:"20", material:"silk",difficulty:"&#9733;&#9733;&#9734;&#9734;&#9734;", link:'""', image:'""',
+				tags:["Pillow", "20","silk","&#9733;&#9733;"],diff:"diff2"};
 	searchItems = [bear,pillow,roll,sundress];
 	refreshResults([]);
 }
@@ -57,6 +57,11 @@ function refreshResults(){
 								match = 1;
 								break;
 							}
+							if (selectedFilters[x].children[1].classList.contains("number")) {
+								if (selectedFilters[x].children[1].id >= (searchItems[i].cost)) {
+								match = 1;
+								break;
+							}
 							}
 							if (selectedFilters[x].children[1].innerHTML == (searchItems[i].tags[y])) {
 								match = 1;
@@ -77,7 +82,7 @@ function refreshResults(){
 						'<h3><a href='+ searchItems[i].link +'>' + searchItems[i].name + '</a></h3>' +						
 						'<p>Difficulty: <span class="difficulty">' + searchItems[i].difficulty + '</span></p>' +
 						'</div>' +
-						'<div class="thumbnail searchResultImg"><!--<%= image_tag(' + searchItems[i].image + ') %>--></div>' +
+						'<div class="thumbnail searchResultImg"><img src=' + searchItems[i].image + '/></div>' +
 						'<div class="clearFloat"></div>' +
 					'</div>');
 				}
@@ -119,9 +124,12 @@ function setupFilters() {
 	var $tempDivVar = $("<div></div>");
 
 	for (var k = 0; k < filterItems[filterCategories[j]].length; k++){
+		l = 5 - k;
 		if (filterCategories[j] == "difficulty"){
-			var l = 5-k;
 			$tempDivVar.append("<div class='filter bodyText'><input type='checkbox' class='checkBox'><span class='diff' id='diff"+l+"'>"+filterItems[filterCategories[j]][k]+"</span></div>");
+		}
+		else if (filterCategories[j] == "cost"){
+			$tempDivVar.append("<div class='filter bodyText'><input type='checkbox' class='checkBox'><span class='number' id='diff"+"'>"+filterItems[filterCategories[j]][k]+"</span></div>");
 		}
 		else {
 			$tempDivVar.append("<div class='filter bodyText'><input type='checkbox' class='checkBox'><span>"+filterItems[filterCategories[j]][k]+"</span></div>");
