@@ -2,6 +2,24 @@
 
 */
 
+
+//glossary entries here
+var glossaryEntryList = [
+	"blanket stitch",
+	"running stitch",
+	"threading a needle",
+	"needle threader",
+	"tying off"
+];
+
+var glossaryRef = {
+	"blanket stitch":"blanket-stitch",
+	"running stitch":"running-stitch",
+	"threading a needle":"thread-needle",
+	"needle threader":"needle-threader",
+	"tying off":"tie-off"
+};
+
 // deals with dialog boxes that come up when you click on a glossary term
 $(document).ready(function() {
 	
@@ -16,7 +34,6 @@ $(document).ready(function() {
 	glossaryEntryStuff("thread-needle");
 	glossaryEntryStuff("needle-threader");
 	glossaryEntryStuff("tie-off");
-
 	
 });
 

@@ -36,11 +36,16 @@ function start(){
 	helpItems = [threadNeedle,tieOff,blanketStitch,runningStitch,needleThreader];
 	refreshResults([]);
 	
+	// sets up the tabs for the glossary entries
 	glossaryEntryStuffForSewingBasics("blanket-stitch");
 	glossaryEntryStuffForSewingBasics("running-stitch");
 	glossaryEntryStuffForSewingBasics("thread-needle");
 	glossaryEntryStuffForSewingBasics("needle-threader");
 	glossaryEntryStuffForSewingBasics("tie-off");
+	
+	$("#query").autocomplete({
+		source:glossaryEntryList
+	});
 }
 
 function refreshResults(selectedFilters){
@@ -79,7 +84,7 @@ function setupFilters() {
   for (var j = 0; j < filterCategories.length; j++){
 	var $tempDivVar = $("<div></div>");
 	for (var k = 0; k < filterItems[filterCategories[j]].length; k++){
-		if (filterItems[filterCategories[j]][k].toLowerCase() == "blanket"){
+		if (filterItems[filterCategories[j]][k].toLowerCase() == "blanket stitch"){
 			$tempDivVar.append("<div id='blanket' class='filter bodyText'><input type='radio' class='radioBox'><span>"+filterItems[filterCategories[j]][k]+"</span></div>");
 		}
 		else{
@@ -139,4 +144,6 @@ var glossaryEntryStuffForSewingBasics = function(term){
 		}
 	});	
 }
+
+
 
