@@ -37,6 +37,10 @@ function start(){
 				tags:["Pillow", 20,"silk","&#9733;&#9733;"], diff:"diff2"};
 	searchItems = [bear,pillow,roll,sundress];
 	refreshResults([]);
+	$("#query").autocomplete({
+		source: ["Bear","Pillow","Strawberry Cream Roll","Sundress"],
+	});
+	
 }
 
 function refreshResults(){
@@ -190,3 +194,4 @@ function setupFilters() {
   //TODO: tehre should be no gap above
   //cost shouldn't justs search
 }
+
