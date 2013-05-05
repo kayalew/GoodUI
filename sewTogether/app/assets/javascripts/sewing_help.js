@@ -21,23 +21,19 @@ http://www.w3schools.com/jsref/jsref_tolowercase.asp*/
 var searchItems;
 var filterItems;
 function start(){ 
-	filterItems = { techniques: ["Basting","Cut","Darning"],
-					stitches: ["Backstitch","Bar tack","Blanket"],
-					closures: ["Buckle","Button","Buttonhole"],
-					tools: ["Bobbin", "Dress form", "Needle threader"]
+	filterItems = { techniques: ["threading a needle","tying off"],
+					stitches: ["blanket stitch","running stitch"],
+					tools: ["needle threader"]
 					};
 	setupFilters();
 	
-	var basting = { name:"Basting", 
-				tags:["Basting"] };
-	var cut = { name:"Cut", 
-				tags:["Cut"] };
-	var darning = { name:"Darning", 
-				tags:["Darning"] }
-	var blanket = { name:"Blanket", 
-				tags:["Blanket"] };
+	var threadNeedle = { name:"threading a needle"};
+	var tieOff = { name:"tying off"};
+	var blanketStitch = { name:"blanket stitch"};
+	var runningStitch = { name:"running stitch"};
+	var needleThreader = { name:"needle threader"};
 
-	helpItems = [basting,cut,darning,blanket];
+	helpItems = [threadNeedle,tieOff,blanketStitch,runningStitch,needleThreader];
 	refreshResults([]);
 	
 	glossaryEntryStuffForSewingBasics("blanket-stitch");
