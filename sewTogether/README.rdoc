@@ -12,6 +12,14 @@ https://stellar.mit.edu/S/course/6/fa12/6.170/courseMaterial/topics/topic6/lectu
 http://www.simonecarletti.com/blog/2011/05/configuring-rails-3-https-ssl/
 http://guides.rubyonrails.org/migrations.html#creating-a-standalone-migration
 
+
+kal:
+** learned about seeding from here:
+http://stackoverflow.com/questions/5343516/best-way-to-fill-development-db-in-rails
+http://stackoverflow.com/questions/62201/how-and-whether-to-populate-rails-application-with-initial-data
+**
+http://guides.rubyonrails.org/routing.html
+
 == Welcome to Rails
 
 Rails is a web-application framework that includes everything needed to create

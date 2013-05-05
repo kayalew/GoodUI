@@ -1,67 +1,23 @@
-<!DOCTYPE HTML>
-<!--http://api.rubyonrails.org/classes/ActionView/Helpers/UrlHelper.html#method-i-link_to
-for interesting link tos
-http://stackoverflow.com/questions/7806133/how-do-i-check-if-a-variable-is-defined-in-rails-->
-<html>
+<h1>Listing projects</h1>
 
-<head>
-	<title>Strawberry Cream Roll - Sew Together</title>
-	
-	<!--stuff-->
-	<%= stylesheet_link_tag :overview %>
-	<%= stylesheet_link_tag :project %>
-	<%= stylesheet_link_tag :steps %>
-	<%= stylesheet_link_tag :glossary %>
-	
-	<% content_for :head do %>
-		<%= javascript_include_tag :steps %>
-		<%= javascript_include_tag :glossary %>
-	<% end %>
-</head>
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
 
-<body>
-<%= render 'nav_bar' %>
+<% @projects.each do |project| %>
+  <tr>
+    <td><%= project.name %></td>
+    <td><%= link_to 'Show', project %></td>
+    <td><%= link_to 'Edit', edit_project_path(project) %></td>
+    <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
 
+<br />
 
-<!--Tabs-->
-<div id="pageContent">
-<h1 id="title">Strawberry Cream Roll</h1>
-	<div id="tabs">
-		<div id="actualTabs">
-		<ul>
-			<%= link_to projects_path(:part => "overview") do %>
-				<li id="tabOverview">Overview</li>
-			<% end %>
-			<%= link_to projects_path(:part => "instructions") do %>
-				<li id="tabInstructions" class="projectActiveTab">Instructions</li>
-			<% end %>
-			
-
-		</ul>
-		</div>
-		<div id = "instructionsExtras">
-			<div id="instructionsAccordion">
-				<h5>Jump to step</h5>
-				<div>					
-					<p><%= link_to "1. Cut out templates", projects_path(:part => "step1") %></p>
-					<p><%= link_to "2. Sew side to bottom", projects_path(:part => "step2") %></p>
-					<p><%= link_to "3. Sew cream spirals", projects_path(:part => "step3") %></p>
-					<p><%= link_to "4. Sew on cake fronts", projects_path(:part => "step4") %></p>
-					<p><%= link_to "5. Stuff and finish", projects_path(:part => "step5") %></p>
-				</div>			
-			</div>
-			<div id = "stepNavigationHelp">
-				<p>Tip: You can use the left and right arrow keys to navigate between steps.</p>
-			</div>
-		</div>
-		
-	</div>
-
-	<!-- replaces tab content-->
-	<%= render part %>
-
-	<div class="clearFloat"></div>
-	</div>
-	
-</body>
-</html>
+<%= link_to 'New Project', new_project_path %>
