@@ -39,6 +39,12 @@ function start(){
 
 	helpItems = [basting,cut,darning,blanket];
 	refreshResults([]);
+	
+	glossaryEntryStuffForSewingBasics("blanket-stitch");
+	glossaryEntryStuffForSewingBasics("running-stitch");
+	glossaryEntryStuffForSewingBasics("thread-needle");
+	glossaryEntryStuffForSewingBasics("needle-threader");
+	glossaryEntryStuffForSewingBasics("tie-off");
 }
 
 function refreshResults(selectedFilters){
@@ -120,3 +126,21 @@ function setupFilters() {
   //TODO: tehre should be no gap above
   //cost shouldn't justs search
 }
+
+var glossaryEntryStuffForSewingBasics = function(term){			
+	$("#glossary-"+term+"-tabs").tabs({
+		// don't embed the youtube video until/unless you actually need it
+		activate: function(e,ui){
+			if ($("#videoPlaceholder-"+term).length){
+				var url = $("#videoPlaceholder-"+term).html();
+				var toEmbed = "<iframe id=\"iframe-"+term+"\" width=\"420\" height=\"315\" src=\""+url+"\"frameborder=\"0\" allowfullscreen></iframe>";
+				console.log(toEmbed);
+				$("#glossary-"+term+"-video").html(toEmbed);				
+				// how to get it to stop if you clikc on a different term?
+			}
+			else{
+			}
+		}
+	});	
+}
+
