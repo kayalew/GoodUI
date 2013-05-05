@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<!--
+  MEMBERS: Tristan Daniels, Xingyi Li, Kaleb Ayalew
+-->
+<!--copied tmeplate from checkers game-->
+<html>
+
+	<head>
+		<title>Home Page - Sew Together</title>
+
+		<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+		<!-- Load style sheets -->
+
+		<!-- Load javascript libraries here -->
+		<% content_for :head do %>
+
+		<% end %>
+
+	</head>
+
+	<body onload="start();">
+		<%= render 'nav_bar' %>
+		<h1 id="title">Welcome to Sew Together!</h1>
+	</body>
+
+	<div id="logIn">
+		<h3>Already have an account? Log in here!</h3>
+		<%= form_tag sessions_path do %>
+			<div class=“field”>
+				<%= label_tag :user_name %>
+				<%= text_field_tag :user_name, params[:user_name] %>
+			</div>
+			<div class=“field”>
+				<%= label_tag :password %>
+				<%= password_field_tag :password %>
+			</div>
+			<div class=“actions”>
+				<%= submit_tag :"Log in!" %>
+			</div>
+			<% end %>
+	</div>
+
+
+	<div id="signUp">
+		<h3>New member? Sign up here!</h3>
+		<%= form_for @user do |f| %>
+			<% if @user.errors.any? %>
+				<div class=”errors”>
+					<h2>Form is invalid</h2>
+				</div>
+			<% end %>
+			<div class=“field”>
+				Email: <%= f.text_field :email %>
+			</div>
+			<div class=“field”>
+				User name: <%= f.text_field :user_name %>
+			</div>
+			<div class=“field”>
+				Password: <%= f.text_field :password %>
+			</div>
+			<div class=“field”>
+				Password confirmation: <%= f.text_field :password_confirmation %>
+			</div>
+			<div class=“actions”>
+				<%= submit_tag :"Sign up!" %> 
+			</div>
+		<% end %>
+	</div>
+</html>

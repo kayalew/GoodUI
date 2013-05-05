@@ -1,4 +1,7 @@
 class StaticPagesController < ApplicationController
+  def home
+	@user = User.new
+  end
   def dashboard
   end
   def project_search

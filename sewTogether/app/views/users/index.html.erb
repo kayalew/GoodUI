@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<!--
+  MEMBERS: Tristan Daniels, Xingyi Li, Kaleb Ayalew
+-->
+<!--copied tmeplate from checkers game-->
+<html>
+
+	<head>
+		<title>Users are here</title>
+
+		<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+		<!-- Load style sheets -->
+
+		<!-- Load javascript libraries here -->
+		<% content_for :head do %>
+
+		<% end %>
+
+	</head>
+
+	<body onload="start();">
+		<%= render 'nav_bar' %>
+		<h1 id="title">Users are here</h1>
+	</body>
+	
+	<%= link_to <%= current_user.user_name %>, user %>
+</html>

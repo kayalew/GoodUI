@@ -1,9 +1,11 @@
 SewTogether::Application.routes.draw do
 	resources :users
+	resources :sessions
   #static pages controller
   # idea from http://stackoverflow.com/questions/15513134/rails-3-2-7-and-link-to
 	resources :static_pages do
 		collection do
+			get 'home'
 			get 'dashboard'
 			get 'project_search'
 			get 'sewing_help'
