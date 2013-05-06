@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 	def index
+		@users = User.all
 	end
 	def show
 	end
@@ -8,10 +9,13 @@ class UsersController < ApplicationController
 	end
 	def create
 		@user = User.new(params[:user])
+		session[:session_id] = @user.id
 		if @user.save
-			redirect_to root_url
+			session[:session_id] = @user.id
+			@current_user = current_user 
+			redirect_to dashboard_static_pages_path, :notice => 'Welcome, '+@current_user.user_name+'!'
 		else
-			render 'new'
+			redirect_to root_url, :notice => 'Did not create account: error message'
 		end
 	end
 end
