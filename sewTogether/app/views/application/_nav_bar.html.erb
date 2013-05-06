@@ -12,7 +12,7 @@
 	<span id="navRight">
 		<h3 id="navRight" class="navText">
 			<%= link_to "About ", about_static_pages_path, :class => "noUnderline whiteText" %>|
-			Log out
+			<%= link_to "Log out", session_path(:session_id), :method => :delete, :class => "noUnderline whiteText" %>
 		</h3>
 	</span>
 </div>
