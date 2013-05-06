@@ -69,11 +69,10 @@ function refreshResults(selectedFilters){
 		}
 	}
 	
-	console.log(partMatches);
 	$("#sewingBasicsPlaceholder").html("Were you looking for any of these?<ul>");	
 	for (var i=0; i<partMatches.length; i++){
-		console.log(partMatches[i]);
 		$("#sewingBasicsPlaceholder").append("<li><span class=\"glossaryTerm "+glossaryRef[partMatches[i]]+"-click\">"+partMatches[i]+"</span></li>");
+		glossaryEntryStuff(glossaryRef[partMatches[i]]);
 	}
 }
 
