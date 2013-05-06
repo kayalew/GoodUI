@@ -17,20 +17,7 @@
 			<div id="stepNavigation">
 				<%= render 'step_navigation', :prev_step => "step3", :next_step => "step5" %>
 			</div>		
-			
-			<div id="comments">
-				<h5>Comments</h5>
-				<div class="comment">
-					<p class="commentText">How big of an opening do I need to leave??</p>
-					<p class="commentInfo">Posted by Cathy on 5/2/2013</p>
-				</div>		
-				<div class="comment">
-					<p class="commentText">Whatever's big enough for you to comfortably stuff the roll with, but small enough that the stufing stays in! For this pattern, you don't have to worry too much about the size of the opening, since you're sewing everything on the outside anyway.</p>
-					<p class="commentInfo">Posted by Alice on 5/2/2013</p>
-				</div>
-				
-				<div id="newComment" class="myButton">Add new comment</div>
-			</div>	
+			<%= render "comments/comments" %>
 			
 		</div>	
 		

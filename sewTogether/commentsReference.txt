@@ -1,0 +1,65 @@
+	Overview
+			<div id="comments">
+				<h5>Comments</h5>
+				<div class="comment">
+					<p class="commentText">There is an error in the supply listings! You forgot to mention that we also need white thread :)</p>
+					<p class="commentInfo">Posted by Sewphia on 5/2/2013</p>
+				</div>		
+				<div class="comment">
+					<p class="commentText">Wow, thanks for catching that! I'll make a correcting as soon as possible.</p>
+					<p class="commentInfo">Posted by Alice on 5/2/2013</p>
+				</div>
+				
+				<div id="newComment" class="myButton">Add new comment</div>
+			</div>
+	Step1
+			<div id="comments">
+				<h5>Comments</h5>
+				
+				<div class="comment">
+					<p class="commentText">On the swirls-- stuff shows up on white felt very easily, and sometimes THROUGH the felt depending on how you cut it. </p>
+					<p class="commentTExt">Also, instead of tracing two cake fronts and cutting them it would probably be easier to trace one and cut them both together.</p>
+					<p class="commentInfo">Posted by Alice on 5/2/2013</p>
+				</div>		
+				
+				
+				<div id="newComment" class="myButton">Add new comment</div>
+			</div>
+			<div id = comment_list_p><%= render "comments", :comments => @project.comments %></div>
+	Step2
+			<div id="comments">
+				<h5>Comments</h5>
+				
+				<div class="comment">
+					<p class="commentText">Can we use a different stitch if we don't want to have the thread show on the outside?</p>
+					<p class="commentInfo">Posted by Bob on 5/2/2013</p>
+				</div>		
+				
+				<div id="newComment" class="myButton">Add new comment</div>
+			</div>
+	Step3
+			<div id="comments">
+				<h5>Comments</h5>
+			
+				<div id="newComment" class="myButton">Add new comment</div>
+			</div>	
+	Step4
+			<div id="comments">
+				<h5>Comments</h5>
+				<div class="comment">
+					<p class="commentText">How big of an opening do I need to leave??</p>
+					<p class="commentInfo">Posted by Cathy on 5/2/2013</p>
+				</div>		
+				<div class="comment">
+					<p class="commentText">Whatever's big enough for you to comfortably stuff the roll with, but small enough that the stufing stays in! For this pattern, you don't have to worry too much about the size of the opening, since you're sewing everything on the outside anyway.</p>
+					<p class="commentInfo">Posted by Alice on 5/2/2013</p>
+				</div>
+				
+				<div id="newComment" class="myButton">Add new comment</div>
+			</div>	
+	Step5
+			<div id="comments">
+				<h5>Comments</h5>
+				
+				<div id="newComment" class="myButton">Add new comment</div>
+			</div>

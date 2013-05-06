@@ -1,4 +1,7 @@
 SewTogether::Application.routes.draw do
+  resources :comments
+
+
   resources :projects
 
 

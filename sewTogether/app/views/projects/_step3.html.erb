@@ -19,12 +19,7 @@
 		<div id="stepNavigation">
 			<%= render 'step_navigation', :prev_step => "step2", :next_step => "step4" %>
 		</div>	
-
-		<div id="comments">
-			<h5>Comments</h5>
-			
-			<div id="newComment" class="myButton">Add new comment</div>
-		</div>		
+		<%= render "comments/comments" %>	
 	</div>	
 	
 	<div id="stepImages">

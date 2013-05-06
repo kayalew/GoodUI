@@ -1,0 +1,10 @@
+<%#add ", :remote => true" to make remote%>
+<%= form_for comment, :remote => true do |f| %>
+	<%= f.text_area :text %>
+	<%= f.hidden_field :user_id %>
+	<%#unsafe becaues user can overwrite hidden fields%>
+	<%= f.hidden_field :project_id, :value => @project.id  %>
+    <%= f.hidden_field :part, :value => @part  %>
+	<%#feel free to modify newComment to other id name%>
+	<%= f.submit "Add new comment", :id => "newComment", :class => "myButton", :project_id => @project %>
+<% end %>

@@ -1,5 +1,9 @@
 #http://guides.rubyonrails.org/active_record_querying.html
 #http://stackoverflow.com/questions/10220280/undefined-local-variable-or-method-blog
+#http://stackoverflow.com/questions/4769483/rails-3-form-how-to-change-the-text-on-the-submit-button
+#http://www.aptana.com/reference/html/api/CSS.element.Text%20Area.html
+#http://stackoverflow.com/questions/195632/how-to-change-an-input-button-image-using-css
+#http://guides.rubyonrails.org/form_helpers.html
 class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
@@ -15,6 +19,7 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
+	current_user = User.new
 	name = params[:name]
 	if (params[:name].present? and Project.where("name = ?", name).exists?)
 		@project = Project.find_by_name(name)
@@ -23,12 +28,12 @@ class ProjectsController < ApplicationController
 	end
 
 	if (params[:part].present?)
-		part = params[:part]
+		@part = params[:part]
 	else
-		part = "overview"
+		@part = "overview"
 	end
 	
-    render "show", :locals => {:part => part}
+    render "show"
   end
 
   # GET /projects/new
