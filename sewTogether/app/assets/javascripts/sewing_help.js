@@ -46,29 +46,40 @@ function start(){
 	
 	
 	$("#query").autocomplete({
-		source:glossaryEntryList
+		source:glossaryEntryList,
+		select:function(event,ui){
+			// not yet working
+			console.log("hi");
+			refreshResults([]);
+		}
 	});
 }
 
 function refreshResults(selectedFilters){
 	var queryTerm = $("#query").val().toLowerCase();
-	if (((queryTerm == "blanket") || (queryTerm == "blanke") ||
-	(queryTerm == "blank")) || 
-	((selectedFilters.length > 0) && (selectedFilters[0].id == "blanket"))){
-		//$("#blanket").addClass("selected"); DIDNT UNSELECT
-		$("#glossary-blanket-stitch-tabs").tabs();
-		$("#results").css("display","inline");
+	var partMatches = [];	
+	for (var i=0; i<glossaryEntryList.length; i++){
+		if (queryTerm==glossaryEntryList[i]){	
+			// if exact match, open up appropriate dialog box
+			$("#glossary-"+glossaryRef[queryTerm]).dialog("open");
+			return;
+		} else if (glossaryEntryList[i].match(queryTerm)){
+			// get partial matches--
+			partMatches.push(glossaryEntryList[i]);
+		}
 	}
 	
-	else {
-		$("#results").css("display","none");
+	console.log(partMatches);
+	$("#sewingBasicsPlaceholder").html("Were you looking for any of these?<ul>");	
+	for (var i=0; i<partMatches.length; i++){
+		console.log(partMatches[i]);
+		$("#sewingBasicsPlaceholder").append("<li><span class=\"glossaryTerm "+glossaryRef[partMatches[i]]+"-click\">"+partMatches[i]+"</span></li>");
 	}
-	$("#query").val("");
 }
 
 function searchIfEnter(event){
 	if(event.keyCode == 13){//keycode 13 is enter
-		//refreshResults([]);
+		refreshResults([]);
 	}
 }
 
@@ -91,10 +102,12 @@ function setupFilters() {
 	}
 	$("#ID_"+filterCategories[j]).after($tempDivVar);
   }
+  
   //end of create filter html
   
   //can use $(".filter").hide(); if .next().hide() isn't 
   //specific enough for future purposes
+  
   jQuery(".filterCategory").click(function()
   {
 	$(".filter").css( "visibility", "visible" );//counters the default hidden characteristic
@@ -105,7 +118,10 @@ function setupFilters() {
 	
 	return false;
   }).next().hide();
+  
   //hides the next element (which in my code is the div containing the filter options)
+  
+  /*
   jQuery(".filter").click(function()
   {
 	console.log($(this).val());
@@ -124,6 +140,8 @@ function setupFilters() {
   });
   //TODO: tehre should be no gap above
   //cost shouldn't justs search
+  */
+  
 }
 
 
