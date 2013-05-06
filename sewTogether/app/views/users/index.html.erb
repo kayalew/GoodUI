@@ -24,6 +24,18 @@
 		<%= render 'nav_bar' %>
 		<h1 id="title">Users are here</h1>
 	</body>
-	
-	<%= link_to <%= current_user.user_name %>, user %>
+
+	<ul id="userList">
+		<% @users.each do |u| %>
+		<li>
+			<%= link_to u.user_name%>
+		</li>
+		<li>
+			<%= link_to u.email%>
+		</li>
+		<li>
+			<%= link_to u.id%>
+		</li>
+		<% end %>
+	</ul>
 </html>
