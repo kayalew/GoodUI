@@ -1,0 +1,25 @@
+<div id="tabContent" class="step">
+	
+		<div id="stepText">
+			<h3>Step 1 of 5</h3>
+			<p>Print and cut out <a href="/template.pdf" target="_blank">pattern template</a>. Transfer pattern by tracing the template <strong>lightly</strong> with a pencil on the appropriately colored felt and then cutting.<p>
+			<p>You should have the following:</p>
+			<ul>
+				<li>1 cake bottom</li>
+				<li>2 cake fronts</li>
+				<li>1 cake side</li>
+				<li>2 cream spirals</li>
+			</ul>
+			
+			<div id="stepNavigation">
+				<%= render 'step_navigation', :prev_step => "instructions", :next_step => "step2" %>
+			</div>
+			<%= render "comments/comments" %>
+		</div>
+		
+		<div id="stepImages">
+			<%= image_tag "projects/strawberry-cream-roll/step1.JPG" %>
+		</div>
+		
+		<div class="clearFloat"></div>
+</div>

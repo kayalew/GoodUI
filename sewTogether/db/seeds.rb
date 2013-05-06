@@ -6,3 +6,6 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 Project.create( :name => "Strawberry Cream Roll" )
+Project.create( :name => "Bear" )
+Project.create( :name => "Sundress" )
+Project.create( :name => "Pillow" )
