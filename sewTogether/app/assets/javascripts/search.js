@@ -29,11 +29,11 @@ function start(){
 	setupFilters();
 	var roll = {name:"Strawberry Cream Roll", cost:10, fabric:"felt", difficulty:"&#9733;&#9734;&#9734;&#9734;&#9734;", link:'../projects/5?part=overview&name=Strawberry+Cream+Roll', image:"/projects/strawberry-cream-roll/roll.JPG",
 				tags:["Strawberry Cream Roll", 10, "felt","&#9733;"], diff:"diff1"};
-	var bear = { name:"Bear", cost:10, fabric:"cotton", difficulty:"&#9733;&#9733;&#9733;&#9734;&#9734;", link:'""', image:'/projects/bear/bear.jpg',
+	var bear = { name:"Bear", cost:10, fabric:"cotton", difficulty:"&#9733;&#9733;&#9733;&#9734;&#9734;", link:'../projects/5?part=overview&name=Bear', image:'/projects/bear/bear.jpg',
 				tags:["Bear",10,"cotton","&#9733;&#9733;&#9733;","buttons"], diff:"diff3"};		// Bear image taken from here: http://www.canadianliving.com/crafts/sewing/cute_bears_to_sew_from_felt.php
-	var sundress = {name:"Sundress", cost:30, fabric:"cotton",difficulty:"&#9733;&#9733;&#9733;&#9733;&#9734;", link:'""', image:"/projects/sundress/greydress.jpg",
+	var sundress = {name:"Sundress", cost:30, fabric:"cotton",difficulty:"&#9733;&#9733;&#9733;&#9733;&#9734;", link:'../projects/5?part=overview&name=Sundress', image:"/projects/sundress/greydress.jpg",
 				tags:["Sundress", 30,"cotton","&#9733;&#9733;&#9733;&#9733;"], diff:"diff4"};	// dresss image from http://sewing.patternreview.com/patterns/1652
-	var pillow = {name:"Pillow", cost:20, fabric:"silk",difficulty:"&#9733;&#9733;&#9734;&#9734;&#9734;", link:'""', image:"/projects/pillow/pillow.jpg",
+	var pillow = {name:"Pillow", cost:20, fabric:"silk",difficulty:"&#9733;&#9733;&#9734;&#9734;&#9734;", link:'../projects/5?part=overview&name=Pillow', image:"/projects/pillow/pillow.jpg",
 				tags:["Pillow", 20,"silk","&#9733;&#9733;"], diff:"diff2"}; 					// pillow image from http://www.hgtv.com/living-rooms/easy-to-sew-pillows/index.html
 	searchItems = [bear,pillow,roll,sundress];
 	refreshResults([]);
