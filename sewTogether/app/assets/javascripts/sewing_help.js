@@ -34,14 +34,16 @@ function start(){
 	var needleThreader = { name:"needle threader"};
 
 	helpItems = [threadNeedle,tieOff,blanketStitch,runningStitch,needleThreader];
-	refreshResults([]);
+	//refreshResults([]);
 	
 	// sets up the tabs for the glossary entries
-	glossaryEntryStuffForSewingBasics("blanket-stitch");
-	glossaryEntryStuffForSewingBasics("running-stitch");
-	glossaryEntryStuffForSewingBasics("thread-needle");
-	glossaryEntryStuffForSewingBasics("needle-threader");
-	glossaryEntryStuffForSewingBasics("tie-off");
+	
+	glossaryEntryStuff("blanket-stitch");
+	glossaryEntryStuff("running-stitch");
+	glossaryEntryStuff("thread-needle");
+	glossaryEntryStuff("needle-threader");
+	glossaryEntryStuff("tie-off");
+	
 	
 	$("#query").autocomplete({
 		source:glossaryEntryList
@@ -66,7 +68,7 @@ function refreshResults(selectedFilters){
 
 function searchIfEnter(event){
 	if(event.keyCode == 13){//keycode 13 is enter
-		refreshResults([]);
+		//refreshResults([]);
 	}
 }
 
@@ -74,6 +76,7 @@ function searchIfEnter(event){
 //create filter categories and filters, hide filter options and set up toggleability
 //Note, the element right after a category should be
 //everything immediately under it
+
 function setupFilters() {
 	//beginning create filter html
   var filterCategories = Object.keys(filterItems);
@@ -84,12 +87,7 @@ function setupFilters() {
   for (var j = 0; j < filterCategories.length; j++){
 	var $tempDivVar = $("<div></div>");
 	for (var k = 0; k < filterItems[filterCategories[j]].length; k++){
-		if (filterItems[filterCategories[j]][k].toLowerCase() == "blanket stitch"){
-			$tempDivVar.append("<div id='blanket' class='filter bodyText'><input type='radio' class='radioBox'><span>"+filterItems[filterCategories[j]][k]+"</span></div>");
-		}
-		else{
-			$tempDivVar.append("<div class='filter bodyText'><input type='radio' class='radioBox'><span>"+filterItems[filterCategories[j]][k]+"</div>");
-		}
+		$tempDivVar.append('<div class="filter bodyText"><span class="glossaryTerm '+glossaryRef[filterItems[filterCategories[j]][k]]+'-click">'+filterItems[filterCategories[j]][k]+'</span></div>');
 	}
 	$("#ID_"+filterCategories[j]).after($tempDivVar);
   }
@@ -121,29 +119,13 @@ function setupFilters() {
 	
 	var selectedFilters = $(".selected");
 	
-	refreshResults(selectedFilters);
+	//refreshResults(selectedFilters);
 	return false;
   });
   //TODO: tehre should be no gap above
   //cost shouldn't justs search
 }
 
-var glossaryEntryStuffForSewingBasics = function(term){			
-	$("#glossary-"+term+"-tabs").tabs({
-		// don't embed the youtube video until/unless you actually need it
-		activate: function(e,ui){
-			if ($("#videoPlaceholder-"+term).length){
-				var url = $("#videoPlaceholder-"+term).html();
-				var toEmbed = "<iframe id=\"iframe-"+term+"\" width=\"420\" height=\"315\" src=\""+url+"\"frameborder=\"0\" allowfullscreen></iframe>";
-				console.log(toEmbed);
-				$("#glossary-"+term+"-video").html(toEmbed);				
-				// how to get it to stop if you clikc on a different term?
-			}
-			else{
-			}
-		}
-	});	
-}
 
 
 
