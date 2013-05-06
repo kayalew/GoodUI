@@ -20,6 +20,10 @@
 
 <body>
 
+<% if flash[:notice] %>
+		<div id="notice"><%= flash[:notice] %></div>
+<% end %>
+
 <%= render 'nav_bar' %>
 <h1 id="title">Dashboard</h1>
 <div id="dashboard">
