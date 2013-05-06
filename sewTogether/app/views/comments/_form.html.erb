@@ -6,5 +6,5 @@
 	<%= f.hidden_field :project_id, :value => @project.id  %>
     <%= f.hidden_field :part, :value => @part  %>
 	<%#feel free to modify newComment to other id name%>
-	<%= f.submit "Add new comment", :id => "commentSubmit", :class => "myButton", :project_id => @project %>
+	<%= f.submit submit_label, :id => "commentSubmit", :class => "myButton", :project_id => @project %>
 <% end %>
