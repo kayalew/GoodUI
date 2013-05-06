@@ -45,13 +45,7 @@ http://stackoverflow.com/questions/7806133/how-do-i-check-if-a-variable-is-defin
 		<div id = "instructionsExtras">
 			<div id="instructionsAccordion">
 				<h5>Jump to step</h5>
-				<div>					
-					<p><%= link_to "1. Cut out templates", project_path(@project,:part => "step1") %></p>
-					<p><%= link_to "2. Sew side to bottom", project_path(@project,:part => "step2") %></p>
-					<p><%= link_to "3. Sew cream spirals", project_path(@project,:part => "step3") %></p>
-					<p><%= link_to "4. Sew on cake fronts", project_path(@project,:part => "step4") %></p>
-					<p><%= link_to "5. Stuff and finish", project_path(@project,:part => "step5") %></p>
-				</div>			
+				<%= render "projects/"+@project.name+"/sidestepnav" %>	
 			</div>
 			<div id = "stepNavigationHelp">
 				<p>Tip: You can use the left and right arrow keys to navigate between steps.</p>
