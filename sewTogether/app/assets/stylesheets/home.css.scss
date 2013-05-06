@@ -1,0 +1,67 @@
+#rightSide{
+	float:right;
+	width:50%;
+}
+
+#leftSide{
+	float:left;
+	width:50%;
+}
+
+.homeBox{
+	width:60%;
+	margin:auto;
+	padding:1em;
+	border:1px solid #AAAAAA;
+	border-radius:5px;
+}
+
+.homeLabel{
+	width:85%;
+	margin:auto;
+	padding:1em 1em .5em 1em;
+	font-size:1.3em;
+}
+
+.field{
+	margin: .5em 0;
+}
+
+input[type="text"]{
+	width:96%;
+	border-radius: 5px;
+	font-size: .9em;
+	border: 1px solid #AAAAAA;
+	padding: 5px;
+	outline: none;
+}
+
+input[type="password"]{
+	width:96%;
+	border-radius: 5px;
+	font-size: .9em;
+	border: 1px solid #AAAAAA;
+	padding: 5px;
+	outline: none;
+}
+
+label{
+	float:left;
+	position:relative;
+	font-family:"Helvetica",sans-serif;
+	color:gray;
+}
+
+input[type="submit"]{
+	width:30%;
+	float:right;
+	margin:0;
+	background:transparent;
+	background-color:#7F7EBF;
+	color:white;
+	border-radius:5px;
+	line-height:1.8em;
+	font-size:1em;
+	font-family:"Helvetica",sans-serif;
+	font-weight:bold;
+}
