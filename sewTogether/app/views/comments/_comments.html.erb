@@ -1,5 +1,5 @@
 <div id="comments">
-	<h5>Comments</h5>
+	<h5>Notes</h5>
 <%unless @project.comments.nil?%>
   <%@project.comments.each do |comment|%>
 	<% if comment.part == @part %>
@@ -16,6 +16,6 @@
   <%end%>
 <%end%>
 <%#if current_user != nil%>
-	<div><%= render 'comments/form', :comment => Comment.new, :project_id => @project.id, :part => @part, :submit_label => "Add new comment" %></div>
+	<div><%= render 'comments/form', :comment => Comment.new, :project_id => @project.id, :part => @part, :submit_label => "Add new note" %></div>
 <%#end%><br><br>
 </div>
