@@ -18,10 +18,11 @@ http://stackoverflow.com/questions/7806133/how-do-i-check-if-a-variable-is-defin
 	<% content_for :head do %>
 		<%= javascript_include_tag :steps %>
 		<%= javascript_include_tag :glossary %>
+		<%= javascript_include_tag :comments %>
 	<% end %>
 </head>
 
-<body>
+<body onload="setupCommentBox();">
 <%= render 'nav_bar' %>
 
 
