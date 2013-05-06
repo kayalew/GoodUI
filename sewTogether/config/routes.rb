@@ -1,12 +1,9 @@
 SewTogether::Application.routes.draw do
-  resources :comments
-
-
-  resources :projects
-
-
+	resources :comments
+	resources :projects
 	resources :users
 	resources :sessions
+	
   #static pages controller
   # idea from http://stackoverflow.com/questions/15513134/rails-3-2-7-and-link-to
 	resources :static_pages do
@@ -24,7 +21,7 @@ SewTogether::Application.routes.draw do
 			get 'index'
 		end
 	end
-	root :to => "static_pages#dashboard"
+	root :to => "static_pages#home"
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
