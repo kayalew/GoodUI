@@ -1,3 +1,5 @@
+
+
 #rightSide{
 	float:right;
 	width:50%;
@@ -27,7 +29,7 @@
 	margin: .5em 0;
 }
 
-input[type="text"]{
+.field input[type="text"]{
 	width:96%;
 	border-radius: 5px;
 	font-size: .9em;
@@ -36,7 +38,7 @@ input[type="text"]{
 	outline: none;
 }
 
-input[type="password"]{
+.field input[type="password"]{
 	width:96%;
 	border-radius: 5px;
 	font-size: .9em;
@@ -45,14 +47,16 @@ input[type="password"]{
 	outline: none;
 }
 
-label{
+
+.field label{
 	float:left;
 	position:relative;
 	font-family:"Helvetica",sans-serif;
 	color:gray;
 }
 
-input[type="submit"]{
+
+.field input[type="submit"]{
 	width:30%;
 	float:right;
 	margin:0;
