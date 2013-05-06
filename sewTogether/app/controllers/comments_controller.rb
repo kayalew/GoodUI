@@ -83,11 +83,14 @@ class CommentsController < ApplicationController
   # DELETE /comments/1.json
   def destroy
     @comment = Comment.find(params[:id])
-    @comment.destroy
-
+	#unsafe code because it trusts the user 
+	#not to modify @comment.project and @comment.part
+	@project = @comment.project
+	@part = @comment.part
+	
+	@comment.destroy
     respond_to do |format|
-      format.html { redirect_to comments_url }
-      format.json { head :no_content }
+      format.js { render "refresh", :layout => false }
     end
   end
 end
