@@ -7,7 +7,9 @@ function setupCommentBox() {
 function setupCommentBoxToggle() {
   jQuery("#commentSubmit").click(function()
   {
-	$("#commentBox").slideDown(400);
+	$("#commentBox").slideDown(400,function(){
+		$("#commentSubmit").val("Post new note");
+	});
 	return false;
   });
 }
