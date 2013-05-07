@@ -5,7 +5,7 @@
 	<% if comment.part == @part %>
 	<div class = "comment">
 		<p class="commentText"> <%= comment.text %> </p>
-		<p class="commentInfo"> Posted by <%= comment.user %> on <%= comment.updated_at %> </p>
+		<p class="commentInfo"> Posted by <%= comment.user.user_name %> on <%= comment.updated_at %> </p>
 		<% if comment.user == current_user %>
 			<div class = "commentTextLinks">
 				<%= link_to 'Edit', edit_comment_path(comment), :class => "commentText" %>
