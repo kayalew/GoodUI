@@ -5,10 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-scr = Project.create( :name => "Strawberry Cream Roll" )
-Project.create( :name => "Bear" )
-Project.create( :name => "Sundress" )
-Project.create( :name => "Pillow" )
+scr = Project.create( :name => "Strawberry Cream Roll", :num_steps => 5 )
+Project.create( :name => "Bear", :num_steps => 2 )
+Project.create( :name => "Sundress", :num_steps => 2 )
+Project.create( :name => "Pillow", :num_steps => 2 )
 sew = User.create(:email => "sewphia@sewphia.net", :password => "sewphia", 
 			:password_confirmation => "sewphia", :user_name => "Sewphia")
 ali = User.create(:email => "alice@alice.net", :password => "alice", 
