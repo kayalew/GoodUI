@@ -1,18 +1,16 @@
 <!--http://apidock.com/rails/ActionView/Helpers/UrlHelper/link_to-->
 <div id="navBar" class="primarySiteColor">
-	<h3 id="navLeft" class="navText">
-		Sew Together |
-		<%= link_to "Dashboard ", dashboard_static_pages_path, :class => "noUnderline whiteText" %>|
-		<%= link_to " Project Search ", project_search_static_pages_path, :class => "noUnderline whiteText" %>|
-		<%= link_to " Sewing Basics ", sewing_help_static_pages_path, :class => "noUnderline whiteText" %>
-		<!--
-		<%= link_to " Lounge", lounge_static_pages_path, :class => "noUnderline whiteText" %>
-		-->
-	</h3>
-	<span id="navRight">
-		<h3 id="navRight" class="navText">
+	<div id="navBarLeft">
+		<img id="logo" src="/logo.png"/>
+	</div>
+	<div id="navBarRight">
+		<h3 class="navText">
+			<%= link_to "Dashboard ", dashboard_static_pages_path, :class => "noUnderline whiteText" %>|
+			<%= link_to " Project Search ", project_search_static_pages_path, :class => "noUnderline whiteText" %>|
+			<%= link_to " Sewing Basics ", sewing_help_static_pages_path, :class => "noUnderline whiteText" %>|
 			<%= link_to "About ", about_static_pages_path, :class => "noUnderline whiteText" %>|
 			<%= link_to "Log out", session_path(:session_id), :method => :delete, :class => "noUnderline whiteText" %>
 		</h3>
-	</span>
+	</div>
+	<div class="clearFloat"></div>
 </div>
