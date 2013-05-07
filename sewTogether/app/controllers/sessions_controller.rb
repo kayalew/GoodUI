@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
 			@current_user = current_user 
 			redirect_to dashboard_static_pages_path, :notice => 'Welcome back, '+@current_user.user_name+'!'
 		else
-			redirect_to root_url, :notice => 'Could not log in: error message'
+			redirect_to root_url, :notice => 'Sorry, we could not log you in with this user name and password'
 		end
 	end
 	def destroy

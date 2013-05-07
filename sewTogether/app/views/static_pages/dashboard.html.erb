@@ -20,12 +20,13 @@
 
 <body>
 
-<% if flash[:notice] %>
-		<div id="notice"><%= flash[:notice] %></div>
-<% end %>
-
 <%= render 'nav_bar' %>
-<h1 id="title">Dashboard</h1>
+<h1 id="title">Dashboard
+<% if flash[:notice] %>
+		<div id="notice" class="greeting"><%= flash[:notice] %></div>
+<% end %>
+</h1>
+
 <div id="dashboard">
 <div class="menuElementRow">
 <div class = "menuElement MELeft">
