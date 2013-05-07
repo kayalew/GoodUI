@@ -19,6 +19,7 @@ http://stackoverflow.com/questions/5343516/best-way-to-fill-development-db-in-ra
 http://stackoverflow.com/questions/62201/how-and-whether-to-populate-rails-application-with-initial-data
 **
 http://guides.rubyonrails.org/routing.html
+http://guides.rubyonrails.org/association_basics.html#the-has_many-through-association
 
 == Welcome to Rails
 
