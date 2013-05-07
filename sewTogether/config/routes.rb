@@ -17,7 +17,7 @@ SewTogether::Application.routes.draw do
 		end
 	end
 	resources :projects do
-		collection do
+		member do
 			get 'select'
 		end
 	end
