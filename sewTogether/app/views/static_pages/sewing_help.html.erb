@@ -33,16 +33,14 @@ http://apidock.com/rails/ActionView/Helpers/AssetTagHelper/image_tag
 <table id="mainTable">
 	<tr><td id="navCell" colspan="2">
 		<%= render 'nav_bar' %>
-		<h1 id="title">Sewing Basics</h1>
-	<td><tr>
-	<tr>
-		<td></td>
-        <td id="searchBox">
+		<h1 id="title" class="searchTitle">Sewing Basics
+		 <span id="searchBox">
 			<!-- Note: not within form. Check if this is problematic-->
 			<input id = "query" name="queryValue" type="text" onkeyup="searchIfEnter(event)">
 			<input id = "searchButton" name="searchValue" type="button" onclick="refreshResults([])" value="Search">
-		</td>
-    </tr>
+		</span>
+		</h1>
+	<td>
 	<tr>
 		<td id = "sidebar" class="sidebarWidth">
 			<div id="filterCollection">
