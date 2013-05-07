@@ -18,7 +18,6 @@ SewTogether::Application.routes.draw do
 	end
 	resources :projects do
 		collection do
-			get 'index'
 			get 'select'
 		end
 	end
