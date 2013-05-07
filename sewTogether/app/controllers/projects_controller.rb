@@ -36,6 +36,12 @@ class ProjectsController < ApplicationController
     render "show"
   end
 
+  def select
+    respond_to do |format|
+      format.js
+    end
+  end
+  
   # GET /projects/new
   # GET /projects/new.json
   def new

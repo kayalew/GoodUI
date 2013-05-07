@@ -19,6 +19,7 @@ SewTogether::Application.routes.draw do
 	resources :projects do
 		collection do
 			get 'index'
+			get 'select'
 		end
 	end
 	root :to => "static_pages#home"
