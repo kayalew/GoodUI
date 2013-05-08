@@ -3,6 +3,9 @@ class StaticPagesController < ApplicationController
 	@user = User.new
   end
   def dashboard
+	if flash[:notice] == nil
+		flash[:notice] = current_user.user_name
+	end
   end
   def project_search
   end
