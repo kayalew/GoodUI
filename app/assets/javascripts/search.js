@@ -97,8 +97,10 @@ function refreshResults(){
 					$("#results").append('<div class="searchResult" id="search-result-roll">' +
 						'<div class="searchResultText">' +
 						//'<h3><a href='+ searchItems[i].link + ' class="searchResultName">' + searchItems[i].name + '</a></h3>' +
-						'<h3><a href='+ searchItems[i].link +'>' + searchItems[i].name + '</a></h3>' +						
+						'<h3><a href='+ searchItems[i].link +'>' + searchItems[i].name + '</a></h3>' +
+						'<p>Estimated Cost: <span>$' + searchItems[i].cost + '</span></p>' +
 						'<p>Difficulty: <span class="difficulty">' + searchItems[i].difficulty + '</span></p>' +
+						'<p>Required Materials: <span>' + searchItems[i].fabric + '</span></p>' +
 						'</div>' +
 						'<div class="thumbnail searchResultImg"><img src=' + searchItems[i].image + '/></div>' +
 						'<div class="clearFloat"></div>' +
