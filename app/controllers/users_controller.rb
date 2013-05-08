@@ -15,7 +15,7 @@ class UsersController < ApplicationController
 			@current_user = current_user 
 			redirect_to dashboard_static_pages_path, :notice => 'Welcome, '+@current_user.user_name+'!'
 		else
-			redirect_to root_url, :notice => 'Did not create account'
+			redirect_to root_url, :notice => 'Did not create account. Make sure all entries are correct.'
 		end
 	end
 	def destroy
