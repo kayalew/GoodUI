@@ -18,4 +18,8 @@ class UsersController < ApplicationController
 			redirect_to root_url, :notice => 'Did not create account: error message'
 		end
 	end
+	def destroy
+		@user = nil
+		redirect_to root_url, :notice => 'Account deleted: WE HOPE YOU COME BACK :-('		
+	end
 end

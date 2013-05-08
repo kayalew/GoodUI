@@ -19,9 +19,8 @@ var searchItems;
 var filterItems;
 function start(){
 	filterCosts = [10,20,30,50]
-	filterItems = { cost: ["$10 and under","$20 and under","$30 and under","$50 and under"], 
-						difficulty: ["&#9733;&#9733;&#9733;&#9733;&#9733;","&#9733;&#9733;&#9733;&#9733;","&#9733;&#9733;&#9733;","&#9733;&#9733;","&#9733;"],
-						fabric: ["any","cotton","felt","fleece","linen","polyester","silk"],
+	filterItems = { cost: ["$10 and under","$20 and under","$30 and under","$50 and under"], difficulty: ["&#9733;","&#9733;&#9733;","&#9733;&#9733;&#9733;","&#9733;&#9733;&#9733;&#9733;","&#9733;&#9733;&#9733;&#9733;&#9733;"],
+						fabric: ["any","cotton","felt","fleece","linen","polyester","silk"]
 						 };
 						
 						// TODO: change materials to "fabric by weight"??
@@ -143,7 +142,7 @@ function setupFilters() {
 	var $tempDivVar = $("<div></div>");
 
 	for (var k = 0; k < filterItems[filterCategories[j]].length; k++){
-		l = 5 - k;
+		l = 1+k;
 		if (filterCategories[j] == "difficulty"){
 			$tempDivVar.append("<div class='filter bodyText'><input type='checkbox' class='checkBox'><span class='diff' id='diff"+l+"'>"+filterItems[filterCategories[j]][k]+"</span></div>");
 		}
