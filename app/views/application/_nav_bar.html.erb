@@ -1,7 +1,12 @@
 <!--http://apidock.com/rails/ActionView/Helpers/UrlHelper/link_to-->
 <div id="navBar" class="primarySiteColor">
 	<div id="navBarLeft">
-		<img id="logo" src="/logo.png"/>
+		<!--img id="logo" src="/logo.png"/-->
+		<% if current_user == nil %>
+			<%= link_to image_tag("/logo.png", :id=>"logo"),home_static_pages_path %>
+		<% else %>
+			<%= link_to image_tag("/logo.png", :id=>"logo"),dashboard_static_pages_path %>
+		<% end %>
 	</div>
 	<div id="navBarRight">
 		<h3 class="navText">
