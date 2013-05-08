@@ -34,7 +34,8 @@
 	margin-top: 3px;
 	margin-bottom: 3px;
 	margin-right: 10px;
-	font-size:1.0em;
+	font-size:.8em;
+	line-height:1.5em;
 	padding: .1em .1em .1em .1em;
 	text-align:center;
 }
@@ -84,6 +85,7 @@
 	color:#111111;
 	position:relative;
 	right:-.5em;
+	margin-top:2em;
 }
 
 #ui-accordion-instructionsAccordion-panel-0{
@@ -166,4 +168,8 @@
 textarea{
 	height: 4em;
 	width: 99.2%;
+}
+
+#selectionsSidebar{
+	font-family:sans-serif;
 }

@@ -1,16 +1,16 @@
 <div id="selectionSidebar">
 	<% if current_user != nil %>
-		<%=curr_step(current_user, @project)%> of <%=@project.num_steps%> steps completed
+		<!--%=curr_step(current_user, @project)%> of <%=@project.num_steps%> steps completed-->
 		<% if !current_user.projects.include?(@project) %>
 			<%= link_to(select_project_path @project, :part => "instructions", :remote => true) do %>
-				<li class="minorOptions">Start tracking this project</li>
+				<li class="minorOptions">Start this project</li>
 			<% end %>
 		<% elsif curr_step(current_user,@project) < @project.num_steps %>
 			<%= link_to(select_project_path @project, :part => @part, :remote => true) do %>
-				<li class="minorOptions">Save project progress</li>
+				<li class="minorOptions">Save progress</li>
 			<% end %>
 			<%= link_to(select_project_path @project, :part => "x"+@part, :remote => true) do %>
-				<li class="minorOptions">Mark project as completed</li>
+				<li class="minorOptions">Mark as completed</li>
 			<% end %>
 		<% elsif curr_step(current_user,@project) == @project.num_steps %>
 			<%= link_to(select_project_path @project, :part => "instructions", :remote => true) do %>
