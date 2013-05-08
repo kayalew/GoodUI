@@ -1,5 +1,7 @@
 $(function() {
-    $( "#strawberry-cream-roll-progress" ).progressbar({
-      value: 40
-    });
+    jQuery( ".progressbar" ).each(function() {
+		$(this).progressbar({
+			value: $(this).data('percent')*100
+		});
   });
+});

@@ -31,16 +31,33 @@
 <div class="menuElementRow">
 <div class = "menuElement MELeft">
 <div id="currentProjects" class="menuTitle category"><a class="noUnderline whiteText" href="">Current Projects</a></div>
-<ul>
-<li><%= link_to "Strawberry Cream Roll", projects_path(:part => "step2") %><div class="progressbar" id="strawberry-cream-roll-progress"></div></li>
-</ul>
+<%current_user.projects.each do |p|%>
+	<% s = curr_step(current_user,p) %>
+	<% iden = p.name.split.join + "progress" %>
+	<%if s < p.num_steps %>
+		<ul>
+			<li>
+				<%= link_to project_path(p, :part => nav_to_step(s, p.num_steps)) do %> 
+					<%=p.name%>
+					<%= content_tag :div, class: :progressbar, data: {percent: s.to_f/p.num_steps.to_f} do %>
+					<%end%>
+				<%end%>
+			</li>
+		</ul>
+	<%end%>
+<%end%>
 </div>
 <div class = "menuElement MERight">
 <div id="pastProjects" class="menuTitle"><a class="noUnderline whiteText" href="">Past Projects</a></div>
 <ul>
-<li> Bear
-<li> Sundress
-<li> Easy Tote Bag
+<%current_user.projects.each do |p|%>
+	<% s = curr_step(current_user,p) %>
+	<%if s == p.num_steps %>
+		<ul>
+			<li><%= link_to p.name, project_path(p, :part => "overview") %>
+		</ul>
+	<%end%>
+<%end%>
 </ul>
 </div>
 <div class="clearFloat"></div>
@@ -55,11 +72,11 @@
 </ul>
 </div>
 <div class = "menuElement MERight">
-<div id="interestingProjects" class="menuTitle"><a class="noUnderline whiteText" href="">Interesting Projects</a></div>
+<!--<div id="interestingProjects" class="menuTitle"><a class="noUnderline whiteText" href="">Interesting Projects</a></div>
 <ul>
 <li> Stuffed Penguin
 <li> Kitty Ear Hat
-</ul>
+</ul>-->
 </div>
 <div class="clearFloat"></div>
 </div>
