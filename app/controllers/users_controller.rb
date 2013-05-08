@@ -22,4 +22,7 @@ class UsersController < ApplicationController
 		@user = nil
 		redirect_to root_url, :notice => 'Account deleted: WE HOPE YOU COME BACK :-('		
 	end
+	
+	before_filter :authenticate_user
+	skip_before_filter :authenticate_user, :only => [:new, :create, :destroy]
 end

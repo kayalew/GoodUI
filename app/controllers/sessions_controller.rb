@@ -16,4 +16,7 @@ class SessionsController < ApplicationController
 		@current_user = session[:session_id] = nil
 		redirect_to root_url, :notice => 'Logged out!'
 	end
+	
+	before_filter :authenticate_user
+	skip_before_filter :authenticate_user, :only => [:create, :destroy]
 end
