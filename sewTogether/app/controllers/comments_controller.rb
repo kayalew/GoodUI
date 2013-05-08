@@ -48,9 +48,10 @@ class CommentsController < ApplicationController
   # POST /comments
   # POST /comments.json
   def create
-	@comment = Comment.new(params[:comment])
-	@comment.user = current_user
-	#unsafe code because it trusts the user 
+	#TODO: the below line (through testing b/c timeframe) will ignore inputted
+	#user and only use the cucrrent user.
+	@comment = current_user.comments.new(params[:comment])
+	#TODO: unsafe code because it trusts the user 
 	#not to modify @comment.project and @comment.part
 	@project = @comment.project
 	@part = @comment.part
@@ -83,7 +84,7 @@ class CommentsController < ApplicationController
   # DELETE /comments/1.json
   def destroy
     @comment = Comment.find(params[:id])
-	#unsafe code because it trusts the user 
+	#TODO: unsafe code because it trusts the user 
 	#not to modify @comment.project and @comment.part
 	@project = @comment.project
 	@part = @comment.part
