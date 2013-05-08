@@ -17,12 +17,26 @@
 	font-family: "Lato", sans-serif;
 	background-color:#7F7EBF;
 	color:white;
-	font-size:1.3em;
-	text-align:right;
-	padding: .5em .5em .5em .5em;
-	margin: 3px 0 3px 0;
 	border-top-left-radius:5px;
 	border-bottom-left-radius:5px;
+}
+
+#tabs #actualTabs .majorOptions{
+	margin: 3px 0 3px 0;
+	font-size:1.3em;
+	padding: .5em .5em .5em .5em;
+	text-align:right;
+}
+
+#tabs #actualTabs .minorOptions{
+	border-top-right-radius:5px;
+	border-bottom-right-radius:5px;
+	margin-top: 3px;
+	margin-bottom: 3px;
+	margin-right: 10px;
+	font-size:1.0em;
+	padding: .1em .1em .1em .1em;
+	text-align:center;
 }
 
 #tabs #actualTabs li:hover{

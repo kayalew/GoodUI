@@ -32,15 +32,31 @@ http://stackoverflow.com/questions/9501452/rails-button-to-how-to-specify-the-co
 		<div id="actualTabs">
 		<ul>
 			<%= link_to project_path(@project,:part => "overview") do %>
-				<li id="tabOverview">Overview</li>
+				<li id="tabOverview" class ="majorOptions">Overview</li>
 			<% end %>
 			<%= link_to project_path(:name => @project.name,:part => "instructions") do %>
-				<li id="tabInstructions" class="projectActiveTab">Instructions</li>
+				<li id="tabInstructions" class="projectActiveTab majorOptions">Instructions</li>
+			<% end %>
+			
+			<br><br><br><br><br><br>
+			
+			<%= link_to(select_project_path(@project), :status => "step0", :method => :post) do %>
+					<li class="minorOptions">Start project</li>
+			<% end %>
+			<%= link_to(select_project_path(@project), :status => @part, :method => :post) do %>
+				<li class="minorOptions">Save project progress</li>
+			<% end %>
+			<%= link_to(select_project_path(@project), :status => "completed", :method => :post) do %>
+				<li class="minorOptions">Mark project as completed</li>
+			<% end %>
+			<%= link_to(select_project_path(@project), :status => "step0", :method => :post) do %>
+				<li class="minorOptions">Start this project again</li>
 			<% end %>
 			
 
 		</ul>
 		</div>
+
 		<div id = "instructionsExtras">
 			<div id="instructionsAccordion">
 				<h5>Jump to step</h5>
