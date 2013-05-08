@@ -5,7 +5,7 @@ module StaticPagesHelper
 		if (projsel != nil) and (projsel.current_step != nil)
 			result = projsel.current_step
 		else
-			result = -1
+			result = 0
 		end
 		result
 	end
