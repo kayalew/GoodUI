@@ -1,6 +1,6 @@
 class StaticPagesController < ApplicationController
   def home
-    if current_user == 'nil'
+    if current_user == nil
 		@user = User.new
 	else 
 	    redirect_to dashboard_static_pages_path
