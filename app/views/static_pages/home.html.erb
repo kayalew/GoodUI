@@ -23,11 +23,11 @@
 	<body onload="start();">
 		<%= render 'nav_bar' %>
 		<h1 id="title">Welcome to Sew Together!
-
-		</h1>
 		<% if flash[:notice] %>
-			<div id="notice"><%= flash[:notice] %></div>
+			<div id="notice" class="error"><%= flash[:notice] %></div>
 		<% end %>
+		</h1>
+		
 	
 	<div id="homeBody">
 	<div id="rightSide">
