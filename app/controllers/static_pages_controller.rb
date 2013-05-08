@@ -1,6 +1,10 @@
 class StaticPagesController < ApplicationController
   def home
-	@user = User.new
+    if current_user == 'nil'
+		@user = User.new
+	else 
+	    redirect_to dashboard_static_pages_path
+    end		
   end
   def dashboard
 	if flash[:notice] == nil
