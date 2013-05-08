@@ -1,4 +1,9 @@
 == References 
+
+code for list item inside button (a basic ish form) taken from here (should be in rails 4.0, but wasn't in my version)
+https://github.com/rails/rails/pull/6556/files
+jquery javascript and css taken from old hws in this class
+
 --using heroku
 https://devcenter.heroku.com/articles/quickstart#step-2-install-the-heroku-toolbelt
 https://devcenter.heroku.com/articles/rails3
@@ -20,6 +25,11 @@ http://stackoverflow.com/questions/62201/how-and-whether-to-populate-rails-appli
 **
 http://guides.rubyonrails.org/routing.html
 http://guides.rubyonrails.org/association_basics.html#the-has_many-through-association
+**divs don't onload - http://stackoverflow.com/questions/4057236/how-to-add-onload-event-to-a-div
+**check if element is visible http://www.electrictoolbox.com/jquery-element-is-visible/
+http://api.jquery.com/is/ similar to above
+find or create by multiple fields http://stackoverflow.com/questions/3949864/rails-find-or-create-based-on-two-fields
+http://guides.rubyonrails.org/active_record_querying.html
 
 == Welcome to Rails
 

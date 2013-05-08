@@ -21,10 +21,8 @@ http://stackoverflow.com/questions/9501452/rails-button-to-how-to-specify-the-co
 	<% end %>
 </head>
 
-<body onload="setupCommentBox();">
+<body>
 <%= render 'nav_bar' %>
-
-
 <!--Tabs-->
 <div id="pageContent">
 <h1 id="title"><%= @project.name %></h1>
@@ -38,21 +36,8 @@ http://stackoverflow.com/questions/9501452/rails-button-to-how-to-specify-the-co
 				<li id="tabInstructions" class="projectActiveTab majorOptions">Instructions</li>
 			<% end %>
 			
-			<br><br><br><br><br><br>
-			
-			<%= link_to(select_project_path(@project), :status => "step0", :method => :post) do %>
-					<li class="minorOptions">Start project</li>
-			<% end %>
-			<%= link_to(select_project_path(@project), :status => @part, :method => :post) do %>
-				<li class="minorOptions">Save project progress</li>
-			<% end %>
-			<%= link_to(select_project_path(@project), :status => "completed", :method => :post) do %>
-				<li class="minorOptions">Mark project as completed</li>
-			<% end %>
-			<%= link_to(select_project_path(@project), :status => "step0", :method => :post) do %>
-				<li class="minorOptions">Start this project again</li>
-			<% end %>
-			
+			<br><br>
+			<%= render "selection_sidebar" %>
 
 		</ul>
 		</div>
