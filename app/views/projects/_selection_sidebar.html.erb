@@ -9,12 +9,9 @@
 			<%= link_to(select_project_path @project, :part => @part, :remote => true) do %>
 				<li class="minorOptions">Save progress</li>
 			<% end %>
-			<%= link_to(select_project_path @project, :part => "x"+@part, :remote => true) do %>
-				<li class="minorOptions">Mark as completed</li>
-			<% end %>
 		<% elsif curr_step(current_user,@project) == @project.num_steps %>
 			<%= link_to(select_project_path @project, :part => "instructions", :remote => true) do %>
-				<li class="minorOptions">Start tracking this project again</li>
+				<li class="minorOptions">Restart this project</li>
 			<% end %>
 		<% end %>
 	<% end %>

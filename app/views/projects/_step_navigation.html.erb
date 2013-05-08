@@ -7,5 +7,9 @@
 	<%= link_to project_path(@project,:part => next_step) do %>
 		<span id="stepNext" class="myButton">Next &gt;&gt;</span>
 	<% end %>
+<% elsif current_user != nil and is_tracking?(current_user,@project) %>
+	<%= link_to(select_project_path @project, :part => "x"+@part, :remote => true) do %>
+		<span id="stepNext" class="myButton">Mark as completed!</span>
+	<% end %>
 <% end %>
 <div class="clearFloat"></div>
