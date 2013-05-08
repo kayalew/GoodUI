@@ -126,4 +126,6 @@ class ProjectsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  before_filter :authenticate_user
+  skip_before_filter :authenticate_user, :only => [:show]
 end
