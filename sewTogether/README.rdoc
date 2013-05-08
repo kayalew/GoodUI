@@ -31,6 +31,13 @@ http://api.jquery.com/is/ similar to above
 find or create by multiple fields http://stackoverflow.com/questions/3949864/rails-find-or-create-based-on-two-fields
 http://guides.rubyonrails.org/active_record_querying.html
 
+http://stackoverflow.com/questions/1634750/ruby-function-to-remove-all-white-spaces squeeze
+http://alicebobandmallory.com/articles/2010/02/02/string-concatenation-in-ruby join
+passing data thorugh html tags and content tag usage
+http://railscasts.com/episodes/324-passing-data-to-javascript?view=asciicast
+
+help on jquery each function
+http://stackoverflow.com/questions/5292037/using-the-jquery-each-function-to-loop-through-classname-elements
 == Welcome to Rails
 
 Rails is a web-application framework that includes everything needed to create
