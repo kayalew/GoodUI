@@ -5,11 +5,17 @@
 	</div>
 	<div id="navBarRight">
 		<h3 class="navText">
-			<%= link_to "Dashboard ", dashboard_static_pages_path, :class => "noUnderline whiteText" %>|
+			<% if current_user != nil%>
+				<%= link_to "Dashboard ", dashboard_static_pages_path, :class => "noUnderline whiteText" %>|
+			<% end %>
 			<%= link_to " Project Search ", project_search_static_pages_path, :class => "noUnderline whiteText" %>|
 			<%= link_to " Sewing Basics ", sewing_help_static_pages_path, :class => "noUnderline whiteText" %>|
-			<%= link_to "About ", about_static_pages_path, :class => "noUnderline whiteText" %>|
-			<%= link_to "Log out", session_path(:session_id), :method => :delete, :class => "noUnderline whiteText" %>
+			<%= link_to "About ", about_static_pages_path, :class => "noUnderline whiteText" %>
+			<% if current_user != nil%>
+				| <%= link_to "Log out", session_path(:session_id), :method => :delete, :class => "noUnderline whiteText" %>
+			<% else %>
+				| <%= link_to "Log in", home_static_pages_path, :class => "noUnderline whiteText" %>
+			<% end %>
 		</h3>
 	</div>
 	<div class="clearFloat"></div>
