@@ -31,6 +31,7 @@
 <div class="menuElementRow">
 <div class = "menuElement MELeft">
 <div id="currentProjects" class="menuTitle category"><a class="noUnderline whiteText" href="">Current Projects</a></div>
+<% cat = false %>
 <%current_user.projects.each do |p|%>
 	<% s = curr_step(current_user,p) %>
 	<% iden = p.name.split.join + "progress" %>
@@ -40,25 +41,34 @@
 				<%= link_to project_path(p, :part => nav_to_step(s, p.num_steps)) do %> 
 					<%=p.name%>
 					<%= content_tag :div, class: :progressbar, data: {percent: s.to_f/p.num_steps.to_f} do %>
+					<% cat = true %>
 					<%end%>
 				<%end%>
 			</li>
 		</ul>
 	<%end%>
 <%end%>
+<% if cat == false%>
+	<p align="center">No current projects! Why not <%= link_to "start a new one", project_search_static_pages_path %>?</p>			
+<%end%>
 </div>
 <div class = "menuElement MERight">
 <div id="pastProjects" class="menuTitle"><a class="noUnderline whiteText" href="">Past Projects</a></div>
 <ul>
+<% cat = false %>
 <%current_user.projects.each do |p|%>
 	<% s = curr_step(current_user,p) %>
 	<%if s == p.num_steps %>
 		<ul>
 			<li><%= link_to p.name, project_path(p, :part => "overview") %>
+			<% cat = true %>
 		</ul>
 	<%end%>
 <%end%>
 </ul>
+<% if cat == false%>
+	<p align="center">No completed projects</p>			
+<%end%>
 </div>
 <div class="clearFloat"></div>
 </div>
