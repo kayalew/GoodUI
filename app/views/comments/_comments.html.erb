@@ -18,11 +18,11 @@
 	<% end %>
   <%end%>
 <%end%>
-<%#if current_user != nil%>
+<%if current_user != nil%>
 	<div><%= render 'comments/form', :comment => Comment.new, 
 			:project_id => @project.id, :part => @part, 
 			:submit_label => "Add new note" %></div>
-<%#end%><br><br>
+<%end%><br><br>
 </div>
 <script>
 	resetCommentBox();
