@@ -13,7 +13,7 @@
 
 .searchResultImg{
 	float:right;
-	margin:1em;
+	margin:.5em;
 }
 
 .searchResultText{
@@ -32,4 +32,19 @@
 
 .searchResult:nth-of-type(odd) {
 	background-color:#E6E6E6;
+}
+
+
+.resultDetail{
+	margin-top:2em;
+}
+
+.resultDetail td{
+	padding:0 4em 0 0;
+	font-size:.9em;
+}	
+
+.searchResultLabel{
+	font-weight:bold;
+	font-family:"Lato",sans-serif;
 }

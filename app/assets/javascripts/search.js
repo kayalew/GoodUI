@@ -98,9 +98,11 @@ function refreshResults(){
 						'<div class="searchResultText">' +
 						//'<h3><a href='+ searchItems[i].link + ' class="searchResultName">' + searchItems[i].name + '</a></h3>' +
 						'<h3><a href='+ searchItems[i].link +'>' + searchItems[i].name + '</a></h3>' +
-						'<p>Estimated Cost: <span>$' + searchItems[i].cost + '</span></p>' +
-						'<p>Difficulty: <span class="difficulty">' + searchItems[i].difficulty + '</span></p>' +
-						'<p>Required Materials: <span>' + searchItems[i].fabric + '</span></p>' +
+						'<table class="resultDetail">'+
+						'<td><span class="searchResultLabel">Estimated Cost: </span><span class="searchResultThing">$'+ searchItems[i].cost + '</span></td>' +
+						'<td><span class="searchResultLabel difficulty">Difficulty: </span><span class="searchResultThing">' + searchItems[i].difficulty + '</span></td>' +
+						'<td><span class="searchResultLabel">Required Materials: </span><span class="searchResultThing">' + searchItems[i].fabric + '</span><td>' +
+						'</table>'+
 						'</div>' +
 						'<div class="thumbnail searchResultImg"><img src=' + searchItems[i].image + '/></div>' +
 						'<div class="clearFloat"></div>' +
