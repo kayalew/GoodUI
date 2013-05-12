@@ -1,13 +1,34 @@
+<% if current_user != nil %>
+	<% if current_user.projects.include?(@project) %>
+		<div id="progressMarker">
+		Step completed?
+		<!--%=curr_step(current_user, @project)%> of <%=@project.num_steps%> steps completed-->
+		<% if curr_step(current_user,@project) < @project.num_steps %>
+			<%= link_to(select_project_path @project, :part => @part, :remote => true) do %>
+				<%= image_tag "notcheckedoff.png", :id=>"checkbox" %>
+			<% end %>
+		<% elsif curr_step(current_user,@project) == @project.num_steps %>
+			<%= link_to(select_project_path @project, :part => "instructions", :remote => true) do %>
+				<%= image_tag "notcheckedoff.png", :id=>"checkbox" %>
+			<% end %>
+		<% elsif curr_step(current_user,@project) > @project.num_steps %>
+			<%= link_to(select_project_path @project, :part => "instructions", :remote => true) do %>
+				<%= image_tag "notcheckedoff.png", :id=>"checkbox" %>
+			<% end %>
+		<% end %>
+		</div>
+		<div class="clearFloat"></div>
+	<% end %>
+<% end %>
 
 
 <div id="stepNavigation">
-
 <% if defined?(prev_step)%>
 	<%= link_to project_path(@project,:part => prev_step) do %>
 		<span id="stepBack" class="myButton">&lt;&lt; Back</span>
 	<% end %>
 <% end %>
-	
+
 <% if defined?(next_step)%>
 	<%= link_to project_path(@project,:part => next_step) do %>
 		<span id="stepNext" class="myButton">Next &gt;&gt;</span>
