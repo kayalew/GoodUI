@@ -5,10 +5,10 @@
 			<%= link_to(select_project_path @project, :part => "instructions", :remote => true) do %>
 				<li class="minorOptions">Start this project</li>
 			<% end %>
-		<% elsif curr_step(current_user,@project) < @project.num_steps %>
-			<%= link_to(select_project_path @project, :part => @part, :remote => true) do %>
-				<li class="minorOptions">Save progress</li>
-			<% end %>
+		<!--% elsif curr_step(current_user,@project) < @project.num_steps %-->
+			<!--%= link_to(select_project_path @project, :part => @part, :remote => true) do %-->
+				<!--li class="minorOptions">Save progress</li-->
+			<!--% end %-->
 		<% elsif curr_step(current_user,@project) == @project.num_steps %>
 			<%= link_to(select_project_path @project, :part => "instructions", :remote => true) do %>
 				<li class="minorOptions">Restart this project</li>
