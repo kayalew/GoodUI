@@ -9,7 +9,7 @@ module ProjectsHelper
 		end
 		result
 	end
-	def curr_step(part)
+	def current_step(part)
 		if part[0..3] == "step"
 			step = [Integer(@part.to_s[4..-1],10)-1,0].max
 		else

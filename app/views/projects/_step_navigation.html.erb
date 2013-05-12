@@ -2,7 +2,7 @@
 	<% if current_user.projects.include?(@project) %>
 		<div id="progressMarker">
 		Step completed?
-		<% if saved_step(current_user,@project) < current_step(@part) %>
+		<% if saved_step(current_user,@project) > current_step(@part) %>
 			<%= link_to(select_project_path @project, :part => @part, :remote => true) do %>
 				<%= image_tag "checkedoff.png", :id=>"checkbox" %>
 			<% end %>
