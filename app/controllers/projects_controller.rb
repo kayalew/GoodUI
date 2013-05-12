@@ -55,7 +55,7 @@ class ProjectsController < ApplicationController
 				#NOTE: even if part is nil, new_sel will be 0
 				#NOTE: so if you save on a step that means you completed all the
 				#steps before and are currently on this step
-				new_sel = [Integer(@part.to_s[4..-1],10)-1,0].max
+				new_sel = [Integer(@part.to_s[4..-1],10)-1,0].max + 1
 			else
 				new_sel = 0
 			end
