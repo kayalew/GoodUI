@@ -1,8 +1,13 @@
+
+
+<div id="stepNavigation">
+
 <% if defined?(prev_step)%>
 	<%= link_to project_path(@project,:part => prev_step) do %>
 		<span id="stepBack" class="myButton">&lt;&lt; Back</span>
 	<% end %>
 <% end %>
+	
 <% if defined?(next_step)%>
 	<%= link_to project_path(@project,:part => next_step) do %>
 		<span id="stepNext" class="myButton">Next &gt;&gt;</span>
@@ -13,3 +18,5 @@
 	<% end %>
 <% end %>
 <div class="clearFloat"></div>
+
+</div>

@@ -48,3 +48,21 @@
 	box-sizing:border-box;
 }
 
+#progressMarker{
+	font-family:"Lato",sans-serif;
+	font-size:.8em;
+	float:right;
+	position:relative;
+	right:-10px;
+}
+
+#checkbox{
+	height:40px;
+	width:40px;
+	position:relative;
+	bottom:-10px;
+}
+
+#stepNavigation{
+	width:100%;
+}
