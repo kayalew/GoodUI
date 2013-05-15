@@ -1,7 +1,8 @@
+//http://stackoverflow.com/questions/967096/using-jquery-to-test-if-an-input-has-focus
 $(document).ready(function() {
 
 	$(document).keydown(function(e){
-
+		if ($("#commentBox").is(':hidden') || $("#commentBox").val()=="" || !$("#commentBox").is(':focus')){
 		// navigation between steps w/  arrow keys	
 		// left arrow
 		if (e.which==37){
@@ -28,6 +29,7 @@ $(document).ready(function() {
 			});
 		}
 		*/
+		}
 		
 	});	
 	
